@@ -2,7 +2,15 @@ from dash import html,callback,Output,Input,MATCH,State,clientside_callback,dcc
 import dash_bootstrap_components as dbc
 import uuid
 
-
+def node_match_filter(node,filter):
+    if filter in node['title']:
+        return True
+    if 'children' not in node or len(node['children'])<=0 or node['children'] == None:
+        return False
+    for item in node['children']:
+        if node_match_filter(item,filter):
+            return True
+    return False
 
 class CollapseTreeRootAIO(html.Div):
     class ids:
@@ -51,13 +59,11 @@ class CollapseTreeRootAIO(html.Div):
     State(ids.div(MATCH), "children")
     )
     def hide_node(store,children):
-        if store[0]!='':
-            for i,item in enumerate(store[1]):
-                if store[0] not in item['title'] and store[0] != item['title']:
+        for i,item in enumerate(store[1]):
+                if not node_match_filter(item,store[0]):
                     children[i]['props']['style'] = {'display':'none'}
                 else:
                     children[i]['props']['style'] = {}
-        print(children)
         return children
     
 
