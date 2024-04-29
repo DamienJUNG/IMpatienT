@@ -37,7 +37,6 @@ app.layout = dbc.Container([
     State(component_id=collapse_tree.CollapseTreeRootAIO.ids.store("test"),component_property='data')
 )
 def update_filter(i,data):
-    print(i)
     data[0] = i
     return data
     

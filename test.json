@@ -1,40 +1,100 @@
 [
     {
+        "title": "Folder 1",
+        "key": "1",
         "children": [
             {
+                "title": "Folder 1-1",
+                "key": "1-1",
                 "children": [
                     {
-                        "children": [],
+                        "title": "Folder 1-1-1",
                         "key": "1-1-1",
-                        "title": "File 1-1-1"
+                        "children": [
+                            {
+                                "title": "File 1-1-1-1",
+                                "key": "1-1-1-1",
+                                "children": []
+                            },
+                            {
+                                "title": "File 1-1-1-2",
+                                "key": "1-1-1-2",
+                                "children": []
+                            }
+                        ]
                     },
                     {
-                        "children": [],
+                        "title": "Folder 1-1-2",
                         "key": "1-1-2",
-                        "title": "File 1-1-2"
+                        "children": [
+                            {
+                                "title": "File 1-1-2-1",
+                                "key": "1-1-2-1",
+                                "children": []
+                            },
+                            {
+                                "title": "File 1-1-2-2",
+                                "key": "1-1-2-2",
+                                "children": []
+                            }
+                        ]
                     }
-                ],
-                "key": "1-1",
-                "title": "Folder 1-1"
+                ]
             },
             {
-                "children": [],
+                "title": "Folder 1-2",
                 "key": "1-2",
-                "title": "Folder 1-2"
+                "children": [
+                    {
+                        "title": "File 1-2-1",
+                        "key": "1-2-1",
+                        "children": []
+                    },
+                    {
+                        "title": "File 1-2-2",
+                        "key": "1-2-2",
+                        "children": []
+                    }
+                ]
             }
-        ],
-        "key": "1",
-        "title": "Folder 1"
+        ]
     },
     {
+        "title": "Folder 2",
+        "key": "2",
         "children": [
             {
-                "children": [],
+                "title": "Folder 2-1",
                 "key": "2-1",
-                "title": "Folder 2-1"
+                "children": [
+                    {
+                        "title": "File 2-1-1",
+                        "key": "2-1-1",
+                        "children": []
+                    },
+                    {
+                        "title": "File 2-1-2",
+                        "key": "2-1-2",
+                        "children": []
+                    }
+                ]
+            },
+            {
+                "title": "Folder 2-2",
+                "key": "2-2",
+                "children": [
+                    {
+                        "title": "File 2-2-1",
+                        "key": "2-2-1",
+                        "children": []
+                    },
+                    {
+                        "title": "File 2-2-2",
+                        "key": "2-2-2",
+                        "children": []
+                    }
+                ]
             }
-        ],
-        "key": "2",
-        "title": "Folder 2"
+        ]
     }
 ]

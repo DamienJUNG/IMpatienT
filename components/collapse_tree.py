@@ -5,12 +5,37 @@ import uuid
 def node_match_filter(node,filter):
     if filter in node['title']:
         return True
-    if 'children' not in node or len(node['children'])<=0 or node['children'] == None:
+    if 'children' not in node or len(node['children'])<1 or node['children'] == None:
         return False
     for item in node['children']:
         if node_match_filter(item,filter):
             return True
     return False
+
+def make_node_match_json(data,json,filter):
+
+    if node_match_filter(json,filter):
+        data['props']['style'] = {}
+        if data['type']=='div':
+            currNode = data['props']['children'][1]
+            make_node_match_json(currNode,json,filter)
+    
+        elif data['type']=='collapse':
+            for i,json_node in enumerate(json['children']) :
+                make_node_match_json(data['props']['children'][i],json_node,filter)
+    else:
+        data['props']['style'] = {'display':'none'}
+        
+            
+    return data
+
+def make_view_match_json(data,json,filter):
+    if node_match_filter(json,filter):
+        data['props']['style'] = {}
+        make_node_match_json(data['props']['children'][1],json,filter)
+    else:
+        data['props']['style'] = {'display':'none'}
+    return data
 
 class CollapseTreeRootAIO(html.Div):
     class ids:
@@ -50,7 +75,7 @@ class CollapseTreeRootAIO(html.Div):
 
         super().__init__([
             html.Div(id=self.ids.div(aio_id), **_div_props),
-            dcc.Store(id=self.ids.store(aio_id),**{'storage_type':'local','data':[filter,data]})
+            dcc.Store(id=self.ids.store(aio_id),**{'storage_type':'memory','data':[filter,data]})
         ])
 
     @callback(
@@ -60,10 +85,7 @@ class CollapseTreeRootAIO(html.Div):
     )
     def hide_node(store,children):
         for i,item in enumerate(store[1]):
-                if not node_match_filter(item,store[0]):
-                    children[i]['props']['style'] = {'display':'none'}
-                else:
-                    children[i]['props']['style'] = {}
+            make_node_match_json(children[i],item,store[0])
         return children
     
 
@@ -97,8 +119,7 @@ class CollapseTreeNodeAIO(html.Div):
       div_props=None,
       aio_id=None,filter="",is_leaf=False      
     ):
-        """CollapseTreeRootAIO is an All-in-One component that is composed
-        of a parent `html.Div`.
+        """CollapseTreeNodeAIO is an All-in-One component that is composed of a parent `html.Div`.
         - `data` - The data used to create children TreeViewNodeAIO
         - `div_props` - A dictionary of properties passed into the html.Div component.
         - `filter` - String to filter displayed content
@@ -113,21 +134,12 @@ class CollapseTreeNodeAIO(html.Div):
                 children.append(CollapseTreeNodeAIO(item))
             else:
                 children.append(CollapseTreeNodeAIO(item,is_leaf=True))
-        _div_props = {'children':children}
+        _div_props = {'children':children,'style':{'marginLeft':'10%'}}
         if div_props:
             _div_props.update(div_props)
 
         super().__init__([
                 html.Div([html.Img(id=self.ids.button(aio_id),style={'height':'5%', 'width':'5%'}) if is_leaf==False else "",
-            #     slider.SliderWithDivAIO(marks={
-            #     -1:"Absent",
-            #     0:"Pas signicatif",
-            #     1:"Très faiblement présent",
-            #     2:"Faiblement présent",
-            #     3:"Présent",
-            #     4:"Fortement présent",
-            #     5:"Très fortement présent"},slider_props={'min':-1, 'max':5,'value':1,'className':'collapse-slider'
-            # })
             dbc.RadioItems(id=self.ids.group(aio_id),
             className="btn-group",
             inputClassName="btn-check",
@@ -141,7 +153,7 @@ class CollapseTreeNodeAIO(html.Div):
             value=1
             ),html.Label(id=self.ids.label(aio_id),children=data['title'])
         ],className='collapse-div radio-group'),
-            dbc.Collapse(id=self.ids.collapse(aio_id), **_div_props,is_open=False) if is_leaf==False else ""
+            dbc.Collapse(id=self.ids.collapse(aio_id),**_div_props,is_open=False) if is_leaf==False else None
         ])
 
     @callback(
@@ -151,10 +163,7 @@ class CollapseTreeNodeAIO(html.Div):
     State(ids.collapse(MATCH), "is_open")
     )
     def toggle_collapse(n, is_open):
-        if n:
-            return not is_open, "../assets/cross_to_right.jpg" if is_open is True else "../assets/cross_to_down.jpg"
-        # Ne sert que à l'initialisation
-        return is_open, "../assets/cross_to_right.jpg"
+        return not is_open, "../assets/cross_to_right.jpg" if is_open is True else "../assets/cross_to_down.jpg"
     
     # clientside_callback(
     # """

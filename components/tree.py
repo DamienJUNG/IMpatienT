@@ -42,7 +42,7 @@ class TreeViewRootAIO(html.Div):
     ids = ids
 
     def __init__(
-      self,data,
+      self,json,
       div_props=None,
       aio_id=None,filter=""
     ):
@@ -58,7 +58,7 @@ class TreeViewRootAIO(html.Div):
             aio_id = str(uuid.uuid4())
 
         # Merge user-supplied properties into default properties
-        _div_props = {'children':[TreeViewNodeAIO(item) for item in data]}
+        _div_props = {'children':[TreeViewNodeAIO(item) for item in json]}
         if div_props:
             _div_props.update(div_props)
         super().__init__([ 
@@ -85,7 +85,7 @@ class TreeViewNodeAIO(html.Div):
     ids = ids
     def __init__(
       self,
-      data,
+      json,
       accordion_props=None,
       aio_id=None
     ):
@@ -103,8 +103,8 @@ class TreeViewNodeAIO(html.Div):
             'children':[
             dbc.AccordionItem([
                 TreeViewNodeAIO(item)
-                for item in data['children']],
-                title=[data['title'],slider.SliderWithDivAIO(marks={
+                for item in json['children']],
+                title=[json['title'],slider.SliderWithDivAIO(marks={
                 -1:"Absent",
                 0:"Pas signicatif",
                 1:"Très faiblement présent",
