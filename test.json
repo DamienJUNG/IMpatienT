@@ -1,0 +1,40 @@
+[
+    {
+        "children": [
+            {
+                "children": [
+                    {
+                        "children": [],
+                        "key": "1-1-1",
+                        "title": "File 1-1-1"
+                    },
+                    {
+                        "children": [],
+                        "key": "1-1-2",
+                        "title": "File 1-1-2"
+                    }
+                ],
+                "key": "1-1",
+                "title": "Folder 1-1"
+            },
+            {
+                "children": [],
+                "key": "1-2",
+                "title": "Folder 1-2"
+            }
+        ],
+        "key": "1",
+        "title": "Folder 1"
+    },
+    {
+        "children": [
+            {
+                "children": [],
+                "key": "2-1",
+                "title": "Folder 2-1"
+            }
+        ],
+        "key": "2",
+        "title": "Folder 2"
+    }
+]

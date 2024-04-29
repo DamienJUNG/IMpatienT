@@ -1,0 +1,28 @@
+.collapse-div {
+    display: flex;
+    align-items: center
+}
+
+.collapse-slider {
+    min-width: 50em;
+    flex-basis: fill;
+}
+
+.radio-group .form-check {
+    padding-left: 0;
+}
+
+.collapse-text {
+    margin-right: 60em;
+}
+
+.radio-group .btn-group>.form-check:not(:last-child)>.btn {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.radio-group .btn-group>.form-check:not(:first-child)>.btn {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    margin-left: -1px;
+}

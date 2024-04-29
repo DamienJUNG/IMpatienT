@@ -1,0 +1,21 @@
+.slider span {
+    font-size: 0;
+}
+
+.slider-text {
+    font-size: 1em;
+    display: flex;
+    margin-top: 0;
+    margin-bottom: 1.5em;
+    justify-content: center;
+    align-items: center;
+}
+
+.slider {
+    margin-left: 0%;
+}
+
+.slider .rc-slider {
+    background-image: linear-gradient(to right, red 5%, gray 10%, lightgreen 85%);
+    background-color: indigo;
+}
