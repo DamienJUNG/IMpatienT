@@ -69,7 +69,7 @@ class CollapseTreeRootAIO(html.Div):
             aio_id = str(uuid.uuid4())
 
         
-        _div_props = {'children':[CollapseTreeNodeAIO(item) for item in data]}
+        _div_props = {'children':[CollapseTreeNodeAIO(item,with_button=False,className='category1') for item in data]}
         if div_props:
             _div_props.update(div_props)
 
@@ -117,7 +117,10 @@ class CollapseTreeNodeAIO(html.Div):
     def __init__(
       self,data,
       div_props=None,
-      aio_id=None,filter="",is_leaf=False      
+      aio_id=None,filter="",
+      is_leaf=False,
+      with_button = True,
+      className=None
     ):
         """CollapseTreeNodeAIO is an All-in-One component that is composed of a parent `html.Div`.
         - `data` - The data used to create children TreeViewNodeAIO
@@ -134,12 +137,12 @@ class CollapseTreeNodeAIO(html.Div):
                 children.append(CollapseTreeNodeAIO(item))
             else:
                 children.append(CollapseTreeNodeAIO(item,is_leaf=True))
-        _div_props = {'children':children,'style':{'marginLeft':'10%'}}
+        _div_props = {'children':children,'style':{'marginLeft':'4em'}}
         if div_props:
             _div_props.update(div_props)
 
         super().__init__([
-                html.Div([html.Img(id=self.ids.button(aio_id),style={'height':'5%', 'width':'5%'}) if is_leaf==False else "",
+                html.Div([html.Img(id=self.ids.button(aio_id),style={'height':'2em', 'width':'2em'}) if is_leaf==False else "",
             dbc.RadioItems(id=self.ids.group(aio_id),
             className="btn-group",
             inputClassName="btn-check",
@@ -150,11 +153,11 @@ class CollapseTreeNodeAIO(html.Div):
                 {"label": "Option 2", "value": 2},
                 {"label": "Option 3", "value": 3},
             ],
-            value=1
-            ),html.Label(id=self.ids.label(aio_id),children=data['title'])
+            value=1) if with_button else None
+            ,html.Label(id=self.ids.label(aio_id),children=data['title'])
         ],className='collapse-div radio-group'),
-            dbc.Collapse(id=self.ids.collapse(aio_id),**_div_props,is_open=False) if is_leaf==False else None
-        ])
+            dbc.Collapse(id=self.ids.collapse(aio_id),**_div_props) if not is_leaf else None
+        ],className=className)
 
     @callback(
     Output(ids.collapse(MATCH), "is_open"),
@@ -163,7 +166,9 @@ class CollapseTreeNodeAIO(html.Div):
     State(ids.collapse(MATCH), "is_open")
     )
     def toggle_collapse(n, is_open):
-        return not is_open, "../assets/cross_to_right.jpg" if is_open is True else "../assets/cross_to_down.jpg"
+        if n:
+            return not is_open, "../assets/cross_to_right.jpg" if is_open is True else "../assets/cross_to_down.jpg"
+        return is_open,"../assets/cross_to_right.jpg"
     
     # clientside_callback(
     # """

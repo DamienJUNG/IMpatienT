@@ -8,6 +8,20 @@
     flex-basis: fill;
 }
 
+.category {
+    border: 3px black solid;
+    border-radius: 2px;
+    margin: 20px;
+}
+
+.category1 {
+    border: 3px gray solid;
+    background-color: gray;
+    border-radius: 30px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
 .radio-group .form-check {
     padding-left: 0;
 }
