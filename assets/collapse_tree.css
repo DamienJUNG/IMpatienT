@@ -16,10 +16,24 @@
 
 .category1 {
     border: 3px gray solid;
-    background-color: gray;
+    padding: 20px;
+    display: flex;
+    align-items: center;
     border-radius: 30px;
     margin-bottom: 20px;
     margin-top: 20px;
+}
+
+.category2 {
+    border: 4px gray solid;
+    padding: 20px;
+    border-radius: 30px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.category2 label {
+    margin-left: 10px;
 }
 
 .radio-group .form-check {
@@ -39,4 +53,38 @@
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
     margin-left: -1px;
+}
+
+#YES {
+    color: gray;
+    background-color: white;
+    border: 1px solid black;
+}
+
+#YES.active {
+    color: black;
+    background-color: rgb(132, 173, 70);
+}
+
+#NA {
+    color: gray;
+    background-color: white;
+    border: 1px solid black;
+}
+
+#NA.active {
+    color: black;
+    background-color: gray;
+}
+
+
+#NO {
+    color: gray;
+    background-color: white;
+    border: 1px solid black;
+}
+
+#NO.active {
+    color: black;
+    background-color: rgb(230, 17, 17);
 }
