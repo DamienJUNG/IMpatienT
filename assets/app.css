@@ -1,0 +1,10 @@
+.card-title {
+    background-color: rgb(234, 234, 234);
+    font-size: 1.15em;
+    display: flex;
+    justify-content: center;
+}
+
+.card-title label {
+    font-size: 1.25em;
+}

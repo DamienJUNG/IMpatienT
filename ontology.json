@@ -1,0 +1,2876 @@
+[
+    {
+        "id": "MHO:000076",
+        "text": "ATPase staining",
+        "icon": true,
+        "data": {
+            "description": "",
+            "synonymes": "",
+            "phenotype_datamined": "",
+            "gene_datamined": "",
+            "alternative_language": "Enzymologie ATPasique",
+            "correlates_with": "",
+            "hex_color": "#C19CF4",
+            "hpo_datamined": "",
+            "image_annotation": false
+        },
+        "parent": "#"
+    },
+    {
+        "id": "MHO:000089",
+        "text": "ATPase activity",
+        "icon": true,
+        "data": {
+            "description": "",
+            "synonymes": "",
+            "phenotype_datamined": "",
+            "gene_datamined": "",
+            "alternative_language": "Activit\u00e9 ATPasique",
+            "correlates_with": "",
+            "hex_color": "#C5326E",
+            "hpo_datamined": "",
+            "image_annotation": false
+        },
+        "parent": "MHO:000076"
+    },
+    {
+        "id": "MHO:000095",
+        "text": "Abnormal ATPase activity",
+        "icon": true,
+        "data": {
+            "description": "",
+            "synonymes": "",
+            "phenotype_datamined": "ORPHA:172976 Congenital myopathy with cores",
+            "gene_datamined": "HGNC:12403 TTN,HGNC:129 ACTA1",
+            "alternative_language": "Activit\u00e9 ATPasique Anormale",
+            "correlates_with": "",
+            "hex_color": "#ABC865",
+            "hpo_datamined": "",
+            "image_annotation": false
+        },
+        "parent": "MHO:000089"
+    },
+    {
+        "id": "MHO:000090",
+        "text": "Acid-Resistant Activity (Type 1)",
+        "icon": true,
+        "data": {
+            "description": "",
+            "synonymes": "Acide-Resistant,Acid-Resistant",
+            "phenotype_datamined": "ORPHA:172976 Congenital myopathy with cores",
+            "gene_datamined": "HGNC:129 ACTA1",
+            "alternative_language": "Activit\u00e9 Acide-R\u00e9sistant (Type 1)",
+            "correlates_with": "",
+            "hex_color": "#80A42F",
+            "hpo_datamined": "",
+            "image_annotation": false
+        },
+        "parent": "MHO:000089"
+    },
+    {
+        "id": "MHO:000091",
+        "text": "Central ATP activity",
+        "icon": true,
+        "data": {
+            "description": "",
+            "synonymes": "",
+            "phenotype_datamined": "ORPHA:595 Centronuclear myopathy",
+            "gene_datamined": "HGNC:7448 MTM1,HGNC:9752 QDPR",
+            "alternative_language": "Activit\u00e9 ATP Centrale",
+            "correlates_with": "",
+            "hex_color": "#188893",
+            "hpo_datamined": "",
+            "image_annotation": false
+        },
+        "parent": "MHO:000089"
+    },
+    {
+        "id": "MHO:000093",
+        "text": "Extended Range Activity",
+        "icon": true,
+        "data": {
+            "description": "",
+            "synonymes": "Plage \u00e9tendue,Extended Range",
+            "phenotype_datamined": "",
+            "gene_datamined": "",
+            "alternative_language": "Activit\u00e9 en Plage \u00e9tendue",
+            "correlates_with": "",
+            "hex_color": "#1B8ED5",
+            "hpo_datamined": "",
+            "image_annotation": false
+        },
+        "parent": "MHO:000089"
+    },
+    {
+        "id": "MHO:000094",
+        "text": "Halo activity",
+        "icon": true,
+        "data": {
+            "description": "",
+            "synonymes": "Halo",
+            "phenotype_datamined": "ORPHA:172976 Congenital myopathy with cores",
+            "gene_datamined": "HGNC:7577 MYH7",
+            "alternative_language": "Activit\u00e9 en Halo",
+            "correlates_with": "",
+            "hex_color": "#0F1786",
+            "hpo_datamined": "",
+            "image_annotation": false
+        },
+        "parent": "MHO:000089"
+    },
+    {
+        "id": "MHO:000096",
+        "text": "Locally Abnormal ATP Activity (Clear Zone)",
+        "icon": true,
+        "data": {
+            "description": "",
+            "phenotype_datamined": "ORPHA:172976 Congenital myopathy with cores,ORPHA:595 Centronuclear myopathy,ORPHA:607 Nemaline myopathy",
+            "gene_datamined": "HGNC:10483 RYR1,HGNC:12403 TTN,HGNC:129 ACTA1,HGNC:7448 MTM1,HGNC:7577 MYH7,HGNC:7720 NEB",
+            "synonymes": "",
+            "alternative_language": "Activit\u00e9 ATPasique Anormale Localement (Zone Claire)",
+            "correlates_with": "MHO:000027 Centralized Nuclei,MHO:000096 Locally Abnormal ATP Activity (Clear Zone)",
+            "hex_color": "#A093D4",
+            "hpo_datamined": ",HP:0001324 Muscle weakness,HP:0001252 Hypotonia,HP:0001319 Neonatal hypotonia",
+            "image_annotation": false
+        },
+        "parent": "MHO:000089"
+    },
+    {
+        "id": "MHO:000092",
+        "text": "Peripheral ATP activity",
+        "icon": true,
+        "data": {
+            "description": "",
+            "synonymes": "",
+            "phenotype_datamined": "",
+            "gene_datamined": "",
+            "alternative_language": "Activit\u00e9 ATP P\u00e9riph\u00e9rique",
+            "correlates_with": "",
+            "hex_color": "#A0C802",
+            "hpo_datamined": "",
+            "image_annotation": false
+        },
+        "parent": "MHO:000089"
+    },
+    {
+        "id": "MHO:000077",
+        "text": "Fibre differentiation",
+        "icon": true,
+        "data": {
+            "description": "",
+            "synonymes": "",
+            "phenotype_datamined": "",
+            "gene_datamined": "",
+            "alternative_language": "Diff\u00e9rentiation des Fibres",
+            "correlates_with": "",
+            "hex_color": "#CB89E3",
+            "hpo_datamined": "",
+            "image_annotation": false
+        },
+        "parent": "MHO:000076"
+    },
+    {
+        "id": "MHO:000078",
+        "text": "Abnormal differentiation",
+        "icon": true,
+        "data": {
+            "description": "",
+            "synonymes": "fibre type disproportion",
+            "phenotype_datamined": "",
+            "gene_datamined": "",
+            "correlates_with": "MHO:000031 Increase in the number of nuclei,MHO:000078 Abnormal differentiation",
+            "alternative_language": "Diff\u00e9renciation Anormale",
+            "hex_color": "#613C20",
+            "hpo_datamined": "",
+            "image_annotation": false
+        },
+        "parent": "MHO:000077"
+    },
+    {
+        "id": "MHO:000080",
+        "text": "Area without ATPase activity",
+        "icon": true,
+        "data": {
+            "description": "",
+            "synonymes": "",
+            "phenotype_datamined": "",
+            "gene_datamined": "",
+            "correlates_with": "MHO:000036 Fuscinophilic material: Dark clusters/aggregates,MHO:000048 Rods,MHO:000080 Area without ATPase activity",
+            "alternative_language": "Zone sans activit\u00e9 ATPase",
+            "hex_color": "#7C0CD9",
+            "hpo_datamined": "",
+            "image_annotation": false
+        },
+        "parent": "MHO:000077"
+    },
+    {
+        "id": "MHO:000079",
+        "text": "Pale Atrophic Fibre Staining",
+        "icon": true,
+        "data": {
+            "description": "",
+            "synonymes": "",
+            "phenotype_datamined": "",
+            "gene_datamined": "",
+            "alternative_language": "Coloration P\u00e2le des Fibre Atrophiques",
+            "correlates_with": "",
+            "hex_color": "#41CA1C",
+            "hpo_datamined": "",
+            "image_annotation": false
+        },
+        "parent": "MHO:000077"
+    },
+    {
+        "id": "MHO:000081",
+        "text": "Type Uniformity",
+        "icon": true,
+        "data": {
+            "description": "",
+            "synonymes": "",
+            "phenotype_datamined": "ORPHA:172976 Congenital myopathy with cores,ORPHA:595 Centronuclear myopathy,ORPHA:607 Nemaline myopathy,UNCLEAR",
+            "gene_datamined": "HGNC:12403 TTN,HGNC:7448 MTM1,HGNC:7720 NEB,HGNC:9752 QDPR,N/A",
+            "correlates_with": "MHO:000063 Connective Interstitial Tissue Increase,MHO:000081 Type Uniformity,MHO:000083 Predominance Fibre Type 1,MHO:000107 Structural Disorganisation",
+            "alternative_language": "Uniformit\u00e9 de Type",
+            "hex_color": "#C6FD2F",
+            "hpo_datamined": ",HP:0001324 Muscle weakness,HP:0001252 Hypotonia,HP:0001319 Neonatal hypotonia",
+            "image_annotation": false
+        },
+        "parent": "MHO:000077"
+    },
+    {
+        "id": "MHO:000082",
+        "text": "Numeric Fibre Distribution",
+        "icon": true,
+        "data": {
+            "description": "",
+            "synonymes": "",
+            "phenotype_datamined": "",
+            "gene_datamined": "",
+            "alternative_language": "R\u00e9partition Num\u00e9rique des Fibres",
+            "correlates_with": "",
+            "hex_color": "#59C385",
+            "hpo_datamined": "",
+            "image_annotation": false
+        },
+        "parent": "MHO:000076"
+    },
+    {
+        "id": "MHO:000083",
+        "text": "Predominance Fiber Type 1",
+        "icon": true,
+        "data": {
+            "description": "",
+            "synonymes": "",
+            "phenotype_datamined": "ORPHA:172976 Congenital myopathy with cores,ORPHA:595 Centronuclear myopathy,ORPHA:607 Nemaline myopathy,UNCLEAR",
+            "gene_datamined": "HGNC:10483 RYR1,HGNC:1052 BIN1,HGNC:12403 TTN,HGNC:129 ACTA1,HGNC:7448 MTM1,HGNC:7577 MYH7,HGNC:7720 NEB,HGNC:9752 QDPR,N/A",
+            "correlates_with": "MHO:000081 Type Uniformity,MHO:000083 Predominance Fibre Type 1",
+            "alternative_language": "Pr\u00e9dominance Fibre Type 1",
+            "hex_color": "#7E19C5",
+            "hpo_datamined": ",HP:0001324 Muscle weakness,HP:0001252 Hypotonia,HP:0001319 Neonatal hypotonia",
+            "image_annotation": false
+        },
+        "parent": "MHO:000082"
+    },
+    {
+        "id": "MHO:000084",
+        "text": "Predominance Fiber Type 2",
+        "icon": true,
+        "data": {
+            "description": "",
+            "synonymes": "",
+            "phenotype_datamined": "",
+            "gene_datamined": "",
+            "correlates_with": "MHO:000030 Nuclei with Myotubular Aspects,MHO:000084 Predominance Fibre Type 2",
+            "alternative_language": "Pr\u00e9dominance Fibre Type 2",
+            "hex_color": "#4BEBA8",
+            "hpo_datamined": "",
+            "image_annotation": false
+        },
+        "parent": "MHO:000082"
+    },
+    {
+        "id": "MHO:000085",
+        "text": "Topographical Distribution of Fibre Types",
+        "icon": true,
+        "data": {
+            "description": "",
+            "synonymes": "",
+            "phenotype_datamined": "",
+            "gene_datamined": "",
+            "alternative_language": "R\u00e9partition Topographique des Types de Fibre",
+            "correlates_with": "",
+            "hex_color": "#3B7F84",
+            "hpo_datamined": "",
+            "image_annotation": false
+        },
+        "parent": "MHO:000076"
+    },
+    {
+        "id": "MHO:000086",
+        "text": "Fibre bundling",
+        "icon": true,
+        "data": {
+            "description": "",
+            "synonymes": "",
+            "phenotype_datamined": "",
+            "gene_datamined": "",
+            "correlates_with": "MHO:000086 Fibre bundling,MHO:000087 Fibres 1 Grouped,MHO:000088 Fibres 2 Grouped",
+            "alternative_language": "Regroupement des Fibres",
+            "hex_color": "#55DEBE",
+            "hpo_datamined": "",
+            "image_annotation": false
+        },
+        "parent": "MHO:000085"
+    },
+    {
+        "id": "MHO:000087",
+        "text": "Fibres 1 Grouped",
+        "icon": true,
+        "data": {
+            "description": "",
+            "synonymes": "",
+            "phenotype_datamined": "ORPHA:607 Nemaline myopathy",
+            "gene_datamined": "HGNC:12403 TTN",
+            "correlates_with": "MHO:000086 Fibre bundling,MHO:000087 Fibres 1 Grouped,MHO:000088 Fibres 2 Grouped",
+            "alternative_language": "Fibres 1 Group\u00e9es",
+            "hex_color": "#4D26F1",
+            "hpo_datamined": "HP:0001324 Muscle weakness,HP:0001252 Hypotonia,HP:0001319 Neonatal hypotonia",
+            "image_annotation": false
+        },
+        "parent": "MHO:000085"
+    },
+    {
+        "id": "MHO:000088",
+        "text": "Fibres 2 Grouped",
+        "icon": true,
+        "data": {
+            "description": "",
+            "synonymes": "",
+            "phenotype_datamined": "",
+            "gene_datamined": "",
+            "correlates_with": "MHO:000086 Fibre bundling,MHO:000087 Fibres 1 Grouped,MHO:000088 Fibres 2 Grouped",
+            "alternative_language": "Fibres 2 Group\u00e9es",
+            "hex_color": "#D8390D",
+            "hpo_datamined": "",
+            "image_annotation": false
+        },
+        "parent": "MHO:000085"
+    },
+    {
+        "id": "MHO:000156",
+        "text": "Electron Microscopy (EM)",
+        "icon": true,
+        "data": {
+            "description": "",
+            "synonymes": "",
+            "phenotype_datamined": "",
+            "gene_datamined": "",
+            "alternative_language": "Microscopie Electronique (ME)",
+            "correlates_with": "",
+            "hex_color": "#D08E9B",
+            "hpo_datamined": "",
+            "image_annotation": false
+        },
+        "parent": "#"
+    },
+    {
+        "id": "MHO:000160",
+        "text": "A Band",
+        "icon": true,
+        "data": {
+            "description": "",
+            "synonymes": "",
+            "phenotype_datamined": "",
+            "gene_datamined": "",
+            "alternative_language": "Bande A",
+            "correlates_with": "",
+            "hex_color": "#7A8142",
+            "hpo_datamined": "",
+            "image_annotation": false
+        },
+        "parent": "MHO:000156"
+    },
+    {
+        "id": "MHO:000164",
+        "text": "Autophagic vacuoles",
+        "icon": true,
+        "data": {
+            "description": "",
+            "synonymes": "",
+            "phenotype_datamined": "",
+            "gene_datamined": "",
+            "alternative_language": "Vacuoles Autophagiques",
+            "correlates_with": "",
+            "hex_color": "#34FA8E",
+            "hpo_datamined": "",
+            "image_annotation": false
+        },
+        "parent": "MHO:000156"
+    },
+    {
+        "id": "MHO:000167",
+        "text": "CAPS-type lesions",
+        "icon": true,
+        "data": {
+            "description": "",
+            "synonymes": "",
+            "phenotype_datamined": "",
+            "gene_datamined": "",
+            "alternative_language": "L\u00e9sions de type CAPS",
+            "correlates_with": "",
+            "hex_color": "#17FE15",
+            "hpo_datamined": "",
+            "image_annotation": false
+        },
+        "parent": "MHO:000156"
+    },
+    {
+        "id": "MHO:000157",
+        "text": "Sarcomeric structure",
+        "icon": true,
+        "data": {
+            "description": "",
+            "synonymes": "",
+            "phenotype_datamined": "",
+            "gene_datamined": "",
+            "alternative_language": "Structure sarcom\u00e9rique",
+            "correlates_with": "",
+            "hex_color": "#8B87EB",
+            "hpo_datamined": "",
+            "image_annotation": false
+        },
+        "parent": "MHO:000156"
+    },
+    {
+        "id": "MHO:000159",
+        "text": "Crescent-shaped sarcomeric structure",
+        "icon": true,
+        "data": {
+            "description": "",
+            "synonymes": "Crescent sarcomeric structure,Structure sarcom\u00e9rique en croissant",
+            "phenotype_datamined": "",
+            "gene_datamined": "",
+            "alternative_language": "Structure sarcom\u00e9rique en Croissant",
+            "correlates_with": "",
+            "hex_color": "#E08D25",
+            "hpo_datamined": "",
+            "image_annotation": false
+        },
+        "parent": "MHO:000157"
+    },
+    {
+        "id": "MHO:000158",
+        "text": "Disorganized sarcomeric structure",
+        "icon": true,
+        "data": {
+            "description": "",
+            "synonymes": "D\u00e9sorganis\u00e9e",
+            "phenotype_datamined": "",
+            "gene_datamined": "",
+            "alternative_language": "Structure sarcom\u00e9rique Remani\u00e9",
+            "correlates_with": "",
+            "hex_color": "#E6B4EC",
+            "hpo_datamined": "",
+            "image_annotation": false
+        },
+        "parent": "MHO:000157"
+    },
+    {
+        "id": "MHO:000165",
+        "text": "Tanker",
+        "icon": true,
+        "data": {
+            "description": "",
+            "synonymes": "",
+            "phenotype_datamined": "",
+            "gene_datamined": "",
+            "alternative_language": "Citerne",
+            "correlates_with": "",
+            "hex_color": "#4511F4",
+            "hpo_datamined": "",
+            "image_annotation": false
+        },
+        "parent": "MHO:000156"
+    },
+    {
+        "id": "MHO:000166",
+        "text": "Tanker Expansion",
+        "icon": true,
+        "data": {
+            "description": "",
+            "synonymes": "",
+            "phenotype_datamined": "",
+            "gene_datamined": "",
+            "alternative_language": "Dilatation de Citerne",
+            "correlates_with": "",
+            "hex_color": "#C5088D",
+            "hpo_datamined": "",
+            "image_annotation": false
+        },
+        "parent": "MHO:000165"
+    },
+    {
+        "id": "MHO:000161",
+        "text": "Z Material",
+        "icon": true,
+        "data": {
+            "description": "",
+            "synonymes": "",
+            "phenotype_datamined": "",
+            "gene_datamined": "",
+            "alternative_language": "Materiel Z",
+            "correlates_with": "",
+            "hex_color": "#B903D6",
+            "hpo_datamined": "",
+            "image_annotation": false
+        },
+        "parent": "MHO:000156"
+    },
+    {
+        "id": "MHO:000162",
+        "text": "Z Material: Enlargement",
+        "icon": true,
+        "data": {
+            "description": "",
+            "synonymes": "",
+            "phenotype_datamined": "",
+            "gene_datamined": "",
+            "alternative_language": "Materiel Z: Elargissement",
+            "correlates_with": "",
+            "hex_color": "#7CBADA",
+            "hpo_datamined": "",
+            "image_annotation": false
+        },
+        "parent": "MHO:000161"
+    },
+    {
+        "id": "MHO:000163",
+        "text": "Z Materiel: Streaming",
+        "icon": true,
+        "data": {
+            "description": "",
+            "synonymes": "",
+            "phenotype_datamined": "",
+            "gene_datamined": "",
+            "alternative_language": "Materiel Z: Streaming",
+            "correlates_with": "",
+            "hex_color": "#89911C",
+            "hpo_datamined": "",
+            "image_annotation": false
+        },
+        "parent": "MHO:000161"
+    },
+    {
+        "id": "MHO:000133",
+        "text": "Enzymology Miscellaneous",
+        "icon": true,
+        "data": {
+            "description": "",
+            "genes": "test",
+            "synonymes": "",
+            "phenotype_datamined": "",
+            "gene_datamined": "",
+            "alternative_language": "Enzymologie Divers",
+            "correlates_with": "",
+            "hex_color": "#DBF65C",
+            "hpo_datamined": "",
+            "image_annotation": false
+        },
+        "parent": "#"
+    },
+    {
+        "id": "MHO:000134",
+        "text": "COX activity",
+        "icon": true,
+        "data": {
+            "description": "",
+            "synonymes": "",
+            "phenotype_datamined": "",
+            "gene_datamined": "",
+            "alternative_language": "Activit\u00e9 COX",
+            "correlates_with": "",
+            "hex_color": "#66530A",
+            "hpo_datamined": "",
+            "image_annotation": false
+        },
+        "parent": "MHO:000133"
+    },
+    {
+        "id": "MHO:000135",
+        "text": "Abnormal COX activity",
+        "icon": true,
+        "data": {
+            "description": "",
+            "synonymes": "",
+            "phenotype_datamined": "UNCLEAR",
+            "gene_datamined": "N/A",
+            "correlates_with": "MHO:000135 Abnormal COX activity",
+            "alternative_language": "Activit\u00e9 COX Anormale",
+            "hex_color": "#E31559",
+            "hpo_datamined": "",
+            "image_annotation": false
+        },
+        "parent": "MHO:000134"
+    },
+    {
+        "id": "MHO:000136",
+        "text": "Local Abnormal COX activity",
+        "icon": true,
+        "data": {
+            "description": "",
+            "synonymes": "",
+            "phenotype_datamined": "ORPHA:607 Nemaline myopathy",
+            "gene_datamined": "HGNC:7720 NEB,N/A",
+            "correlates_with": "MHO:000005 Type 1 Hypertrophic (large),MHO:000136 Local Abnormal COX activity",
+            "alternative_language": "Activit\u00e9 COX Anormale Localement",
+            "hex_color": "#2BEACC",
+            "hpo_datamined": "",
+            "image_annotation": false
+        },
+        "parent": "MHO:000134"
+    },
+    {
+        "id": "MHO:000142",
+        "text": "PAS Staining",
+        "icon": true,
+        "data": {
+            "description": "",
+            "synonymes": "",
+            "phenotype_datamined": "",
+            "gene_datamined": "",
+            "alternative_language": "Coloration PAS",
+            "correlates_with": "",
+            "hex_color": "#EC3F37",
+            "hpo_datamined": "",
+            "image_annotation": false
+        },
+        "parent": "MHO:000133"
+    },
+    {
+        "id": "MHO:000143",
+        "text": "Abnormal PAS Staining (Overload)",
+        "icon": true,
+        "data": {
+            "description": "",
+            "phenotype_datamined": "ORPHA:172976 Congenital myopathy with cores,ORPHA:607 Nemaline myopathy",
+            "gene_datamined": "HGNC:10483 RYR1,HGNC:7720 NEB",
+            "synonymes": "",
+            "correlates_with": "MHO:000143 Abnormal PAS Staining (Overload)",
+            "alternative_language": "Coloration PAS Anormale (Surcharge)",
+            "hex_color": "#A3D834",
+            "hpo_datamined": "",
+            "image_annotation": false
+        },
+        "parent": "MHO:000142"
+    },
+    {
+        "id": "MHO:000146",
+        "text": "PAS Staining: Diffuse Overload",
+        "icon": true,
+        "data": {
+            "description": "",
+            "synonymes": "",
+            "phenotype_datamined": "",
+            "gene_datamined": "",
+            "alternative_language": "Coloration PAS: Surcharge Diffuse",
+            "correlates_with": "",
+            "hex_color": "#3F5B17",
+            "hpo_datamined": "",
+            "image_annotation": false
+        },
+        "parent": "MHO:000142"
+    },
+    {
+        "id": "MHO:000148",
+        "text": "PAS Staining: High Contrast Type I and II",
+        "icon": true,
+        "data": {
+            "description": "",
+            "synonymes": "",
+            "phenotype_datamined": "",
+            "gene_datamined": "",
+            "alternative_language": "Coloration PAS: Contraste Fort Type I et II",
+            "correlates_with": "",
+            "hex_color": "#450AAC",
+            "hpo_datamined": "",
+            "image_annotation": false
+        },
+        "parent": "MHO:000142"
+    },
+    {
+        "id": "MHO:000145",
+        "text": "PAS Staining: Irregular / Uneven",
+        "icon": true,
+        "data": {
+            "description": "",
+            "synonymes": "",
+            "phenotype_datamined": "ORPHA:172976 Congenital myopathy with cores",
+            "gene_datamined": "HGNC:129 ACTA1",
+            "alternative_language": "Coloration PAS: Irr\u00e9guli\u00e8re / In\u00e9gale",
+            "correlates_with": "",
+            "hex_color": "#2A4A55",
+            "hpo_datamined": "",
+            "image_annotation": false
+        },
+        "parent": "MHO:000142"
+    },
+    {
+        "id": "MHO:000144",
+        "text": "PAS Staining: Locally Abnormal (Overload)",
+        "icon": true,
+        "data": {
+            "description": "",
+            "synonymes": "",
+            "phenotype_datamined": "",
+            "gene_datamined": "",
+            "correlates_with": "MHO:000062 Interstitial alterations,MHO:000144 PAS Staining: Locally Abnormal (Overload)",
+            "alternative_language": "Coloration PAS Anormale Localement (Surcharge)",
+            "hex_color": "#320000",
+            "hpo_datamined": "",
+            "image_annotation": false
+        },
+        "parent": "MHO:000142"
+    },
+    {
+        "id": "MHO:000149",
+        "text": "PAS Staining: Low Level",
+        "icon": true,
+        "data": {
+            "description": "",
+            "phenotype_datamined": "",
+            "gene_datamined": "",
+            "synonymes": "",
+            "alternative_language": "Coloration PAS Teneur Faible",
+            "correlates_with": "",
+            "hex_color": "#1AB017",
+            "hpo_datamined": "",
+            "image_annotation": false
+        },
+        "parent": "MHO:000142"
+    },
+    {
+        "id": "MHO:000147",
+        "text": "PAS Staining: Overdosing in Abnormal Fibre",
+        "icon": true,
+        "data": {
+            "description": "",
+            "synonymes": "",
+            "phenotype_datamined": "",
+            "gene_datamined": "",
+            "alternative_language": "Coloration PAS: Surchage dans Fibre Anormales",
+            "correlates_with": "",
+            "hex_color": "#FEA257",
+            "hpo_datamined": "",
+            "image_annotation": false
+        },
+        "parent": "MHO:000142"
+    },
+    {
+        "id": "MHO:000137",
+        "text": "Phospholipase activity",
+        "icon": true,
+        "data": {
+            "description": "",
+            "synonymes": "",
+            "phenotype_datamined": "",
+            "gene_datamined": "",
+            "alternative_language": "Activit\u00e9 Phospholipases",
+            "correlates_with": "",
+            "hex_color": "#83CC6B",
+            "hpo_datamined": "",
+            "image_annotation": false
+        },
+        "parent": "MHO:000133"
+    },
+    {
+        "id": "MHO:000140",
+        "text": "Abnormal Phospholipase Activity Locally",
+        "icon": true,
+        "data": {
+            "description": "",
+            "phenotype_datamined": "ORPHA:607 Nemaline myopathy",
+            "gene_datamined": "HGNC:129 ACTA1,HGNC:7577 MYH7",
+            "synonymes": "",
+            "correlates_with": "MHO:000140 Abnormal Phospholipase Activity Locally,MHO:000151 Sudan Staining: Abornmal (Lipids Overload)",
+            "alternative_language": "Activit\u00e9 Phospholipases Anormale Localement",
+            "hex_color": "#74C1E2",
+            "hpo_datamined": "",
+            "image_annotation": false
+        },
+        "parent": "MHO:000137"
+    },
+    {
+        "id": "MHO:000138",
+        "text": "Abnormal Phospholipase+AMP activity",
+        "icon": true,
+        "data": {
+            "description": "",
+            "synonymes": "",
+            "phenotype_datamined": "ORPHA:607 Nemaline myopathy",
+            "gene_datamined": "HGNC:129 ACTA1",
+            "correlates_with": "MHO:000029 Sub-Sarcolemmal Nuclei,MHO:000138 Abnormal Phospholipase+AMP activity,MHO:000139 Abnormal phospholipase activity",
+            "alternative_language": "Activit\u00e9 Phospholipases+AMP Anormale",
+            "hex_color": "#C7D991",
+            "hpo_datamined": "",
+            "image_annotation": false
+        },
+        "parent": "MHO:000137"
+    },
+    {
+        "id": "MHO:000139",
+        "text": "Abnormal phospholipase activity",
+        "icon": true,
+        "data": {
+            "description": "",
+            "synonymes": "",
+            "phenotype_datamined": "",
+            "gene_datamined": "",
+            "correlates_with": "MHO:000138 Abnormal Phospholipase+AMP activity,MHO:000139 Abnormal phospholipase activity",
+            "alternative_language": "Activit\u00e9 Phospholipases Anormale",
+            "hex_color": "#704E95",
+            "hpo_datamined": "",
+            "image_annotation": false
+        },
+        "parent": "MHO:000137"
+    },
+    {
+        "id": "MHO:000141",
+        "text": "Diffuse Phospholipase Activity",
+        "icon": true,
+        "data": {
+            "description": "",
+            "phenotype_datamined": "",
+            "gene_datamined": "",
+            "synonymes": "",
+            "alternative_language": "Activit\u00e9 Phospholipases Diffuse",
+            "correlates_with": "",
+            "hex_color": "#1F5269",
+            "hpo_datamined": "",
+            "image_annotation": false
+        },
+        "parent": "MHO:000137"
+    },
+    {
+        "id": "MHO:000150",
+        "text": "Sudan colouring",
+        "icon": true,
+        "data": {
+            "description": "",
+            "synonymes": "",
+            "phenotype_datamined": "",
+            "gene_datamined": "",
+            "alternative_language": "Coloration Soudan",
+            "correlates_with": "",
+            "hex_color": "#22DDA9",
+            "hpo_datamined": "",
+            "image_annotation": false
+        },
+        "parent": "MHO:000133"
+    },
+    {
+        "id": "MHO:000151",
+        "text": "Sudan Staining: Abornmal (Lipids Overload)",
+        "icon": true,
+        "data": {
+            "description": "",
+            "phenotype_datamined": "ORPHA:607 Nemaline myopathy",
+            "gene_datamined": "HGNC:12403 TTN,HGNC:129 ACTA1,HGNC:7720 NEB",
+            "synonymes": "soudan surcharge,soudan overload,surcharge lipide",
+            "correlates_with": "MHO:000036 Fuscinophilic material: Dark clusters/aggregates,MHO:000048 Rods,MHO:000140 Abnormal Phospholipase Activity Locally,MHO:000151 Sudan Staining: Abornmal (Lipids Overload)",
+            "alternative_language": "Coloration Soudan: Anormale (Surchage en Lipides)",
+            "hex_color": "#F462F3",
+            "hpo_datamined": ",HP:0001324 Muscle weakness,HP:0001252 Hypotonia,HP:0001319 Neonatal hypotonia",
+            "image_annotation": false
+        },
+        "parent": "MHO:000150"
+    },
+    {
+        "id": "MHO:000152",
+        "text": "Sudan Staining: Lipid Droplets",
+        "icon": true,
+        "data": {
+            "description": "",
+            "synonymes": "goutelette lipidiques,lipid droplets",
+            "phenotype_datamined": "ORPHA:607 Nemaline myopathy",
+            "gene_datamined": "HGNC:7720 NEB",
+            "alternative_language": "Coloration Soudan: Goutelettes Lipidiques",
+            "correlates_with": "",
+            "hex_color": "#E9865F",
+            "hpo_datamined": "",
+            "image_annotation": false
+        },
+        "parent": "MHO:000150"
+    },
+    {
+        "id": "MHO:000154",
+        "text": "Sudan Staining: Overload in Disorganized Fibres",
+        "icon": true,
+        "data": {
+            "description": "",
+            "synonymes": "surcharge dans les fibre remani\u00e9es,overload in disorganized fibers",
+            "phenotype_datamined": "",
+            "gene_datamined": "",
+            "alternative_language": "Coloration Soudan: Surchage dans les Fibres Remani\u00e9es",
+            "correlates_with": "",
+            "hex_color": "#1B0BA7",
+            "hpo_datamined": "",
+            "image_annotation": false
+        },
+        "parent": "MHO:000150"
+    },
+    {
+        "id": "MHO:000153",
+        "text": "Sudan Staining: Overload in Type I Fibre",
+        "icon": true,
+        "data": {
+            "description": "",
+            "synonymes": "surchage dans fibre type I,overload in type I fibre",
+            "phenotype_datamined": "",
+            "gene_datamined": "",
+            "alternative_language": "Coloration Soudan: Surchage dans Fibre Type I",
+            "correlates_with": "",
+            "hex_color": "#D8BBF1",
+            "hpo_datamined": "",
+            "image_annotation": false
+        },
+        "parent": "MHO:000150"
+    },
+    {
+        "id": "MHO:000155",
+        "text": "Sudan Staining: Type II fibres richer than Type I",
+        "icon": true,
+        "data": {
+            "description": "",
+            "synonymes": "Fibre type II plus riche,Fiber type II richer",
+            "phenotype_datamined": "",
+            "gene_datamined": "",
+            "alternative_language": "Coloration Soudan: Fibres Type II plus riche que Type I",
+            "correlates_with": "",
+            "hex_color": "#9FDD3F",
+            "hpo_datamined": "",
+            "image_annotation": false
+        },
+        "parent": "MHO:000150"
+    },
+    {
+        "id": "MHO:000001",
+        "text": "HE and TG staining",
+        "icon": true,
+        "data": {
+            "description": "",
+            "synonymes": "",
+            "phenotype_datamined": "",
+            "gene_datamined": "",
+            "alternative_language": "Coloration HE et TG",
+            "correlates_with": "",
+            "hex_color": "#DC4807",
+            "hpo_datamined": "",
+            "image_annotation": false
+        },
+        "parent": "#"
+    },
+    {
+        "id": "MHO:000002",
+        "text": "Biopsy Global Aspect",
+        "icon": true,
+        "data": {
+            "description": "",
+            "phenotype_datamined": "",
+            "gene_datamined": "",
+            "synonymes": "",
+            "alternative_language": "Aspect Global Pr\u00e9l\u00e8vement",
+            "correlates_with": "",
+            "hex_color": "#7B1AFF",
+            "hpo_datamined": "",
+            "image_annotation": false
+        },
+        "parent": "MHO:000001"
+    },
+    {
+        "id": "MHO:000003",
+        "text": "Abnormal Biopsy",
+        "icon": true,
+        "data": {
+            "description": "",
+            "phenotype_datamined": "ORPHA:172976 Congenital myopathy with cores,ORPHA:595 Centronuclear myopathy,ORPHA:607 Nemaline myopathy,UNCLEAR",
+            "gene_datamined": "HGNC:10483 RYR1,HGNC:12403 TTN,HGNC:129 ACTA1,HGNC:7720 NEB,N/A",
+            "synonymes": "",
+            "alternative_language": "Pr\u00e9l\u00e8vement Anormal",
+            "correlates_with": "",
+            "hex_color": "#A2C7B9",
+            "hpo_datamined": "",
+            "image_annotation": false
+        },
+        "parent": "MHO:000002"
+    },
+    {
+        "id": "MHO:000058",
+        "text": "Connective Tissue",
+        "icon": true,
+        "data": {
+            "description": "",
+            "synonymes": "",
+            "phenotype_datamined": "",
+            "gene_datamined": "",
+            "alternative_language": "Tissu Conjonctif",
+            "correlates_with": "",
+            "hex_color": "#5824D1",
+            "hpo_datamined": "",
+            "image_annotation": false
+        },
+        "parent": "MHO:000001"
+    },
+    {
+        "id": "MHO:000059",
+        "text": "Fibrous connective tissue",
+        "icon": true,
+        "data": {
+            "description": "",
+            "synonymes": "",
+            "phenotype_datamined": "ORPHA:172976 Congenital myopathy with cores,ORPHA:595 Centronuclear myopathy,ORPHA:607 Nemaline myopathy,UNCLEAR",
+            "gene_datamined": "HGNC:12403 TTN,HGNC:7448 MTM1,N/A",
+            "alternative_language": "Tissus conjonctif Fibreux",
+            "correlates_with": "",
+            "hex_color": "#5827D1",
+            "hpo_datamined": "",
+            "image_annotation": false
+        },
+        "parent": "MHO:000058"
+    },
+    {
+        "id": "MHO:000060",
+        "text": "Lipomatous connective tissue",
+        "icon": true,
+        "data": {
+            "description": "",
+            "synonymes": "",
+            "phenotype_datamined": "ORPHA:172976 Congenital myopathy with cores,ORPHA:595 Centronuclear myopathy,UNCLEAR",
+            "gene_datamined": "HGNC:10483 RYR1,HGNC:7448 MTM1,N/A",
+            "alternative_language": "Tissus conjonctif Lipomateux",
+            "correlates_with": "",
+            "hex_color": "#37CEE2",
+            "hpo_datamined": "",
+            "image_annotation": false
+        },
+        "parent": "MHO:000058"
+    },
+    {
+        "id": "MHO:000175",
+        "text": "Cytoplasm",
+        "icon": true,
+        "data": {
+            "description": "",
+            "synonymes": "",
+            "phenotype_datamined": "",
+            "gene_datamined": "",
+            "alternative_language": "Cystoplasme",
+            "correlates_with": "",
+            "image_annotation": true,
+            "hex_color": "#70e663",
+            "hpo_datamined": ""
+        },
+        "parent": "MHO:000001"
+    },
+    {
+        "id": "MHO:000069",
+        "text": "Endosymal collagen",
+        "icon": true,
+        "data": {
+            "description": "",
+            "synonymes": "",
+            "phenotype_datamined": "",
+            "gene_datamined": "",
+            "alternative_language": "Collag\u00e8ne Endosymial",
+            "correlates_with": "",
+            "hex_color": "#B1B19B",
+            "hpo_datamined": "",
+            "image_annotation": false
+        },
+        "parent": "MHO:000001"
+    },
+    {
+        "id": "MHO:000070",
+        "text": "Increase in Endosymal Collagen",
+        "icon": true,
+        "data": {
+            "description": "",
+            "synonymes": "",
+            "phenotype_datamined": "ORPHA:595 Centronuclear myopathy,ORPHA:607 Nemaline myopathy",
+            "gene_datamined": "HGNC:12403 TTN,HGNC:9752 QDPR",
+            "correlates_with": "MHO:000027 Centralized Nuclei,MHO:000028 Internalized nuclei,MHO:000029 Sub-Sarcolemmal Nuclei,MHO:000070 Increase in Endosymal Collagen",
+            "alternative_language": "Augmentation du Collag\u00e8ne Endosymial",
+            "hex_color": "#17ACC1",
+            "hpo_datamined": "",
+            "image_annotation": false
+        },
+        "parent": "MHO:000069"
+    },
+    {
+        "id": "MHO:000004",
+        "text": "Fiber Type 1",
+        "icon": true,
+        "data": {
+            "description": "",
+            "synonymes": "",
+            "phenotype_datamined": "UNCLEAR",
+            "gene_datamined": "N/A",
+            "alternative_language": "Fibre Type 1",
+            "correlates_with": "",
+            "hex_color": "#95C792",
+            "hpo_datamined": "",
+            "image_annotation": false
+        },
+        "parent": "MHO:000001"
+    },
+    {
+        "id": "MHO:000006",
+        "text": "Fiber Type 1 Atrophied",
+        "icon": true,
+        "data": {
+            "description": "",
+            "synonymes": "Petite fibre type 1,Small type 1 fiber",
+            "phenotype_datamined": "ORPHA:172976 Congenital myopathy with cores,ORPHA:595 Centronuclear myopathy,ORPHA:607 Nemaline myopathy,UNCLEAR",
+            "gene_datamined": "HGNC:1052 BIN1,HGNC:12403 TTN,HGNC:129 ACTA1,HGNC:7448 MTM1,HGNC:7577 MYH7,HGNC:7720 NEB,HGNC:9752 QDPR,N/A",
+            "correlates_with": "MHO:000006 Type 1 Atrophied (small),MHO:000048 Rods",
+            "alternative_language": "Fibre Type 1 Atrophi\u00e9es",
+            "hex_color": "#056F5D",
+            "hpo_datamined": ",HP:0001324 Muscle weakness,HP:0001252 Hypotonia,HP:0001319 Neonatal hypotonia",
+            "image_annotation": false
+        },
+        "parent": "MHO:000004"
+    },
+    {
+        "id": "MHO:000007",
+        "text": "Fiber Type 1 Heterogeneous size",
+        "icon": true,
+        "data": {
+            "description": "",
+            "synonymes": "",
+            "phenotype_datamined": "ORPHA:607 Nemaline myopathy,UNCLEAR",
+            "gene_datamined": "HGNC:129 ACTA1,HGNC:7577 MYH7,HGNC:7720 NEB,N/A",
+            "correlates_with": "MHO:000005 Type 1 Hypertrophic (large),MHO:000007 Type 1 Heterogeneous size,MHO:000009 Type 2 Hypertrophic (large),MHO:000011 Type 2 Heterogeneous size",
+            "alternative_language": "Fibre Type 1 Taille h\u00e9t\u00e9rog\u00e8ne",
+            "hex_color": "#EC022F",
+            "hpo_datamined": "",
+            "image_annotation": false
+        },
+        "parent": "MHO:000004"
+    },
+    {
+        "id": "MHO:000005",
+        "text": "Fiber Type 1 Hypertrophic",
+        "icon": true,
+        "data": {
+            "description": "",
+            "synonymes": "Large Fiber Type 1,Grande fibre type 1",
+            "phenotype_datamined": "ORPHA:172976 Congenital myopathy with cores,ORPHA:607 Nemaline myopathy,UNCLEAR",
+            "gene_datamined": "HGNC:10483 RYR1,HGNC:129 ACTA1,HGNC:7577 MYH7,HGNC:7720 NEB,N/A",
+            "correlates_with": "MHO:000005 Type 1 Hypertrophic (large),MHO:000007 Type 1 Heterogeneous size,MHO:000009 Type 2 Hypertrophic (large),MHO:000011 Type 2 Heterogeneous size,MHO:000036 Fuscinophilic material: Dark clusters/aggregates",
+            "alternative_language": "Fibre Type 1 Hypertrophiques",
+            "hex_color": "#01910D",
+            "hpo_datamined": "",
+            "image_annotation": false
+        },
+        "parent": "MHO:000004"
+    },
+    {
+        "id": "MHO:000008",
+        "text": "Fiber Type 2",
+        "icon": true,
+        "data": {
+            "description": "",
+            "synonymes": "",
+            "phenotype_datamined": "UNCLEAR",
+            "gene_datamined": "N/A",
+            "alternative_language": "Fibre Type 2",
+            "correlates_with": "",
+            "hex_color": "#AEE98A",
+            "hpo_datamined": "",
+            "image_annotation": false
+        },
+        "parent": "MHO:000001"
+    },
+    {
+        "id": "MHO:000010",
+        "text": "Fiber Type 2 Atrophied",
+        "icon": true,
+        "data": {
+            "description": "",
+            "synonymes": "Petite fibre type 2,Small type 2 fiber",
+            "phenotype_datamined": "ORPHA:172976 Congenital myopathy with cores,ORPHA:595 Centronuclear myopathy,ORPHA:607 Nemaline myopathy,UNCLEAR",
+            "gene_datamined": "HGNC:10483 RYR1,HGNC:12403 TTN,HGNC:129 ACTA1,HGNC:7577 MYH7,HGNC:7720 NEB,HGNC:9752 QDPR,N/A",
+            "correlates_with": "MHO:000010 Type 2 Atrophied (small),MHO:000048 Rods",
+            "alternative_language": "Fibre Type 2 Atrophi\u00e9es",
+            "hex_color": "#E038D2",
+            "hpo_datamined": ",HP:0001324 Muscle weakness,HP:0001252 Hypotonia,HP:0001319 Neonatal hypotonia",
+            "image_annotation": false
+        },
+        "parent": "MHO:000008"
+    },
+    {
+        "id": "MHO:000011",
+        "text": "Fiber Type 2 Heterogeneous size",
+        "icon": true,
+        "data": {
+            "description": "",
+            "synonymes": "",
+            "phenotype_datamined": "ORPHA:172976 Congenital myopathy with cores,ORPHA:607 Nemaline myopathy,UNCLEAR",
+            "gene_datamined": "HGNC:10483 RYR1,HGNC:129 ACTA1,HGNC:7577 MYH7,N/A",
+            "alternative_language": "Fibre Type 2  Taille h\u00e9t\u00e9rog\u00e8ne",
+            "correlates_with": "MHO:000005 Type 1 Hypertrophic (large),MHO:000007 Type 1 Heterogeneous size,MHO:000009 Type 2 Hypertrophic (large),MHO:000011 Type 2 Heterogeneous size",
+            "hex_color": "#E155A6",
+            "hpo_datamined": "",
+            "image_annotation": false
+        },
+        "parent": "MHO:000008"
+    },
+    {
+        "id": "MHO:000009",
+        "text": "Fiber Type 2 Hypertrophic",
+        "icon": true,
+        "data": {
+            "description": "",
+            "synonymes": "Large Fiber Type 2,Grande fibre type 2",
+            "phenotype_datamined": "ORPHA:172976 Congenital myopathy with cores,ORPHA:595 Centronuclear myopathy,ORPHA:607 Nemaline myopathy,UNCLEAR",
+            "gene_datamined": "HGNC:10483 RYR1,HGNC:129 ACTA1,HGNC:7448 MTM1,HGNC:7577 MYH7,HGNC:7720 NEB,N/A",
+            "correlates_with": "MHO:000005 Type 1 Hypertrophic (large),MHO:000007 Type 1 Heterogeneous size,MHO:000009 Type 2 Hypertrophic (large),MHO:000011 Type 2 Heterogeneous size",
+            "alternative_language": "Fibre Type 2 Hypertrophiques",
+            "hex_color": "#1FD2B6",
+            "hpo_datamined": "",
+            "image_annotation": false
+        },
+        "parent": "MHO:000008"
+    },
+    {
+        "id": "MHO:000016",
+        "text": "Fibre Aspect",
+        "icon": true,
+        "data": {
+            "description": "",
+            "synonymes": "",
+            "phenotype_datamined": "",
+            "gene_datamined": "",
+            "alternative_language": "Apsect Fibre",
+            "correlates_with": "",
+            "hex_color": "#C32B1F",
+            "hpo_datamined": "",
+            "image_annotation": false
+        },
+        "parent": "MHO:000001"
+    },
+    {
+        "id": "MHO:000020",
+        "text": "Angular",
+        "icon": true,
+        "data": {
+            "description": "",
+            "synonymes": "",
+            "phenotype_datamined": "ORPHA:595 Centronuclear myopathy,ORPHA:607 Nemaline myopathy",
+            "gene_datamined": "HGNC:7448 MTM1,HGNC:7577 MYH7",
+            "alternative_language": "Anguleuse",
+            "correlates_with": "",
+            "hex_color": "#9DD5D8",
+            "hpo_datamined": "",
+            "image_annotation": false
+        },
+        "parent": "MHO:000016"
+    },
+    {
+        "id": "MHO:000025",
+        "text": "Annular fibre",
+        "icon": true,
+        "data": {
+            "description": "",
+            "synonymes": "",
+            "phenotype_datamined": "ORPHA:595 Centronuclear myopathy",
+            "gene_datamined": "HGNC:7448 MTM1",
+            "alternative_language": "Fibre  annulaire",
+            "correlates_with": "",
+            "hex_color": "#3D0E6A",
+            "hpo_datamined": "",
+            "image_annotation": false
+        },
+        "parent": "MHO:000016"
+    },
+    {
+        "id": "MHO:000022",
+        "text": "Fibre segmentation",
+        "icon": true,
+        "data": {
+            "description": "",
+            "synonymes": "",
+            "phenotype_datamined": "ORPHA:172976 Congenital myopathy with cores",
+            "gene_datamined": "HGNC:10483 RYR1",
+            "alternative_language": "Segmentation de fibre",
+            "correlates_with": "",
+            "hex_color": "#875069",
+            "hpo_datamined": "",
+            "image_annotation": false
+        },
+        "parent": "MHO:000016"
+    },
+    {
+        "id": "MHO:000019",
+        "text": "Lobulated",
+        "icon": true,
+        "data": {
+            "description": "",
+            "synonymes": "",
+            "phenotype_datamined": "",
+            "gene_datamined": "",
+            "alternative_language": "Lobul\u00e9e",
+            "correlates_with": "",
+            "hex_color": "#88F797",
+            "hpo_datamined": "",
+            "image_annotation": false
+        },
+        "parent": "MHO:000016"
+    },
+    {
+        "id": "MHO:000024",
+        "text": "Red-ragged fibers",
+        "icon": true,
+        "data": {
+            "description": "",
+            "synonymes": "",
+            "phenotype_datamined": "",
+            "gene_datamined": "",
+            "alternative_language": "Red-ragged fibers",
+            "correlates_with": "",
+            "hex_color": "#44450E",
+            "hpo_datamined": "",
+            "image_annotation": false
+        },
+        "parent": "MHO:000016"
+    },
+    {
+        "id": "MHO:000021",
+        "text": "Rounded edge",
+        "icon": true,
+        "data": {
+            "description": "",
+            "synonymes": "",
+            "phenotype_datamined": "ORPHA:172976 Congenital myopathy with cores,ORPHA:595 Centronuclear myopathy,ORPHA:607 Nemaline myopathy,UNCLEAR",
+            "gene_datamined": "HGNC:10483 RYR1,HGNC:7720 NEB,HGNC:9752 QDPR,N/A",
+            "alternative_language": "Bord arrondis",
+            "correlates_with": "",
+            "hex_color": "#7D3317",
+            "hpo_datamined": "",
+            "image_annotation": false
+        },
+        "parent": "MHO:000016"
+    },
+    {
+        "id": "MHO:000018",
+        "text": "Vacuolised bordered",
+        "icon": true,
+        "data": {
+            "description": "",
+            "synonymes": "",
+            "phenotype_datamined": "",
+            "gene_datamined": "",
+            "alternative_language": "Vacuolis\u00e9e bord\u00e9e",
+            "correlates_with": "",
+            "hex_color": "#294D29",
+            "hpo_datamined": "",
+            "image_annotation": false
+        },
+        "parent": "MHO:000016"
+    },
+    {
+        "id": "MHO:000023",
+        "text": "Whirlwind",
+        "icon": true,
+        "data": {
+            "description": "",
+            "synonymes": "",
+            "phenotype_datamined": "",
+            "gene_datamined": "",
+            "alternative_language": "Tourbillon",
+            "correlates_with": "",
+            "hex_color": "#026C86",
+            "hpo_datamined": "",
+            "image_annotation": false
+        },
+        "parent": "MHO:000016"
+    },
+    {
+        "id": "MHO:000017",
+        "text": "wheel spokes shape",
+        "icon": true,
+        "data": {
+            "description": "",
+            "synonymes": "",
+            "phenotype_datamined": "",
+            "gene_datamined": "",
+            "alternative_language": "En rayon de roue",
+            "correlates_with": "",
+            "hex_color": "#FAE65F",
+            "hpo_datamined": "",
+            "image_annotation": false
+        },
+        "parent": "MHO:000016"
+    },
+    {
+        "id": "MHO:000012",
+        "text": "Fibre Size",
+        "icon": true,
+        "data": {
+            "description": "",
+            "synonymes": "",
+            "phenotype_datamined": "",
+            "gene_datamined": "",
+            "alternative_language": "Taille Fibre",
+            "correlates_with": "",
+            "hex_color": "#D0A7B3",
+            "hpo_datamined": "",
+            "image_annotation": false
+        },
+        "parent": "MHO:000001"
+    },
+    {
+        "id": "MHO:000014",
+        "text": "Homogeneous size",
+        "icon": true,
+        "data": {
+            "description": "",
+            "synonymes": "",
+            "phenotype_datamined": "",
+            "gene_datamined": "",
+            "alternative_language": "Taille Homog\u00e8ne",
+            "correlates_with": "",
+            "hex_color": "#7A744E",
+            "hpo_datamined": "",
+            "image_annotation": false
+        },
+        "parent": "MHO:000012"
+    },
+    {
+        "id": "MHO:000015",
+        "text": "No Topography",
+        "icon": true,
+        "data": {
+            "description": "",
+            "synonymes": "",
+            "phenotype_datamined": "ORPHA:172976 Congenital myopathy with cores,ORPHA:595 Centronuclear myopathy,ORPHA:607 Nemaline myopathy,UNCLEAR",
+            "gene_datamined": "HGNC:10483 RYR1,HGNC:1052 BIN1,HGNC:12403 TTN,HGNC:129 ACTA1,HGNC:7720 NEB",
+            "correlates_with": "MHO:000015 No Topography,MHO:000036 Fuscinophilic material: Dark clusters/aggregates,MHO:000129 Minicores",
+            "alternative_language": "Sans Topographie",
+            "hex_color": "#8EF386",
+            "hpo_datamined": "",
+            "image_annotation": false
+        },
+        "parent": "MHO:000012"
+    },
+    {
+        "id": "MHO:000013",
+        "text": "Unequal Size",
+        "icon": true,
+        "data": {
+            "description": "",
+            "synonymes": "different size",
+            "phenotype_datamined": "ORPHA:172976 Congenital myopathy with cores,ORPHA:595 Centronuclear myopathy,ORPHA:607 Nemaline myopathy,UNCLEAR",
+            "gene_datamined": "HGNC:10483 RYR1,HGNC:1052 BIN1,HGNC:12403 TTN,HGNC:129 ACTA1,HGNC:7448 MTM1,HGNC:7577 MYH7,HGNC:7720 NEB,HGNC:9752 QDPR,N/A",
+            "correlates_with": "MHO:000007 Type 1 Heterogeneous size,MHO:000013 Unequal Size",
+            "alternative_language": "Taille In\u00e9gale",
+            "hex_color": "#C8F19D",
+            "hpo_datamined": ",HP:0001324 Muscle weakness,HP:0001252 Hypotonia,HP:0001319 Neonatal hypotonia",
+            "image_annotation": false
+        },
+        "parent": "MHO:000012"
+    },
+    {
+        "id": "MHO:000035",
+        "text": "Fuscinophilic material",
+        "icon": true,
+        "data": {
+            "description": "",
+            "synonymes": "",
+            "phenotype_datamined": "",
+            "gene_datamined": "",
+            "alternative_language": "Mat\u00e9riel Fuscinophile",
+            "correlates_with": "",
+            "hex_color": "#0FDCF0",
+            "hpo_datamined": "",
+            "image_annotation": false
+        },
+        "parent": "MHO:000001"
+    },
+    {
+        "id": "MHO:000036",
+        "text": "Dark clusters",
+        "icon": true,
+        "data": {
+            "description": "",
+            "synonymes": "dark aggregates,aggr\u00e9gats sombres",
+            "phenotype_datamined": "ORPHA:172976 Congenital myopathy with cores,ORPHA:607 Nemaline myopathy,UNCLEAR",
+            "gene_datamined": "HGNC:10483 RYR1,HGNC:12403 TTN,HGNC:129 ACTA1,HGNC:7720 NEB,N/A",
+            "correlates_with": "MHO:000005 Type 1 Hypertrophic (large),MHO:000015 No Topography,MHO:000036 Fuscinophilic material: Dark clusters/aggregates,MHO:000048 Rods,MHO:000151 Sudan Staining: Abornmal (Lipids Overload)",
+            "alternative_language": "Amas sombre",
+            "hex_color": "#84E98A",
+            "hpo_datamined": ",HP:0001324 Muscle weakness,HP:0001252 Hypotonia,HP:0001319 Neonatal hypotonia",
+            "image_annotation": false
+        },
+        "parent": "MHO:000035"
+    },
+    {
+        "id": "MHO:000041",
+        "text": "Fuscinophile matrial: Peripherals",
+        "icon": true,
+        "data": {
+            "description": "",
+            "synonymes": "",
+            "phenotype_datamined": "ORPHA:172976 Congenital myopathy with cores,ORPHA:607 Nemaline myopathy",
+            "gene_datamined": "HGNC:10483 RYR1,HGNC:7720 NEB,N/A",
+            "alternative_language": "Mat\u00e9riel Fuscinophile: P\u00e9riph\u00e9riques",
+            "correlates_with": "",
+            "hex_color": "#0749F7",
+            "hpo_datamined": "",
+            "image_annotation": false
+        },
+        "parent": "MHO:000035"
+    },
+    {
+        "id": "MHO:000040",
+        "text": "Fuscinophilic material: Centralized",
+        "icon": true,
+        "data": {
+            "description": "",
+            "synonymes": "",
+            "phenotype_datamined": "ORPHA:172976 Congenital myopathy with cores,ORPHA:607 Nemaline myopathy,UNCLEAR",
+            "gene_datamined": "HGNC:10483 RYR1,HGNC:7720 NEB,N/A",
+            "alternative_language": "Mat\u00e9riel Fuscinophile: Centralis\u00e9s",
+            "correlates_with": "",
+            "hex_color": "#690CBE",
+            "hpo_datamined": "",
+            "image_annotation": false
+        },
+        "parent": "MHO:000035"
+    },
+    {
+        "id": "MHO:000039",
+        "text": "Fuscinophilic material: Diffused",
+        "icon": true,
+        "data": {
+            "description": "",
+            "synonymes": "",
+            "phenotype_datamined": "",
+            "gene_datamined": "",
+            "alternative_language": "Mat\u00e9riel Fuscinophile: Diffus",
+            "correlates_with": "",
+            "hex_color": "#DA5C8F",
+            "hpo_datamined": "",
+            "image_annotation": false
+        },
+        "parent": "MHO:000035"
+    },
+    {
+        "id": "MHO:000037",
+        "text": "Fuscinophilic material: Granular",
+        "icon": true,
+        "data": {
+            "description": "",
+            "synonymes": "",
+            "phenotype_datamined": "ORPHA:172976 Congenital myopathy with cores,ORPHA:607 Nemaline myopathy",
+            "gene_datamined": "HGNC:129 ACTA1,HGNC:7577 MYH7,HGNC:7720 NEB",
+            "alternative_language": "Mat\u00e9riel Fuscinophile: Granuleux",
+            "correlates_with": "",
+            "hex_color": "#D6A94C",
+            "hpo_datamined": "",
+            "image_annotation": false
+        },
+        "parent": "MHO:000035"
+    },
+    {
+        "id": "MHO:000044",
+        "text": "Fuscinophilic material: Irregular edges",
+        "icon": true,
+        "data": {
+            "description": "",
+            "synonymes": "",
+            "phenotype_datamined": "ORPHA:607 Nemaline myopathy,UNCLEAR",
+            "gene_datamined": "HGNC:7577 MYH7,N/A",
+            "alternative_language": "Mat\u00e9riel Fuscinophile: Bords irr\u00e9guliers",
+            "correlates_with": "",
+            "hex_color": "#9BC19D",
+            "hpo_datamined": "",
+            "image_annotation": false
+        },
+        "parent": "MHO:000035"
+    },
+    {
+        "id": "MHO:000038",
+        "text": "Fuscinophilic material: Radiant",
+        "icon": true,
+        "data": {
+            "description": "",
+            "synonymes": "",
+            "phenotype_datamined": "",
+            "gene_datamined": "",
+            "alternative_language": "Mat\u00e9riel Fuscinophile: Radiant",
+            "correlates_with": "",
+            "hex_color": "#5CBC7D",
+            "hpo_datamined": "",
+            "image_annotation": false
+        },
+        "parent": "MHO:000035"
+    },
+    {
+        "id": "MHO:000043",
+        "text": "Fuscinophilic material: Regular edges",
+        "icon": true,
+        "data": {
+            "description": "",
+            "synonymes": "",
+            "phenotype_datamined": "",
+            "gene_datamined": "",
+            "alternative_language": "Mat\u00e9riel Fuscinophile: Bords r\u00e9guliers",
+            "correlates_with": "",
+            "hex_color": "#15B83B",
+            "hpo_datamined": "",
+            "image_annotation": false
+        },
+        "parent": "MHO:000035"
+    },
+    {
+        "id": "MHO:000045",
+        "text": "Fuscinophilic material: Rounded",
+        "icon": true,
+        "data": {
+            "description": "",
+            "synonymes": "",
+            "phenotype_datamined": "ORPHA:607 Nemaline myopathy,UNCLEAR",
+            "gene_datamined": "HGNC:7720 NEB,N/A",
+            "alternative_language": "Mat\u00e9riel Fuscinophile: Arrondis",
+            "correlates_with": "",
+            "hex_color": "#7E7B79",
+            "hpo_datamined": "",
+            "image_annotation": false
+        },
+        "parent": "MHO:000035"
+    },
+    {
+        "id": "MHO:000042",
+        "text": "Fuscinophilic material: Sub-Sarcolemma",
+        "icon": true,
+        "data": {
+            "description": "",
+            "synonymes": "",
+            "phenotype_datamined": "",
+            "gene_datamined": "",
+            "alternative_language": "Mat\u00e9riel Fuscinophile: Sous-Sarcolemmique",
+            "correlates_with": "",
+            "hex_color": "#462EC7",
+            "hpo_datamined": "",
+            "image_annotation": false
+        },
+        "parent": "MHO:000035"
+    },
+    {
+        "id": "MHO:000046",
+        "text": "Purplish appearance",
+        "icon": true,
+        "data": {
+            "description": "",
+            "synonymes": "purplish aspect",
+            "phenotype_datamined": "ORPHA:172976 Congenital myopathy with cores,ORPHA:595 Centronuclear myopathy",
+            "gene_datamined": "HGNC:10483 RYR1",
+            "alternative_language": "Aspect violine",
+            "correlates_with": "",
+            "hex_color": "#1787A1",
+            "hpo_datamined": "",
+            "image_annotation": false
+        },
+        "parent": "MHO:000035"
+    },
+    {
+        "id": "MHO:000067",
+        "text": "Inflammatory elements",
+        "icon": true,
+        "data": {
+            "description": "",
+            "synonymes": "",
+            "phenotype_datamined": "",
+            "gene_datamined": "",
+            "alternative_language": "Elements Inflammatoires",
+            "correlates_with": "",
+            "hex_color": "#045BDA",
+            "hpo_datamined": "",
+            "image_annotation": false
+        },
+        "parent": "MHO:000001"
+    },
+    {
+        "id": "MHO:000068",
+        "text": "Inflammation",
+        "icon": true,
+        "data": {
+            "description": "",
+            "synonymes": "",
+            "phenotype_datamined": "ORPHA:607 Nemaline myopathy",
+            "gene_datamined": "HGNC:7720 NEB",
+            "correlates_with": "MHO:000068 Inflammation",
+            "alternative_language": "Inflammation",
+            "hex_color": "#233403",
+            "hpo_datamined": "",
+            "image_annotation": false
+        },
+        "parent": "MHO:000067"
+    },
+    {
+        "id": "MHO:000176",
+        "text": "Intercellular spaces",
+        "icon": true,
+        "data": {
+            "description": "",
+            "synonymes": "",
+            "phenotype_datamined": "",
+            "gene_datamined": "",
+            "alternative_language": "Espace Intercellulaire",
+            "correlates_with": "",
+            "image_annotation": true,
+            "hex_color": "#031526",
+            "hpo_datamined": ""
+        },
+        "parent": "MHO:000001"
+    },
+    {
+        "id": "MHO:000061",
+        "text": "Interstitial alterations and damage",
+        "icon": true,
+        "data": {
+            "description": "",
+            "synonymes": "",
+            "phenotype_datamined": "",
+            "gene_datamined": "",
+            "alternative_language": "Alt\u00e9rations et L\u00e9sions Interstitielles",
+            "correlates_with": "",
+            "hex_color": "#FE7040",
+            "hpo_datamined": "",
+            "image_annotation": false
+        },
+        "parent": "MHO:000001"
+    },
+    {
+        "id": "MHO:000065",
+        "text": "Circle the Fibers Completely",
+        "icon": true,
+        "data": {
+            "description": "",
+            "synonymes": "",
+            "phenotype_datamined": "",
+            "gene_datamined": "",
+            "alternative_language": "Entoure Compl\u00e8tement les Fibres",
+            "correlates_with": "",
+            "hex_color": "#F01417",
+            "hpo_datamined": "",
+            "image_annotation": false
+        },
+        "parent": "MHO:000061"
+    },
+    {
+        "id": "MHO:000064",
+        "text": "Fatty tissue Increase",
+        "icon": true,
+        "data": {
+            "description": "",
+            "synonymes": "",
+            "phenotype_datamined": "ORPHA:607 Nemaline myopathy",
+            "gene_datamined": "HGNC:129 ACTA1,HGNC:7720 NEB",
+            "alternative_language": "Augmentation Tissu Adipeux",
+            "correlates_with": "",
+            "hex_color": "#D8B91A",
+            "hpo_datamined": "",
+            "image_annotation": false
+        },
+        "parent": "MHO:000061"
+    },
+    {
+        "id": "MHO:000063",
+        "text": "Interstitial Connective Tissue Increase",
+        "icon": true,
+        "data": {
+            "description": "",
+            "synonymes": "",
+            "phenotype_datamined": "ORPHA:172976 Congenital myopathy with cores,ORPHA:595 Centronuclear myopathy,ORPHA:607 Nemaline myopathy",
+            "gene_datamined": "HGNC:12403 TTN,HGNC:7720 NEB",
+            "correlates_with": "MHO:000005 Type 1 Hypertrophic (large),MHO:000063 Connective Interstitial Tissue Increase,MHO:000081 Type Uniformity",
+            "alternative_language": "Augmentation Tissu Conjonctif",
+            "hex_color": "#DE050F",
+            "hpo_datamined": "",
+            "image_annotation": false
+        },
+        "parent": "MHO:000061"
+    },
+    {
+        "id": "MHO:000062",
+        "text": "Interstitial alterations",
+        "icon": true,
+        "data": {
+            "description": "",
+            "synonymes": "",
+            "phenotype_datamined": "ORPHA:172976 Congenital myopathy with cores",
+            "gene_datamined": "HGNC:10483 RYR1",
+            "correlates_with": "MHO:000062 Interstitial alterations,MHO:000144 PAS Staining: Locally Abnormal (Overload)",
+            "alternative_language": "Alt\u00e9rations Interstitielles",
+            "hex_color": "#659331",
+            "hpo_datamined": "",
+            "image_annotation": false
+        },
+        "parent": "MHO:000061"
+    },
+    {
+        "id": "MHO:000066",
+        "text": "Thick band between fascicle",
+        "icon": true,
+        "data": {
+            "description": "",
+            "synonymes": "",
+            "phenotype_datamined": "",
+            "gene_datamined": "",
+            "alternative_language": "Bande \u00e9paisse entre Fascicules",
+            "correlates_with": "",
+            "hex_color": "#63E495",
+            "hpo_datamined": "",
+            "image_annotation": false
+        },
+        "parent": "MHO:000061"
+    },
+    {
+        "id": "MHO:000072",
+        "text": "Necklace Fibers",
+        "icon": true,
+        "data": {
+            "description": "",
+            "synonymes": "collier",
+            "phenotype_datamined": "ORPHA:595 Centronuclear myopathy,UNCLEAR",
+            "gene_datamined": "HGNC:7448 MTM1,HGNC:9752 QDPR,N/A",
+            "alternative_language": "Necklace Fibers",
+            "correlates_with": "",
+            "hex_color": "#92A2B9",
+            "hpo_datamined": "",
+            "image_annotation": false
+        },
+        "parent": "MHO:000001"
+    },
+    {
+        "id": "MHO:000074",
+        "text": "Necrosis",
+        "icon": true,
+        "data": {
+            "description": "",
+            "synonymes": "",
+            "phenotype_datamined": "ORPHA:607 Nemaline myopathy,UNCLEAR",
+            "gene_datamined": "HGNC:7720 NEB,N/A",
+            "correlates_with": "MHO:000074 Necrosis,MHO:000075 Regeneration",
+            "alternative_language": "N\u00e9crose",
+            "hex_color": "#6669EC",
+            "hpo_datamined": "",
+            "image_annotation": false
+        },
+        "parent": "MHO:000001"
+    },
+    {
+        "id": "MHO:000056",
+        "text": "Neuromuscular spindle",
+        "icon": true,
+        "data": {
+            "description": "",
+            "synonymes": "",
+            "phenotype_datamined": "",
+            "gene_datamined": "",
+            "alternative_language": "Fuseau Neuromusculaire",
+            "correlates_with": "",
+            "hex_color": "#AA55FF",
+            "hpo_datamined": "",
+            "image_annotation": false
+        },
+        "parent": "MHO:000001"
+    },
+    {
+        "id": "MHO:000057",
+        "text": "Abnormal Neuromuscular Spindle",
+        "icon": true,
+        "data": {
+            "description": "",
+            "synonymes": "",
+            "phenotype_datamined": "UNCLEAR",
+            "gene_datamined": "N/A",
+            "alternative_language": "Fuseau Neuromusculaire Anormal",
+            "correlates_with": "",
+            "hex_color": "#4058B8",
+            "hpo_datamined": "",
+            "image_annotation": false
+        },
+        "parent": "MHO:000056"
+    },
+    {
+        "id": "MHO:000026",
+        "text": "Nuclei",
+        "icon": true,
+        "data": {
+            "description": "",
+            "synonymes": "",
+            "phenotype_datamined": "",
+            "gene_datamined": "",
+            "alternative_language": "Aspect Noyaux",
+            "correlates_with": "",
+            "hex_color": "#ed1536",
+            "hpo_datamined": "",
+            "image_annotation": true
+        },
+        "parent": "MHO:000001"
+    },
+    {
+        "id": "MHO:000027",
+        "text": "Centralized Nuclei",
+        "icon": true,
+        "data": {
+            "description": "",
+            "synonymes": "",
+            "phenotype_datamined": "ORPHA:172976 Congenital myopathy with cores,ORPHA:595 Centronuclear myopathy,ORPHA:607 Nemaline myopathy,UNCLEAR",
+            "gene_datamined": "HGNC:10483 RYR1,HGNC:1052 BIN1,HGNC:12403 TTN,HGNC:129 ACTA1,HGNC:7448 MTM1,HGNC:7577 MYH7,HGNC:7720 NEB,HGNC:9752 QDPR,N/A",
+            "correlates_with": "MHO:000027 Centralized Nuclei,MHO:000028 Internalized nuclei,MHO:000096 Locally Abnormal ATP Activity (Clear Zone)",
+            "alternative_language": "Noyaux Centralis\u00e9",
+            "hex_color": "#6F7356",
+            "hpo_datamined": ",HP:0001324 Muscle weakness,HP:0001252 Hypotonia,HP:0001319 Neonatal hypotonia",
+            "image_annotation": false
+        },
+        "parent": "MHO:000026"
+    },
+    {
+        "id": "MHO:000031",
+        "text": "Increase in the number of nuclei",
+        "icon": true,
+        "data": {
+            "description": "",
+            "synonymes": "",
+            "phenotype_datamined": "ORPHA:595 Centronuclear myopathy,UNCLEAR",
+            "gene_datamined": "HGNC:9752 QDPR,N/A",
+            "correlates_with": "MHO:000027 Centralized Nuclei,MHO:000028 Internalized nuclei,MHO:000031 Increase in the number of nuclei,MHO:000078 Abnormal differentiation",
+            "alternative_language": "Augmentation du Nombre de Noyaux",
+            "hex_color": "#72B750",
+            "hpo_datamined": "",
+            "image_annotation": false
+        },
+        "parent": "MHO:000026"
+    },
+    {
+        "id": "MHO:000028",
+        "text": "Internalized nuclei",
+        "icon": true,
+        "data": {
+            "description": "",
+            "synonymes": "",
+            "phenotype_datamined": "ORPHA:172976 Congenital myopathy with cores,ORPHA:595 Centronuclear myopathy,ORPHA:607 Nemaline myopathy,UNCLEAR",
+            "gene_datamined": "HGNC:10483 RYR1,HGNC:12403 TTN,HGNC:129 ACTA1,HGNC:7448 MTM1,HGNC:7577 MYH7,HGNC:9752 QDPR,N/A",
+            "correlates_with": "MHO:000027 Centralized Nuclei,MHO:000028 Internalized nuclei",
+            "alternative_language": "Noyaux Internalis\u00e9",
+            "hex_color": "#11C256",
+            "hpo_datamined": "",
+            "image_annotation": false
+        },
+        "parent": "MHO:000026"
+    },
+    {
+        "id": "MHO:000174",
+        "text": "Normal Situation",
+        "icon": true,
+        "data": {
+            "description": "",
+            "synonymes": "position normale",
+            "phenotype_datamined": "ORPHA:607 Nemaline myopathy,UNCLEAR",
+            "gene_datamined": "HGNC:7720 NEB,N/A",
+            "alternative_language": "Situation Normale",
+            "correlates_with": "",
+            "hex_color": "#e621e1",
+            "hpo_datamined": "",
+            "image_annotation": false
+        },
+        "parent": "MHO:000026"
+    },
+    {
+        "id": "MHO:000030",
+        "text": "Nuclei with Myotubular Aspects",
+        "icon": true,
+        "data": {
+            "description": "",
+            "synonymes": "aspect myotubulaire,myotubular aspect",
+            "phenotype_datamined": "ORPHA:595 Centronuclear myopathy,UNCLEAR",
+            "gene_datamined": "HGNC:9752 QDPR,N/A",
+            "correlates_with": "MHO:000029 Sub-Sarcolemmal Nuclei,MHO:000030 Nuclei with Myotubular Aspects,MHO:000084 Predominance Fibre Type 2",
+            "alternative_language": "Noyaux \u00e0 Aspects Myotubulaire",
+            "hex_color": "#8C0679",
+            "hpo_datamined": "",
+            "image_annotation": false
+        },
+        "parent": "MHO:000026"
+    },
+    {
+        "id": "MHO:000029",
+        "text": "Sub-Sarcolemmal Nuclei",
+        "icon": true,
+        "data": {
+            "description": "",
+            "synonymes": "",
+            "phenotype_datamined": "ORPHA:172976 Congenital myopathy with cores,ORPHA:595 Centronuclear myopathy,UNCLEAR",
+            "gene_datamined": "HGNC:7577 MYH7,HGNC:9752 QDPR,N/A",
+            "correlates_with": "MHO:000027 Centralized Nuclei,MHO:000028 Internalized nuclei,MHO:000029 Sub-Sarcolemmal Nuclei,MHO:000030 Nuclei with Myotubular Aspects,MHO:000070 Increase in Endosymal Collagen,MHO:000138 Abnormal Phospholipase+AMP activity",
+            "alternative_language": "Noyaux Sous-Sarcolemmique",
+            "hex_color": "#9AB613",
+            "hpo_datamined": "",
+            "image_annotation": false
+        },
+        "parent": "MHO:000026"
+    },
+    {
+        "id": "MHO:000052",
+        "text": "Pale Zone",
+        "icon": true,
+        "data": {
+            "description": "",
+            "synonymes": "",
+            "phenotype_datamined": "",
+            "gene_datamined": "",
+            "alternative_language": "Zone Claire",
+            "correlates_with": "",
+            "hex_color": "#A0D32E",
+            "hpo_datamined": "",
+            "image_annotation": false
+        },
+        "parent": "MHO:000001"
+    },
+    {
+        "id": "MHO:000054",
+        "text": "Central Pale Zone",
+        "icon": true,
+        "data": {
+            "description": "",
+            "synonymes": "",
+            "phenotype_datamined": "ORPHA:607 Nemaline myopathy",
+            "gene_datamined": "HGNC:7720 NEB",
+            "alternative_language": "Zone Claire Centrale",
+            "correlates_with": "",
+            "hex_color": "#DC48F0",
+            "hpo_datamined": "",
+            "image_annotation": false
+        },
+        "parent": "MHO:000052"
+    },
+    {
+        "id": "MHO:000055",
+        "text": "Majority of Fibre",
+        "icon": true,
+        "data": {
+            "description": "",
+            "synonymes": "",
+            "phenotype_datamined": "",
+            "gene_datamined": "",
+            "alternative_language": "Majorit\u00e9 de la Fibre",
+            "correlates_with": "",
+            "hex_color": "#AD9F5E",
+            "hpo_datamined": "",
+            "image_annotation": false
+        },
+        "parent": "MHO:000052"
+    },
+    {
+        "id": "MHO:000053",
+        "text": "Pale Zone as Peripheral Crescent",
+        "icon": true,
+        "data": {
+            "description": "",
+            "synonymes": "pale zone",
+            "phenotype_datamined": "",
+            "gene_datamined": "",
+            "alternative_language": "Croissant P\u00e9riph\u00e9rique",
+            "correlates_with": "",
+            "hex_color": "#8D3207",
+            "hpo_datamined": "",
+            "image_annotation": false
+        },
+        "parent": "MHO:000052"
+    },
+    {
+        "id": "MHO:000073",
+        "text": "Peripheral nail stroke",
+        "icon": true,
+        "data": {
+            "description": "",
+            "synonymes": "coup d'ongle,nail stroke",
+            "phenotype_datamined": "UNCLEAR",
+            "gene_datamined": "N/A",
+            "alternative_language": "Coup d'ongle p\u00e9riph\u00e9rique",
+            "correlates_with": "",
+            "hex_color": "#E90559",
+            "hpo_datamined": "",
+            "image_annotation": false
+        },
+        "parent": "MHO:000001"
+    },
+    {
+        "id": "MHO:000032",
+        "text": "Protein inclusions",
+        "icon": true,
+        "data": {
+            "description": "",
+            "synonymes": "",
+            "phenotype_datamined": "",
+            "gene_datamined": "",
+            "alternative_language": "Inclusions prot\u00e9iques",
+            "correlates_with": "",
+            "hex_color": "#9C6361",
+            "hpo_datamined": "",
+            "image_annotation": false
+        },
+        "parent": "MHO:000001"
+    },
+    {
+        "id": "MHO:000033",
+        "text": "Centralized Inclusions",
+        "icon": true,
+        "data": {
+            "description": "",
+            "synonymes": "",
+            "phenotype_datamined": "ORPHA:607 Nemaline myopathy,UNCLEAR",
+            "gene_datamined": "HGNC:7720 NEB,N/A",
+            "alternative_language": "Inclusions Centralis\u00e9es",
+            "correlates_with": "",
+            "hex_color": "#02F38D",
+            "hpo_datamined": "",
+            "image_annotation": false
+        },
+        "parent": "MHO:000032"
+    },
+    {
+        "id": "MHO:000034",
+        "text": "Peripheral Inclusions",
+        "icon": true,
+        "data": {
+            "description": "",
+            "synonymes": "",
+            "phenotype_datamined": "ORPHA:607 Nemaline myopathy",
+            "gene_datamined": "HGNC:7720 NEB",
+            "alternative_language": "Inclusions P\u00e9riph\u00e9riques",
+            "correlates_with": "",
+            "hex_color": "#D9C462",
+            "hpo_datamined": "",
+            "image_annotation": false
+        },
+        "parent": "MHO:000032"
+    },
+    {
+        "id": "MHO:000075",
+        "text": "Regeneration",
+        "icon": true,
+        "data": {
+            "description": "",
+            "synonymes": "",
+            "phenotype_datamined": "UNCLEAR",
+            "gene_datamined": "N/A",
+            "correlates_with": "MHO:000074 Necrosis,MHO:000075 Regeneration",
+            "alternative_language": "R\u00e9g\u00e9n\u00e9ration",
+            "hex_color": "#11BAC8",
+            "hpo_datamined": "",
+            "image_annotation": false
+        },
+        "parent": "MHO:000001"
+    },
+    {
+        "id": "MHO:000047",
+        "text": "Rods and Nemaline Bodies",
+        "icon": true,
+        "data": {
+            "description": "",
+            "synonymes": "",
+            "phenotype_datamined": "",
+            "gene_datamined": "",
+            "alternative_language": "B\u00e2tonnets - Rods et Nemaline Bodies",
+            "correlates_with": "",
+            "hex_color": "#D65282",
+            "hpo_datamined": "",
+            "image_annotation": false
+        },
+        "parent": "MHO:000001"
+    },
+    {
+        "id": "MHO:000049",
+        "text": "Mini-rods",
+        "icon": true,
+        "data": {
+            "description": "",
+            "synonymes": "minirods",
+            "phenotype_datamined": "",
+            "gene_datamined": "",
+            "alternative_language": "Mini-rods",
+            "correlates_with": "",
+            "hex_color": "#0F25C0",
+            "hpo_datamined": "",
+            "image_annotation": false
+        },
+        "parent": "MHO:000047"
+    },
+    {
+        "id": "MHO:000051",
+        "text": "Red Dust",
+        "icon": true,
+        "data": {
+            "description": "",
+            "synonymes": "",
+            "phenotype_datamined": "ORPHA:607 Nemaline myopathy,UNCLEAR",
+            "gene_datamined": "HGNC:7577 MYH7,N/A",
+            "alternative_language": "Poussi\u00e8re rouge",
+            "correlates_with": "",
+            "hex_color": "#351F4E",
+            "hpo_datamined": "",
+            "image_annotation": false
+        },
+        "parent": "MHO:000047"
+    },
+    {
+        "id": "MHO:000050",
+        "text": "Red Spike",
+        "icon": true,
+        "data": {
+            "description": "",
+            "synonymes": "rod-like",
+            "phenotype_datamined": "ORPHA:172976 Congenital myopathy with cores,UNCLEAR",
+            "gene_datamined": "HGNC:10483 RYR1,N/A",
+            "alternative_language": "Piquet\u00e9 rouge",
+            "correlates_with": "",
+            "hex_color": "#BCAD10",
+            "hpo_datamined": "",
+            "image_annotation": false
+        },
+        "parent": "MHO:000047"
+    },
+    {
+        "id": "MHO:000048",
+        "text": "Rods",
+        "icon": true,
+        "data": {
+            "description": "",
+            "synonymes": "",
+            "phenotype_datamined": "ORPHA:607 Nemaline myopathy,UNCLEAR",
+            "gene_datamined": "HGNC:12403 TTN,HGNC:129 ACTA1,HGNC:7720 NEB,N/A",
+            "correlates_with": "MHO:000006 Type 1 Atrophied (small),MHO:000010 Type 2 Atrophied (small),MHO:000036 Fuscinophilic material: Dark clusters/aggregates,MHO:000048 Rods,MHO:000151 Sudan Staining: Abornmal (Lipids Overload)",
+            "alternative_language": "Batonnets",
+            "hex_color": "#058775",
+            "hpo_datamined": ",HP:0001324 Muscle weakness,HP:0001252 Hypotonia,HP:0001319 Neonatal hypotonia",
+            "image_annotation": true
+        },
+        "parent": "MHO:000047"
+    },
+    {
+        "id": "MHO:000071",
+        "text": "Tubular aggregates",
+        "icon": true,
+        "data": {
+            "description": "",
+            "synonymes": "",
+            "phenotype_datamined": "",
+            "gene_datamined": "",
+            "alternative_language": "Aggr\u00e9gats Tubulaires",
+            "correlates_with": "",
+            "hex_color": "#FB4D7A",
+            "hpo_datamined": "",
+            "image_annotation": false
+        },
+        "parent": "MHO:000001"
+    },
+    {
+        "id": "MHO:000097",
+        "text": "Oxidative staining",
+        "icon": true,
+        "data": {
+            "description": "",
+            "synonymes": "",
+            "phenotype_datamined": "",
+            "gene_datamined": "",
+            "alternative_language": "Enzymologie oxydative",
+            "correlates_with": "",
+            "hex_color": "#A494C7",
+            "hpo_datamined": "",
+            "image_annotation": false
+        },
+        "parent": "#"
+    },
+    {
+        "id": "MHO:000111",
+        "text": "Activity Repartition",
+        "icon": true,
+        "data": {
+            "description": "",
+            "synonymes": "",
+            "phenotype_datamined": "",
+            "gene_datamined": "",
+            "alternative_language": "R\u00e9partition Activit\u00e9",
+            "correlates_with": "",
+            "hex_color": "#A2BE55",
+            "hpo_datamined": "",
+            "image_annotation": false
+        },
+        "parent": "MHO:000097"
+    },
+    {
+        "id": "MHO:000118",
+        "text": "Blurred boundaries",
+        "icon": true,
+        "data": {
+            "description": "",
+            "synonymes": "",
+            "phenotype_datamined": "ORPHA:172976 Congenital myopathy with cores,ORPHA:595 Centronuclear myopathy,ORPHA:607 Nemaline myopathy",
+            "gene_datamined": "HGNC:12403 TTN,HGNC:7577 MYH7,HGNC:7720 NEB",
+            "alternative_language": "Limites floues",
+            "correlates_with": "",
+            "hex_color": "#837158",
+            "hpo_datamined": "",
+            "image_annotation": false
+        },
+        "parent": "MHO:000111"
+    },
+    {
+        "id": "MHO:000114",
+        "text": "Central activity",
+        "icon": true,
+        "data": {
+            "description": "",
+            "synonymes": "",
+            "phenotype_datamined": "ORPHA:172976 Congenital myopathy with cores,ORPHA:595 Centronuclear myopathy,ORPHA:607 Nemaline myopathy",
+            "gene_datamined": "HGNC:10483 RYR1,HGNC:12403 TTN,HGNC:7577 MYH7,HGNC:7720 NEB",
+            "alternative_language": "Activit\u00e9 Centrale",
+            "correlates_with": "",
+            "hex_color": "#471D22",
+            "hpo_datamined": "",
+            "image_annotation": false
+        },
+        "parent": "MHO:000111"
+    },
+    {
+        "id": "MHO:000113",
+        "text": "Clear zone (pale)",
+        "icon": true,
+        "data": {
+            "description": "",
+            "synonymes": "",
+            "phenotype_datamined": "ORPHA:172976 Congenital myopathy with cores,ORPHA:607 Nemaline myopathy,UNCLEAR",
+            "gene_datamined": "HGNC:10483 RYR1,HGNC:1052 BIN1,HGNC:12403 TTN,HGNC:129 ACTA1,HGNC:7577 MYH7,HGNC:7720 NEB",
+            "alternative_language": "Zone Claire (p\u00e2le)",
+            "correlates_with": "",
+            "hex_color": "#5645F3",
+            "hpo_datamined": "",
+            "image_annotation": false
+        },
+        "parent": "MHO:000111"
+    },
+    {
+        "id": "MHO:000116",
+        "text": "Crescent shape",
+        "icon": true,
+        "data": {
+            "description": "",
+            "synonymes": "",
+            "phenotype_datamined": "ORPHA:172976 Congenital myopathy with cores",
+            "gene_datamined": "HGNC:129 ACTA1",
+            "alternative_language": "En Croissant",
+            "correlates_with": "",
+            "hex_color": "#99B212",
+            "hpo_datamined": "",
+            "image_annotation": false
+        },
+        "parent": "MHO:000111"
+    },
+    {
+        "id": "MHO:000120",
+        "text": "Dark Peripheral Border",
+        "icon": true,
+        "data": {
+            "description": "",
+            "synonymes": "",
+            "phenotype_datamined": "",
+            "gene_datamined": "",
+            "alternative_language": "Liseret P\u00e9riph\u00e9rique Fonc\u00e9",
+            "correlates_with": "",
+            "hex_color": "#38E141",
+            "hpo_datamined": "",
+            "image_annotation": false
+        },
+        "parent": "MHO:000111"
+    },
+    {
+        "id": "MHO:000117",
+        "text": "Net limits",
+        "icon": true,
+        "data": {
+            "description": "",
+            "synonymes": "",
+            "phenotype_datamined": "ORPHA:172976 Congenital myopathy with cores,ORPHA:607 Nemaline myopathy",
+            "gene_datamined": "HGNC:7577 MYH7",
+            "alternative_language": "Limites nettes",
+            "correlates_with": "",
+            "hex_color": "#FBD0B1",
+            "hpo_datamined": "",
+            "image_annotation": false
+        },
+        "parent": "MHO:000111"
+    },
+    {
+        "id": "MHO:000115",
+        "text": "Peripheral",
+        "icon": true,
+        "data": {
+            "description": "",
+            "synonymes": "",
+            "phenotype_datamined": "ORPHA:172976 Congenital myopathy with cores",
+            "gene_datamined": "HGNC:10483 RYR1,HGNC:129 ACTA1",
+            "alternative_language": "P\u00e9riph\u00e9rique",
+            "correlates_with": "",
+            "hex_color": "#B4D25B",
+            "hpo_datamined": "",
+            "image_annotation": false
+        },
+        "parent": "MHO:000111"
+    },
+    {
+        "id": "MHO:000122",
+        "text": "Peripheral Mitochondrial Accumulation",
+        "icon": true,
+        "data": {
+            "description": "",
+            "synonymes": "",
+            "phenotype_datamined": "UNCLEAR",
+            "gene_datamined": "N/A",
+            "alternative_language": "Accumulation Mitochondries P\u00e9riph\u00e9riques",
+            "correlates_with": "",
+            "hex_color": "#383047",
+            "hpo_datamined": "",
+            "image_annotation": false
+        },
+        "parent": "MHO:000111"
+    },
+    {
+        "id": "MHO:000119",
+        "text": "Sub-Sarcolemma dark staining",
+        "icon": true,
+        "data": {
+            "description": "",
+            "synonymes": "",
+            "phenotype_datamined": "",
+            "gene_datamined": "",
+            "alternative_language": "Coloration Fonc\u00e9 Sous-Sarcolemmique",
+            "correlates_with": "",
+            "hex_color": "#34C03B",
+            "hpo_datamined": "",
+            "image_annotation": false
+        },
+        "parent": "MHO:000111"
+    },
+    {
+        "id": "MHO:000121",
+        "text": "Uncoloured Inclusion Zone",
+        "icon": true,
+        "data": {
+            "description": "",
+            "synonymes": "",
+            "phenotype_datamined": "ORPHA:607 Nemaline myopathy",
+            "gene_datamined": "HGNC:7720 NEB",
+            "alternative_language": "Zone Inclusion Non Color\u00e9e",
+            "correlates_with": "",
+            "hex_color": "#61CF2C",
+            "hpo_datamined": "",
+            "image_annotation": false
+        },
+        "parent": "MHO:000111"
+    },
+    {
+        "id": "MHO:000123",
+        "text": "Core",
+        "icon": true,
+        "data": {
+            "description": "",
+            "synonymes": "",
+            "phenotype_datamined": "ORPHA:172976 Congenital myopathy with cores,ORPHA:607 Nemaline myopathy",
+            "gene_datamined": "HGNC:7577 MYH7",
+            "alternative_language": "Core",
+            "correlates_with": "",
+            "hex_color": "#F24C11",
+            "hpo_datamined": "",
+            "image_annotation": true
+        },
+        "parent": "MHO:000097"
+    },
+    {
+        "id": "MHO:000128",
+        "text": "Cores over the whole Section",
+        "icon": true,
+        "data": {
+            "description": "",
+            "synonymes": "",
+            "phenotype_datamined": "ORPHA:172976 Congenital myopathy with cores,UNCLEAR",
+            "gene_datamined": "HGNC:10483 RYR1,HGNC:1052 BIN1,HGNC:12403 TTN,HGNC:7577 MYH7",
+            "alternative_language": "Core sur toute la Section",
+            "correlates_with": "",
+            "hex_color": "#D28A16",
+            "hpo_datamined": "",
+            "image_annotation": false
+        },
+        "parent": "MHO:000123"
+    },
+    {
+        "id": "MHO:000127",
+        "text": "Cores with Blurred Boundaries",
+        "icon": true,
+        "data": {
+            "description": "",
+            "synonymes": "",
+            "phenotype_datamined": "ORPHA:172976 Congenital myopathy with cores,UNCLEAR",
+            "gene_datamined": "HGNC:10483 RYR1,HGNC:1052 BIN1,HGNC:12403 TTN,HGNC:7577 MYH7",
+            "alternative_language": "Core \u00e0 Limites Floues",
+            "correlates_with": "",
+            "hex_color": "#74BC84",
+            "hpo_datamined": "",
+            "image_annotation": false
+        },
+        "parent": "MHO:000123"
+    },
+    {
+        "id": "MHO:000126",
+        "text": "Cores with Net Limits",
+        "icon": true,
+        "data": {
+            "description": "",
+            "synonymes": "",
+            "phenotype_datamined": "ORPHA:172976 Congenital myopathy with cores,UNCLEAR",
+            "gene_datamined": "HGNC:10483 RYR1,HGNC:1052 BIN1,HGNC:7577 MYH7",
+            "alternative_language": "Core \u00e0 Limites Nettes",
+            "correlates_with": "",
+            "hex_color": "#29024C",
+            "hpo_datamined": "",
+            "image_annotation": false
+        },
+        "parent": "MHO:000123"
+    },
+    {
+        "id": "MHO:000129",
+        "text": "Minicores",
+        "icon": true,
+        "data": {
+            "description": "",
+            "synonymes": "",
+            "phenotype_datamined": "ORPHA:172976 Congenital myopathy with cores,UNCLEAR",
+            "gene_datamined": "HGNC:1052 BIN1,HGNC:12403 TTN,N/A",
+            "alternative_language": "Minicores",
+            "correlates_with": "MHO:000015 No Topography,MHO:000129 Minicores",
+            "hex_color": "#8B48D5",
+            "hpo_datamined": "",
+            "image_annotation": false
+        },
+        "parent": "MHO:000123"
+    },
+    {
+        "id": "MHO:000124",
+        "text": "Peripheral Cores",
+        "icon": true,
+        "data": {
+            "description": "",
+            "synonymes": "",
+            "phenotype_datamined": "ORPHA:172976 Congenital myopathy with cores,UNCLEAR",
+            "gene_datamined": "HGNC:10483 RYR1,HGNC:1052 BIN1,HGNC:12403 TTN,HGNC:129 ACTA1,HGNC:7577 MYH7",
+            "correlates_with": "MHO:000124 Peripheral Cores,MHO:000125 Single Central Core",
+            "alternative_language": "Core P\u00e9riph\u00e9riques",
+            "hex_color": "#119F16",
+            "hpo_datamined": "",
+            "image_annotation": false
+        },
+        "parent": "MHO:000123"
+    },
+    {
+        "id": "MHO:000125",
+        "text": "Single Central Core",
+        "icon": true,
+        "data": {
+            "description": "",
+            "synonymes": "",
+            "phenotype_datamined": "ORPHA:172976 Congenital myopathy with cores,ORPHA:607 Nemaline myopathy,UNCLEAR",
+            "gene_datamined": "HGNC:10483 RYR1,HGNC:1052 BIN1,HGNC:12403 TTN,HGNC:129 ACTA1,HGNC:7577 MYH7",
+            "correlates_with": "MHO:000124 Peripheral Cores,MHO:000125 Single Central Core",
+            "alternative_language": "Core Centraux Uniques",
+            "hex_color": "#02AD6D",
+            "hpo_datamined": "",
+            "image_annotation": false
+        },
+        "parent": "MHO:000123"
+    },
+    {
+        "id": "MHO:000098",
+        "text": "Fibre aspect",
+        "icon": true,
+        "data": {
+            "description": "",
+            "synonymes": "",
+            "phenotype_datamined": "",
+            "gene_datamined": "",
+            "alternative_language": "Aspect Fibre",
+            "correlates_with": "",
+            "hex_color": "#82EF87",
+            "hpo_datamined": "",
+            "image_annotation": false
+        },
+        "parent": "MHO:000097"
+    },
+    {
+        "id": "MHO:000105",
+        "text": "Core-like alveolus",
+        "icon": true,
+        "data": {
+            "description": "",
+            "synonymes": "",
+            "phenotype_datamined": "ORPHA:172976 Congenital myopathy with cores,ORPHA:595 Centronuclear myopathy,ORPHA:607 Nemaline myopathy,UNCLEAR",
+            "gene_datamined": "HGNC:10483 RYR1,HGNC:1052 BIN1,HGNC:12403 TTN,HGNC:7577 MYH7,HGNC:7720 NEB",
+            "alternative_language": "Alv\u00e9ole Core-like",
+            "correlates_with": "MHO:000105 Core-like alveolus",
+            "hex_color": "#6DA551",
+            "hpo_datamined": "",
+            "image_annotation": false
+        },
+        "parent": "MHO:000098"
+    },
+    {
+        "id": "MHO:000100",
+        "text": "Dark circles",
+        "icon": true,
+        "data": {
+            "description": "",
+            "synonymes": "",
+            "phenotype_datamined": "",
+            "gene_datamined": "",
+            "alternative_language": "Cern\u00e9",
+            "correlates_with": "",
+            "hex_color": "#24312E",
+            "hpo_datamined": "",
+            "image_annotation": false
+        },
+        "parent": "MHO:000098"
+    },
+    {
+        "id": "MHO:000101",
+        "text": "Lobulation",
+        "icon": true,
+        "data": {
+            "description": "",
+            "synonymes": "",
+            "phenotype_datamined": "",
+            "gene_datamined": "",
+            "alternative_language": "Lobulation",
+            "correlates_with": "",
+            "hex_color": "#C10BD4",
+            "hpo_datamined": "",
+            "image_annotation": false
+        },
+        "parent": "MHO:000098"
+    },
+    {
+        "id": "MHO:000102",
+        "text": "Multi-lobulated",
+        "icon": true,
+        "data": {
+            "description": "",
+            "synonymes": "",
+            "phenotype_datamined": "",
+            "gene_datamined": "",
+            "alternative_language": "Multi-lobul\u00e9",
+            "correlates_with": "",
+            "hex_color": "#EAFF29",
+            "hpo_datamined": "",
+            "image_annotation": false
+        },
+        "parent": "MHO:000098"
+    },
+    {
+        "id": "MHO:000099",
+        "text": "Myotubular",
+        "icon": true,
+        "data": {
+            "description": "",
+            "synonymes": "",
+            "phenotype_datamined": "",
+            "gene_datamined": "",
+            "alternative_language": "Myotubulaire",
+            "correlates_with": "",
+            "hex_color": "#470E1A",
+            "hpo_datamined": "",
+            "image_annotation": false
+        },
+        "parent": "MHO:000098"
+    },
+    {
+        "id": "MHO:000104",
+        "text": "Targettoide aspect",
+        "icon": true,
+        "data": {
+            "description": "",
+            "synonymes": "",
+            "phenotype_datamined": "ORPHA:172976 Congenital myopathy with cores,ORPHA:595 Centronuclear myopathy",
+            "gene_datamined": "HGNC:10483 RYR1,HGNC:7448 MTM1",
+            "alternative_language": "Aspect targ\u00e9toide",
+            "correlates_with": "",
+            "hex_color": "#E13911",
+            "hpo_datamined": "",
+            "image_annotation": false
+        },
+        "parent": "MHO:000098"
+    },
+    {
+        "id": "MHO:000103",
+        "text": "wheel spoke shape",
+        "icon": true,
+        "data": {
+            "description": "",
+            "synonymes": "",
+            "phenotype_datamined": "",
+            "gene_datamined": "",
+            "alternative_language": "En rayon de roue",
+            "correlates_with": "",
+            "hex_color": "#1C3A4B",
+            "hpo_datamined": "",
+            "image_annotation": false
+        },
+        "parent": "MHO:000098"
+    },
+    {
+        "id": "MHO:000130",
+        "text": "NADH",
+        "icon": true,
+        "data": {
+            "description": "",
+            "synonymes": "",
+            "phenotype_datamined": "",
+            "gene_datamined": "",
+            "alternative_language": "NADH",
+            "correlates_with": "",
+            "hex_color": "#1A6A14",
+            "hpo_datamined": "",
+            "image_annotation": false
+        },
+        "parent": "MHO:000097"
+    },
+    {
+        "id": "MHO:000131",
+        "text": "Dark Atrophic Fibre",
+        "icon": true,
+        "data": {
+            "description": "",
+            "synonymes": "",
+            "phenotype_datamined": "ORPHA:172976 Congenital myopathy with cores",
+            "gene_datamined": "HGNC:129 ACTA1",
+            "alternative_language": "Fibre Atrophique Fonc\u00e9e",
+            "correlates_with": "",
+            "hex_color": "#76238F",
+            "hpo_datamined": "",
+            "image_annotation": false
+        },
+        "parent": "MHO:000130"
+    },
+    {
+        "id": "MHO:000132",
+        "text": "Sub-Sarcolemma Dark Halo",
+        "icon": true,
+        "data": {
+            "description": "",
+            "synonymes": "",
+            "phenotype_datamined": "",
+            "gene_datamined": "",
+            "alternative_language": "Halo Fonc\u00e9 Sous-Sarcolemmique",
+            "correlates_with": "",
+            "hex_color": "#0C6A5D",
+            "hpo_datamined": "",
+            "image_annotation": false
+        },
+        "parent": "MHO:000130"
+    },
+    {
+        "id": "MHO:000106",
+        "text": "Structural Reorganisation",
+        "icon": true,
+        "data": {
+            "description": "",
+            "synonymes": "remaniement structurel",
+            "phenotype_datamined": "UNCLEAR",
+            "gene_datamined": "N/A",
+            "alternative_language": "Remaniement Structurel",
+            "correlates_with": "",
+            "hex_color": "#AEF02F",
+            "hpo_datamined": "",
+            "image_annotation": false
+        },
+        "parent": "MHO:000097"
+    },
+    {
+        "id": "MHO:000109",
+        "text": "Irregular Intermyofibrillar Network",
+        "icon": true,
+        "data": {
+            "description": "",
+            "synonymes": "",
+            "phenotype_datamined": "UNCLEAR",
+            "gene_datamined": "N/A",
+            "correlates_with": "MHO:000010 Type 2 Atrophied (small),MHO:000107 Structural Disorganisation,MHO:000109 Irregular Intermyofibrillar Network",
+            "alternative_language": "R\u00e9seau Intermyofibrillaire Irr\u00e9gulier",
+            "hex_color": "#1F4FDC",
+            "hpo_datamined": "",
+            "image_annotation": false
+        },
+        "parent": "MHO:000106"
+    },
+    {
+        "id": "MHO:000110",
+        "text": "Rimmed Sarcolemma",
+        "icon": true,
+        "data": {
+            "description": "",
+            "synonymes": "",
+            "phenotype_datamined": "UNCLEAR",
+            "gene_datamined": "N/A",
+            "alternative_language": "Rimmed Sarcolemma",
+            "correlates_with": "",
+            "hex_color": "#8FEB53",
+            "hpo_datamined": "",
+            "image_annotation": false
+        },
+        "parent": "MHO:000106"
+    },
+    {
+        "id": "MHO:000107",
+        "text": "Structural Disorganisation",
+        "icon": true,
+        "data": {
+            "description": "",
+            "synonymes": "remaniement structurel",
+            "phenotype_datamined": "ORPHA:172976 Congenital myopathy with cores,ORPHA:595 Centronuclear myopathy,ORPHA:607 Nemaline myopathy,UNCLEAR",
+            "gene_datamined": "HGNC:10483 RYR1,HGNC:1052 BIN1,HGNC:12403 TTN,HGNC:129 ACTA1,HGNC:7448 MTM1,HGNC:7577 MYH7,HGNC:7720 NEB,HGNC:9752 QDPR,N/A",
+            "correlates_with": "MHO:000005 Type 1 Hypertrophic (large),MHO:000081 Type Uniformity,MHO:000107 Structural Disorganisation,MHO:000109 Irregular Intermyofibrillar Network",
+            "alternative_language": "D\u00e9sorganisation structurelle",
+            "hex_color": "#AE2884",
+            "hpo_datamined": "",
+            "image_annotation": false
+        },
+        "parent": "MHO:000106"
+    },
+    {
+        "id": "MHO:000108",
+        "text": "Sub-sarcolemmal lesion",
+        "icon": true,
+        "data": {
+            "description": "",
+            "synonymes": "",
+            "phenotype_datamined": "",
+            "gene_datamined": "",
+            "alternative_language": "L\u00e9sion Sous-Sarcolemmique",
+            "correlates_with": "",
+            "hex_color": "#F133BB",
+            "hpo_datamined": "",
+            "image_annotation": false
+        },
+        "parent": "MHO:000106"
+    }
+]
