@@ -25,9 +25,9 @@ layout = [
                 ],columnGap=20),
                 dmc.Group([
                     dmc.ButtonGroup([
-                        dmc.Button("Annotate selection",id="annotate-button",color='yellow'),
-                        dmc.Button("Modify selection",id="modify-button",color='green'),
-                        dmc.Button("Delete selection",id="delete-button",color='red'),
+                        dmc.Button("Annotate selection",id="annotate-selection",color='yellow'),
+                        dmc.Button("Modify selection",id="modify-selection",color='green'),
+                        dmc.Button("Delete selection",id="delete-selection",color='red'),
                     ]),
                     dmc.Pagination(id="image-pagination",total=1,value=1),
                     dmc.ButtonGroup([
@@ -147,9 +147,9 @@ def update_page_size(page_size,data,config):
         Output('loc', 'href'),
         Output('selected-images', 'data'),
         Input('image-table', 'active_cell'),
-        Input("annotate-button","n_clicks"),
+        Input("annotate-selection","n_clicks"),
         Input({"action":"annotate","index":ALL},"n_clicks"),
-        Input("modify-button","n_clicks"),
+        Input("modify-selection","n_clicks"),
         Input({"action":"modify","index":ALL},"n_clicks"),
         State("image-table", "selected_rows"),
         State('loc', 'href'),
@@ -163,7 +163,7 @@ def update_graphs(active_cell,n,ns,m,ms,images,url,data,current_page,page_size):
         index = active_cell['row']+page_size*current_page
         return '/annotate_image',[data[index]['Image Name']]
     # Si c'est bien une seule carte qui a été cliqué
-    if len(ctx.triggered)==1 and ctx.triggered_id!="annotate-button" and ctx.triggered_id!="modify-button":
+    if len(ctx.triggered)==1 and ctx.triggered_id!="annotate-selection" and ctx.triggered_id!="modify-selection":
         index = ctx.triggered_id['index']
         if "annotate" in ctx.triggered_id['action'] and len(ns)>=index%page_size and ns[index%page_size]!=None:
             return '/annotate_image',[data[index]['Image Name']]
@@ -179,7 +179,7 @@ def update_graphs(active_cell,n,ns,m,ms,images,url,data,current_page,page_size):
 # Permet la suppression de ou des élements sélectionnés
 @callback(
         Output("data-to-display","data",allow_duplicate=True),
-        Input("delete-button","n_clicks"),
+        Input("delete-selection","n_clicks"),
         Input({"action":"delete","index":ALL},"n_clicks"),
         State("image-table", "selected_rows"),
         State('image-table', 'data'),
@@ -188,7 +188,7 @@ def update_graphs(active_cell,n,ns,m,ms,images,url,data,current_page,page_size):
 )
 def update_graphs(n,ns,image_ids,data,page_size):
     images_to_delete = []
-    if ctx.triggered_id=="delete-button":
+    if ctx.triggered_id=="delete-selection":
         images_to_delete.append(data[i]['Image Name'] for i in image_ids)
     elif len(ctx.triggered)==1:
         index = ctx.triggered_id['index']

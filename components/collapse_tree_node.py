@@ -69,7 +69,7 @@ class CollapseTreeNodeAIO(html.Div):
         self.ids.button(aio_id)['index']=1
 
         super().__init__([
-                html.Div([html.Img(id=self.ids.button(aio_id),n_clicks=0,src="assets/cross_to_right.jpg",style={'height':'2em', 'width':'2em'}) if is_leaf==False else None,
+                html.Div([html.Img(id=self.ids.button(aio_id),n_clicks=0,src="assets/cross_to_right.png",style={'height':'2em', 'width':'2em'}) if is_leaf==False else None,
             dbc.RadioItems(id=self.ids.group(aio_id,parent),
             className="btn-group",
             inputClassName="btn-check",

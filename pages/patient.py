@@ -132,7 +132,22 @@ def update_checked(value,label):
             children.append(
                 dmc.GridCol(
                     dmc.ButtonGroup([
-                        dmc.Button("Delete"),
-                        dmc.Button("Add details")
+                        dmc.Button("Delete",id={"action":"delete","index":i}),
+                        dmc.Button("Add details",id={"action":"add-details","index":i}),
                     ]),span=3))
+            children.append(
+                dmc.GridCol(
+                    dbc.Collapse(dmc.Textarea(spellCheck=True,maxRows=3,minRows=3,autosize=True),id={"action":"collapse","index":i},is_open=False)
+                    ))
     return children
+
+clientside_callback(
+    ClientsideFunction(
+        namespace='clientside',
+        function_name='update_collapse'
+        ),
+    Output({"action":"collapse","index":MATCH}, "is_open"),
+    Output({"action":"collapse","index":MATCH}, "className"),
+    Input({"action":"add-details","index":MATCH}, "n_clicks"),
+    State({"action":"collapse","index":MATCH}, "is_open")
+    )

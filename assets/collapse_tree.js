@@ -37,8 +37,8 @@ window.dash_clientside = {
             (n, is_open) => {
                 //console.log(is_open, n)
                 if (n)
-                    return [!is_open, is_open == true ? "assets/cross_to_right.jpg" : "assets/cross_to_down.jpg"]
-                return [is_open, "assets/cross_to_right.jpg"]
+                    return [!is_open, is_open == true ? "assets/cross_to_right.png" : "assets/cross_to_down.png"]
+                return [is_open, "assets/cross_to_right.png"]
             },
         search_nodes:
             (store, node, style) => {

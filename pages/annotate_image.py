@@ -8,6 +8,7 @@ import dash_mantine_components as dmc
 dash.register_page(__name__, path='/annotate_image')
 
 layout = [
+            dcc.Location(id="loc-annotate",refresh=True),
             dmc.Stack([
                 dmc.Card([
                 dmc.CardSection("Explanation",withBorder=True,className="card-title"),
@@ -100,12 +101,14 @@ def display_button(_,fig):
     Output("current-page","data"),
     Output("current-image","children"),
     Output("image-name","children"),
+    Output("loc-annotate","href"),
     Input("next","n_clicks"),
     Input("previous","n_clicks"),
     State("current-page","data"),
-    State("selected-images","data")
+    State("selected-images","data"),
+    State("loc-annotate","href")
     )
-def update_image(next,previous,current_page,images):
+def update_image(next,previous,current_page,images,url):
     if len(images)>0:
         if next or previous :
             if ctx.triggered_id == "next": current_page+=1
@@ -115,5 +118,5 @@ def update_image(next,previous,current_page,images):
         return px.imshow(img,binary_format=format,
                         binary_compression_level=0,
                         width=img.width if img.width<1200 else 1200,
-                        height=img.height if img.height<1200 else 1200),current_page,str(current_page+1)+"/"+str(len(images)),images[current_page]
-    return {},current_page,str(current_page+1)+"/"+str(len(images)),images[current_page]
+                        height=img.height if img.height<1200 else 1200),current_page,str(current_page+1)+"/"+str(len(images)),images[current_page],url
+    return {},None,"0/0",None,"/image_annotation"

@@ -40,10 +40,6 @@
     padding-left: 0;
 }
 
-.collapse-text {
-    margin-right: 60em;
-}
-
 .radio-group .btn-group>.form-check:not(:last-child)>.btn {
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
