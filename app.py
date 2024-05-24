@@ -10,6 +10,7 @@ dash._dash_renderer._set_react_version('18.2.0')
 
 # App layout
 app.layout = dmc.MantineProvider([
+    dmc.NotificationProvider(),
     html.Header([
         dmc.Flex(children=[
             dmc.NavLink([],label="Home",href="/",active=True,color='transparent',variant='filled'),
@@ -18,7 +19,7 @@ app.layout = dmc.MantineProvider([
             dmc.NavLink([],label="Image annotation",href="/image_annotation",active=True,color='transparent',variant='filled'),
             dmc.NavLink([],label="Reports",href="/reports",active=True,color='transparent',variant='filled'),
             dmc.NavLink([],label="Visualisation Dashboard",href="/visualisation_dashboard",active=True,color='transparent',variant='filled'),
-        ],style={'backgroundColor':'black','padding':'1em'},className="header")
+        ],style={'backgroundColor':'black','padding':'1em'},className="header",id="nav-bar")
     ]),
     html.Div(dash.page_container),
     dcc.Store("selected-images",data=[],storage_type='session')

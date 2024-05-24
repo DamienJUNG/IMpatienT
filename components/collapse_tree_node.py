@@ -10,11 +10,10 @@ class CollapseTreeNodeAIO(html.Div):
             'subcomponent':'img',
             'aio_ids':aio_ids,
         }
-        group = lambda aio_ids,parent:{
+        group = lambda aio_ids:{
             'component':'CollapseTreeNodeAIO',
             'subcomponent':'buttonGroup',
-            'aio_ids':aio_ids,
-            'parent':parent
+            'aio_ids':aio_ids
         }
         collapse = lambda aio_ids:{
             'component':'CollapseTreeNodeAIO',
@@ -70,7 +69,7 @@ class CollapseTreeNodeAIO(html.Div):
 
         super().__init__([
                 html.Div([html.Img(id=self.ids.button(aio_id),n_clicks=0,src="assets/cross_to_right.png",style={'height':'2em', 'width':'2em'}) if is_leaf==False else None,
-            dbc.RadioItems(id=self.ids.group(aio_id,parent),
+            dbc.RadioItems(id=self.ids.group(aio_id),
             className="btn-group",
             inputClassName="btn-check",
             labelClassName="btn btn-outline-primary",

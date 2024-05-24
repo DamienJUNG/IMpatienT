@@ -35,7 +35,7 @@ window.dash_clientside = {
             },
         update_collapse:
             (n, is_open) => {
-                //console.log(is_open, n)
+                // console.log(is_open, n)
                 if (n)
                     return [!is_open, is_open == true ? "assets/cross_to_right.png" : "assets/cross_to_down.png"]
                 return [is_open, "assets/cross_to_right.png"]

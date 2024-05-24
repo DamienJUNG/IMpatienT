@@ -3,7 +3,11 @@ import dash
 import os
 import dash_mantine_components as dmc
 import base64
+from dash_iconify import DashIconify
 
+annotate_icon = DashIconify(icon="mdi:image-edit-outline",width=25)
+modify_icon = DashIconify(icon="mdi:text-box-edit-outline",width=25)
+delete_icon = DashIconify(icon="mdi:delete-outline",width=25)
 dash.register_page(__name__, path='/image_annotation')
 
 layout = [
@@ -11,10 +15,10 @@ layout = [
     dcc.Store(id="display-mode",storage_type="session",data="table"),
     dcc.Store(id="data-to-display",storage_type="memory",data={'images':[],'info':{'nb_pages':0,'current_page':0,'page_size':10}}),
     dcc.Location(id="loc",refresh=True),
-    dmc.Center([
+    dmc.Stack([
         dmc.Title("Upload a new image"),
-        dcc.Upload(dmc.Button("New Image"),multiple=True,id='uploader'),
-    ]),
+        dcc.Upload(dmc.Button("New Image",rightSection=DashIconify(icon="mdi:image-plus-outline",width=25)),multiple=True,id='uploader'),
+    ],justify="center",align="center",gap=0),
     dmc.Stack(
         children=[
                 dmc.Title("Image Database "),
@@ -22,14 +26,14 @@ layout = [
                     dmc.Title("Show",order=4),
                     dmc.Select(id="page-size-selector-images",data=[{"label":"10","value":"10"},{"label":"25","value":"25"},{"label":"100","value":"100"}],value="10",w=80),
                     dmc.Title("entries",order=4)
-                ],columnGap=20),
+                ],columnGap=20,align='center'),
                 dmc.Group([
                     dmc.ButtonGroup([
-                        dmc.Button("Annotate selection",id="annotate-selection",color='yellow'),
-                        dmc.Button("Modify selection",id="modify-selection",color='green'),
-                        dmc.Button("Delete selection",id="delete-selection",color='red'),
+                        dmc.Button("Annotate selection",id="annotate-selection",color='yellow',rightSection=annotate_icon),
+                        dmc.Button("Modify selection",id="modify-selection",color='green',rightSection=modify_icon),
+                        dmc.Button("Delete selection",id="delete-selection",color='red',rightSection=delete_icon),
                     ]),
-                    dmc.Pagination(id="image-pagination",total=1,value=1),
+                    dmc.Pagination(id="image-pagination",total=1,value=1,style={'display':'None'}),
                     dmc.ButtonGroup([
                         dmc.Button("Card mode",id="card-mode",color='gray'),
                         dmc.Button("Table mode",id="table-mode",color='purple'),
@@ -84,10 +88,10 @@ def update_displayer(data,mode,config,ids):
                             dmc.Text("Diagnostic : "+item["Diagnostic"]),
                             dmc.Divider(style={'margin':'2em 0 2em 0'}),
                             dmc.ButtonGroup([
-                                dmc.Button("Annotate",id={"action":"annotate","index":i+start},color='yellow'),
-                                dmc.Button("Modify",id={"action":"modify","index":i+start},color='green'),
-                                dmc.Button("Delete",id={"action":"delete","index":i+start},color='red'),
-                            ],orientation='vertical')
+                                dmc.Button("Annotate",id={"action":"annotate","index":i+start},color='yellow',rightSection=annotate_icon),
+                                dmc.Button("Modify",id={"action":"modify","index":i+start},color='green',rightSection=modify_icon),
+                                dmc.Button("Delete",id={"action":"delete","index":i+start},color='red',rightSection=delete_icon),
+                            ],orientation='vertical',style={'paddingRight':'1em'})
                         ],gap='sm',style={'padding':'1em 0 0 0'})
                     ],span=4)
                 ]))

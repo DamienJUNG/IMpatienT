@@ -1,10 +1,10 @@
 # Import packages
-from dash import callback, State, Input,Output,clientside_callback,ClientsideFunction,dcc,html,ALL,MATCH
+from dash import callback, State, Input,Output,clientside_callback,ClientsideFunction,dcc,html,ALL,MATCH,ctx
 import dash
 import dash_bootstrap_components as dbc
 from components import collapse_tree_root as ctr,orphanet_parser,collapse_tree_node as ctn
 import dash_mantine_components as dmc
-import datetime
+from dash_iconify import DashIconify
 
 import json
 with open("test.json", "r") as read_file:
@@ -52,7 +52,7 @@ layout = dmc.MantineProvider([
             html.H1("Vocabulary Tree"),
             dmc.Grid([
                 dmc.GridCol(dbc.Input(placeholder="type something...",id="input",value=""),span='auto'),
-                dmc.GridCol(dmc.Button("Search",id='button',variant='gradient'),span='content')],grow=True),
+                dmc.GridCol(dmc.Button("Search",id='button',variant='gradient',rightSection=DashIconify(icon="mdi:search",width=20)),span='content')],grow=True),
             ctr.CollapseTreeRootAIO(orphanet_parser.parse_ontology(onto),aio_id='test')
         ]),
         dbc.Container([
@@ -95,7 +95,7 @@ layout = dmc.MantineProvider([
                     {"value": "healthy", "label": "HEALTHY"},
                     {"value": "other", "label": "OTHER"},
                 ]),
-                dmc.Button("Save to Database",variant="gradient")
+                dmc.Button("Save to Database",variant="gradient",rightSection=DashIconify(icon="ic:outline-save",width=25))
             ]),
         ],style={'padding':'2em'}
     ),
@@ -114,9 +114,10 @@ clientside_callback(
 
 @callback(
     Output("selection", "children"),
-    Input(ctn.CollapseTreeNodeAIO.ids.group(ALL,ALL), "value"),
-    State(ctn.CollapseTreeNodeAIO.ids.label(ALL,ALL), "label"),)
-def update_checked(value,label):
+    Input(ctn.CollapseTreeNodeAIO.ids.group(ALL), "value"),
+    State(ctn.CollapseTreeNodeAIO.ids.label(ALL,ALL), "label"),
+    State(ctn.CollapseTreeNodeAIO.ids.group(ALL), "id"))
+def update_checked(value,label,ids):
     children = []
     # On veut récupérer le tous les noeuds qui ont un numéro (item[2])
     label = [item for item in label if item[2]!=None]
@@ -132,7 +133,7 @@ def update_checked(value,label):
             children.append(
                 dmc.GridCol(
                     dmc.ButtonGroup([
-                        dmc.Button("Delete",id={"action":"delete","index":i}),
+                        dmc.Button("Delete",id={"action":"delete","aio_ids":ids[i]['aio_ids']}),
                         dmc.Button("Add details",id={"action":"add-details","index":i}),
                     ]),span=3))
             children.append(

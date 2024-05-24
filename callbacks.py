@@ -1,4 +1,4 @@
-from dash import clientside_callback, MATCH, Output, Input, State, ALL, ClientsideFunction,callback
+from dash import clientside_callback, MATCH, Output, Input, State, ALL, ClientsideFunction,callback,no_update
 from components.collapse_tree_node import CollapseTreeNodeAIO
 from components.collapse_tree_root import CollapseTreeRootAIO
 from dash import ctx
@@ -71,3 +71,16 @@ def load_children(is_open,children,json,label):
         for item in find_children(node,label[0][0]):
             new_children.append(CollapseTreeNodeAIO(item,is_leaf=len(item['children'])==0,parent=''))
     return new_children
+
+@callback(
+    Output(CollapseTreeNodeAIO.ids.group(MATCH),"value"),
+    Input({"action":"delete","aio_ids":MATCH},"n_clicks"),
+    State(CollapseTreeNodeAIO.ids.group(MATCH),"value"),
+)
+def delete_selection(n,value):
+    print(n)
+    if n:
+        return 0
+    else :
+        return value
+    
