@@ -11,7 +11,9 @@ with open("assets/text_reports.csv") as file:
 labels = ["biopsie_id","patient_id","gene_diag","conclusion","BOQA_prediction","BOQA_prediction_score"]
 data = data[labels].fillna("N/A").to_dict('records')
 
-layout = [
+class Layout:
+    def get_layout(args):
+        return [
     dmc.Stack([
         dmc.Title("Upload a new report"),
         dmc.Anchor(
@@ -24,8 +26,17 @@ layout = [
             dmc.Title("Report Database "),
             dmc.Flex([
                 dmc.Title("Show ",order=4),
-                dmc.Select(data=[{"label":"10","value":"10"},{"label":"25","value":"25"},{"label":"100","value":"100"}],value='10',w=80),
+                dmc.Select(id="page-size-selector-reports",data=[{"label":"10","value":"10"},{"label":"25","value":"25"},{"label":"100","value":"100"}],value='10',w=80),
                 dmc.Title(" entries",order=4)
             ],columnGap=20),
-            dash.dash_table.DataTable(id="reports-table",data=data)],
+            dash.dash_table.DataTable(id="reports-table",filter_action='native',data=data,columns=[{'name': i.replace("_"," ").capitalize(), 'id': i} for i in labels])],
     style={'padding':'2em'})]
+
+    @staticmethod
+    def registered_callbacks(app):
+        @app.callback(
+            Output("reports-table","page_size"),
+            Input("page-size-selector-reports","value"),
+        )
+        def udpate_page_size(page_size):
+            return int(page_size)

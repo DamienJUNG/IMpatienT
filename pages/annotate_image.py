@@ -18,8 +18,9 @@ def load_figure(width=10,color='black'):
         }
 
 dash.register_page(__name__, path='/annotate_image')
-
-layout = [
+class Layout:
+    def get_layout(args):
+        return[
             dcc.Store(id="current-color",data='black',storage_type='memory'),
             dcc.Location(id="loc-annotate",refresh=True),
             dmc.Stack([
@@ -85,81 +86,82 @@ layout = [
             ]),
             ],style={'padding':'1em'},id="annotation-stack"),
             dcc.Store(id="current-page",storage_type='memory',data=0)
-        ]
+            ]
+    @staticmethod
+    def registered_callbacks(app):
+        @callback(
+                Output("previous","style"),
+                Output("next","style"),
+                Input("current-page","data"),
+                State("selected-images","data")
+        )
+        def display_button(_,images):
+            if len(images)<2: return {'display':'None'},{'display':'None'}
+            else:return {},{}
 
-@callback(
-        Output("previous","style"),
-        Output("next","style"),
-        Input("current-page","data"),
-        State("selected-images","data")
-)
-def display_button(_,images):
-    if len(images)<2: return {'display':'None'},{'display':'None'}
-    else:return {},{}
+        @callback(
+                Output("save-button","n_clicks"),
+                Input("save-button","n_clicks"),
+                State("annotate-image","figure")
+        )
+        def display_button(_,fig):
+            if _: 
+                fig['layout']['xaxis'] = {}
+                fig['layout']['yaxis'] = {}
+                new_fig = go.Figure(fig)
+                new_fig.update_layout(load_figure()),
+                new_fig.write_image("assets/images/"+"teeeeeeeeeeeeeeeeeeeeeeeest.png")
 
-@callback(
-        Output("save-button","n_clicks"),
-        Input("save-button","n_clicks"),
-        State("annotate-image","figure")
-)
-def display_button(_,fig):
-    if _: 
-        fig['layout']['xaxis'] = {}
-        fig['layout']['yaxis'] = {}
-        new_fig = go.Figure(fig)
-        new_fig.update_layout(load_figure()),
-        new_fig.write_image("assets/images/"+"teeeeeeeeeeeeeeeeeeeeeeeest.png")
+            return _
 
-    return _
+        @callback(
+                Output("current-color","data"),
+                Input({'name':'color-button','color':ALL},'n_clicks'),
+                prevent_initial_call=True
+        )
+        def update_color(n):
+            return ctx.triggered_id['color']
 
-@callback(
-        Output("current-color","data"),
-        Input({'name':'color-button','color':ALL},'n_clicks'),
-        prevent_initial_call=True
-)
-def update_color(n):
-    return ctx.triggered_id['color']
-
-@callback(
-        Output("annotate-image","figure",allow_duplicate=True),
-        Input("brush-width","value"),
-        Input("current-color","data"),
-        State("annotate-image","figure"),
-        prevent_initial_call=True
-)
-def update_brush_width(width,color,fig):
-    fig['layout']['xaxis'] = {}
-    fig['layout']['yaxis'] = {}
-    new_fig = go.Figure(fig)
-    new_fig.update_layout(load_figure(width,color))
-    return new_fig
+        @callback(
+                Output("annotate-image","figure",allow_duplicate=True),
+                Input("brush-width","value"),
+                Input("current-color","data"),
+                State("annotate-image","figure"),
+                prevent_initial_call=True
+        )
+        def update_brush_width(width,color,fig):
+            fig['layout']['xaxis'] = {}
+            fig['layout']['yaxis'] = {}
+            new_fig = go.Figure(fig)
+            new_fig.update_layout(load_figure(width,color))
+            return new_fig
 
 
-@callback(
-    Output("annotate-image","figure"),
-    Output("current-page","data"),
-    Output("current-image","children"),
-    Output("image-name","children"),
-    Output("loc-annotate","href"),
-    Input("next","n_clicks"),
-    Input("previous","n_clicks"),
-    Input("reset-image","n_clicks"),
-    State("current-page","data"),
-    State("selected-images","data"),
-    State("loc-annotate","href"),
-    State("brush-width","value"),
-    State("current-color","data"),
-    )
-def update_image(next,previous,reset,current_page,images,url,width,color):
-    if len(images)>0:
-        if next or previous :
-            if ctx.triggered_id == "next": current_page+=1
-            elif ctx.triggered_id == "previous": current_page-=1
-        current_page%=len(images)
-        img = PIL.Image.open("./assets/images/"+images[current_page])
-        fig = go.Figure(px.imshow(img,
-                        width=img.width if img.width<1200 else 1200,
-                        height=img.height if img.height<1200 else 1200))
-        fig.update_layout(load_figure(width,color))
-        return fig,current_page,str(current_page+1)+"/"+str(len(images)),images[current_page],url
-    return {},None,"0/0",None,"/image_annotation"
+        @callback(
+            Output("annotate-image","figure"),
+            Output("current-page","data"),
+            Output("current-image","children"),
+            Output("image-name","children"),
+            Output("loc-annotate","href"),
+            Input("next","n_clicks"),
+            Input("previous","n_clicks"),
+            Input("reset-image","n_clicks"),
+            State("current-page","data"),
+            State("selected-images","data"),
+            State("loc-annotate","href"),
+            State("brush-width","value"),
+            State("current-color","data"),
+            )
+        def update_image(next,previous,reset,current_page,images,url,width,color):
+            if len(images)>0:
+                if next or previous :
+                    if ctx.triggered_id == "next": current_page+=1
+                    elif ctx.triggered_id == "previous": current_page-=1
+                current_page%=len(images)
+                img = PIL.Image.open("./assets/images/"+images[current_page])
+                fig = go.Figure(px.imshow(img,
+                                width=img.width if img.width<1200 else 1200,
+                                height=img.height if img.height<1200 else 1200))
+                fig.update_layout(load_figure(width,color))
+                return fig,current_page,str(current_page+1)+"/"+str(len(images)),images[current_page],url
+            return {},None,"0/0",None,"/image_annotation"

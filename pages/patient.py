@@ -12,37 +12,38 @@ with open("test.json", "r") as read_file:
 with open("en_product3_146.json", "r") as read_file:
     onto = json.load(read_file)
 
-dash.register_page(__name__, path='/patient')
-
-layout = dmc.MantineProvider([
+class Layout:
+    def get_layout(args):
+        return dmc.Stack([
+    dcc.Store(id="selected-terms",data=dict(),storage_type='memory'),
     dmc.Title("Patient Information"),
     dmc.Grid(
         grow=True,
         gutter="md",
         children=[
             dmc.GridCol([
-                dmc.TextInput(label="Patient ID",placeholder="Patient_ID")
+                dmc.TextInput(label="Patient ID",placeholder="Patient_ID",className='not_implemented')
             ], span=3),
             dmc.GridCol([
-                dmc.TextInput(label="Biopsy ID",placeholder="Biopsy_ID"),
+                dmc.TextInput(label="Biopsy ID",placeholder="Biopsy_ID",className='not_implemented'),
             ], span=3),
             dmc.GridCol([
-                dmc.DateInput(label="Biopsy Date"),
+                dmc.DateInput(label="Biopsy Date",className='not_implemented'),
             ], span=3),
             dmc.GridCol([
-                dmc.TextInput(label="Muscle",placeholder="Muscle"),
+                dmc.TextInput(label="Muscle",placeholder="Muscle",className='not_implemented'),
             ], span=3),
             dmc.GridCol([
-                dmc.NumberInput(label="Patient age at biopsy",allowNegative=False,value=18)
+                dmc.NumberInput(label="Patient age at biopsy",allowNegative=False,value=18,className='not_implemented')
             ], span=6),
             dmc.GridCol([
-                dmc.TextInput(label="Diagnosed Gene (HGNC API)",placeholder="Diagnosed Gene"),
+                dmc.TextInput(label="Diagnosed Gene (HGNC API)",placeholder="Diagnosed Gene",className='not_implemented'),
             ], span=6),
             dmc.GridCol([
-                dmc.TagsInput(label="Phenotype terms (HPO API)",placeholder="HPO Phenotype Description"),
+                dmc.TagsInput(label="Phenotype terms (HPO API)",placeholder="HPO Phenotype Description",className='not_implemented'),
             ], span=6),
             dmc.GridCol([
-                dmc.TextInput(label="Mutation"),
+                dmc.TextInput(label="Mutation",className='not_implemented'),
             ], span=6),
         ],style={'padding':'2em'}
     ),
@@ -66,7 +67,7 @@ layout = dmc.MantineProvider([
                     ],
                     align='center',style={'margin':'1em'})
                 ,withBorder=True),
-                dmc.Grid(id="selection",align='stretch',grow=True,justify='center')
+                dmc.CardSection(dmc.Grid(id="selection",align='stretch',grow=True,justify='center',mih=300,style={'marginTop':'1em'}))
             ],style={'marginTop':'3em','padding':'1em'},
             shadow='lg',
             radius='xl',
@@ -78,15 +79,15 @@ layout = dmc.MantineProvider([
         children=[
             dmc.GridCol([
                 dmc.Title("Commentaries and Conclusions",order=3),
-                dmc.Textarea(placeholder="Commentaries and Conclusions",autosize=True,minRows=3),
+                dmc.Textarea(placeholder="Commentaries and Conclusions",autosize=True,minRows=3,className='not_implemented'),
             ]),
             dmc.GridCol([
                 dmc.Title("Diagnosis Prediction : ",order=3),
-                dmc.Button("Predict !",variant="gradient")
+                dmc.Button("Predict !",color='red')
             ]),
             dmc.GridCol([
                 dmc.Text("Method BOQA (Stats):"),
-                dmc.Badge("Placeholder"),dmc.Badge("Placeholder")
+                dmc.Badge("Placeholder",color='red'),dmc.Badge("Placeholder",color='red')
             ]),
             dmc.GridCol([
                 dmc.Title("Final Diagnosis",order=4),
@@ -95,60 +96,89 @@ layout = dmc.MantineProvider([
                     {"value": "healthy", "label": "HEALTHY"},
                     {"value": "other", "label": "OTHER"},
                 ]),
-                dmc.Button("Save to Database",variant="gradient",rightSection=DashIconify(icon="ic:outline-save",width=25))
+                dmc.Button("Save to Database",rightSection=DashIconify(icon="ic:outline-save",width=25),color='red')
             ]),
         ],style={'padding':'2em'}
     ),
     ])
+    @staticmethod
+    def registered_callbacks(app):
 
-clientside_callback(
-    ClientsideFunction(
-        namespace='clientside',
-        function_name='update_filter'
-    ),
-    Output(component_id=ctr.CollapseTreeRootAIO.ids.store("test",ALL),component_property='data'),
-    Input(component_id="button",component_property='n_clicks'),
-    State(component_id="input",component_property='value'),
-    State(component_id=ctr.CollapseTreeRootAIO.ids.store("test",ALL),component_property='data')
-)
+        # Sert à mettre à jour le composant qui garde en mémoire le filtre du CollapseTreeRoot
+        app.clientside_callback(
+            ClientsideFunction(
+                namespace='clientside',
+                function_name='update_filter'
+            ),
+            Output(component_id=ctr.CollapseTreeRootAIO.ids.store("test",ALL),component_property='data'),
+            Input(component_id="button",component_property='n_clicks'),
+            State(component_id="input",component_property='value'),
+            State(component_id=ctr.CollapseTreeRootAIO.ids.store("test",ALL),component_property='data')
+        )
 
-@callback(
-    Output("selection", "children"),
-    Input(ctn.CollapseTreeNodeAIO.ids.group(ALL), "value"),
-    State(ctn.CollapseTreeNodeAIO.ids.label(ALL,ALL), "label"),
-    State(ctn.CollapseTreeNodeAIO.ids.group(ALL), "id"))
-def update_checked(value,label,ids):
-    children = []
-    # On veut récupérer le tous les noeuds qui ont un numéro (item[2])
-    label = [item for item in label if item[2]!=None]
-    for i,item in enumerate(value):
-        if item>=1: 
-            children.append(
-                dmc.GridCol(
-                    dmc.Text(
-                        label[i],
-                        size='lg',
-                        style={'color':'green' if item==1 else 'red'}
-                    ),span=9,style={'paddingLeft':'2em'}));
-            children.append(
-                dmc.GridCol(
-                    dmc.ButtonGroup([
-                        dmc.Button("Delete",id={"action":"delete","aio_ids":ids[i]['aio_ids']}),
-                        dmc.Button("Add details",id={"action":"add-details","index":i}),
-                    ]),span=3))
-            children.append(
-                dmc.GridCol(
-                    dbc.Collapse(dmc.Textarea(spellCheck=True,maxRows=3,minRows=3,autosize=True),id={"action":"collapse","index":i},is_open=False)
-                    ))
-    return children
+        # On vient récupérer dans un dictionnaire les termes qui ont été cliqué, on ne s'intéresse qu'à celui qui déclenche l'évenement
+        # On le conserve dans un Store pour unifier le flux de données et permettre plus tard une synchronisation + poussée
+        # Entre la sélection et l'arbre
+        @app.callback(
+            Output("selected-terms", "data"),
+            Input(ctn.CollapseTreeNodeAIO.ids.group(ALL), "value"),
+            State(ctn.CollapseTreeNodeAIO.ids.label(ALL,ALL), "label"),
+            State("selected-terms", "data"),
+        )
+        def update_checked(value,label,children):
+            print(ctx.triggered)
+            id = ctx.triggered_id['aio_ids'] if ctx.triggered_id else None
+            print(id)
+            print(ctx.states)
+            print("-------------------------")
+            if ctx.triggered_id :
+                id = ctx.triggered_id['aio_ids']
+                text = ""
+                for key,value in ctx.states.items() :
+                    if id in key:
+                        # print("Trouvééééééééé",key,value)
+                        for str in value:
+                            text+=str
+                        
+                        # print(children)
+                children[text] = {'value':ctx.triggered[0]['value'],'id':id}
+            return children
+        
+        # On met à jour la sélection (partie de droite) en fonction des données du Store
+        @app.callback(
+            Output("selection", "children"),
+            Input("selected-terms", "data"),
+        )
+        def update_selection(selection):
+            children = []
+            for label,data in selection.items():
+                    if data['value']!=0:
+                        children.append(
+                            dmc.GridCol(
+                                dmc.Text(
+                                    label,
+                                    size='lg',
+                                    style={'color':'green' if data['value']==1 else 'red'}
+                                ),span=9,style={'paddingLeft':'2em'}));
+                        children.append(
+                            dmc.GridCol(
+                                dmc.ButtonGroup([
+                                    dmc.Button("Delete",id={"action":"delete","aio_ids":data['id']}),
+                                    dmc.Button("Add details",id={"action":"add-details","id":data['id']}),
+                                ]),span=3))
+                        children.append(
+                            dmc.GridCol(
+                                dbc.Collapse(dmc.Textarea(spellCheck=True,maxRows=3,minRows=3,autosize=True,style={'paddingLeft':'2em','paddingRight':'2em'}),id={"action":"collapse","id":data['id']},is_open=False)
+                                ))
+            return children
 
-clientside_callback(
-    ClientsideFunction(
-        namespace='clientside',
-        function_name='update_collapse'
-        ),
-    Output({"action":"collapse","index":MATCH}, "is_open"),
-    Output({"action":"collapse","index":MATCH}, "className"),
-    Input({"action":"add-details","index":MATCH}, "n_clicks"),
-    State({"action":"collapse","index":MATCH}, "is_open")
-    )
+        # Gère le petit volet de détail pour les champs du panneau de sélection (toujours à droite)
+        app.clientside_callback(
+            ClientsideFunction(
+                namespace='clientside',
+                function_name='update_click'
+                ),
+            Output({"action":"collapse","id":MATCH}, "is_open"),
+            Input({"action":"add-details","id":MATCH}, "n_clicks"),
+            State({"action":"collapse","id":MATCH}, "is_open")
+            )

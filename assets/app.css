@@ -8,3 +8,23 @@
 .card-title label {
     font-size: 1.25em;
 }
+
+.not_implemented {
+    border: 1px solid red;
+}
+
+.normal-text #text span {
+    font-size: 1em;
+}
+
+.normal-text span {
+    font-size: 1em;
+}
+
+.bold-text span {
+    font-weight: bold;
+}
+
+.invisible {
+    display: none;
+}

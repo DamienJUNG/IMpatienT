@@ -3,11 +3,10 @@ import dash
 import dash_mantine_components as dmc
 from dash_iconify import DashIconify
 
-dash.register_page(__name__, path='/create_image')
-
 icon = DashIconify(icon="line-md:upload-outline-loop",width=30)
-
-layout = [dmc.Stack([
+class Layout:
+    def get_layout(args):
+        return [dmc.Stack([
         dmc.Title("Modify/Upload a new image"),
         dmc.TextInput(label="Patient ID"),
         dcc.Upload([dmc.Button("Select a file"),dmc.Text(id="uploaded-file")],id="uploader-create",multiple=False),
@@ -18,17 +17,19 @@ layout = [dmc.Stack([
         dmc.Button("Save changes",leftSection=icon,rightSection=icon,style={"font-size":"1.15em"})
     ],style={"paddingLeft":"30em","paddingRight":"30em"})]
 
-@callback(
-    Output("uploaded-file","children"),
-    Input("uploader-create","filename"),
-    State("selected-images","data")
-)
-def upload_file(new,old):
-    if new:
-        return new
-    if old :
-        if type(old)==type(""):
-            return old
-        else:
-            return old[0]
-    return "Aucun fichier choisi"
+    @staticmethod
+    def registered_callbacks(app):
+        @app.callback(
+            Output("uploaded-file","children"),
+            Input("uploader-create","filename"),
+            State("selected-images","data")
+        )
+        def upload_file(new,old):
+            if new:
+                return new
+            if old :
+                if type(old)==type(""):
+                    return old
+                else:
+                    return old[0]
+            return "Aucun fichier choisi"

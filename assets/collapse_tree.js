@@ -21,7 +21,7 @@ window.dash_clientside = {
     clientside: {
         update_checked:
             (value, checked, label) => {
-                // console.log(label)
+                console.log(label)
                 label = label.filter(x => x[2] != null)
                 checked = { 'Yes': [], 'No': [], 'NA': [] }
                 value.map((item, i) => {
@@ -34,11 +34,14 @@ window.dash_clientside = {
                 return value
             },
         update_collapse:
-            (n, is_open) => {
-                // console.log(is_open, n)
-                if (n)
-                    return [!is_open, is_open == true ? "assets/cross_to_right.png" : "assets/cross_to_down.png"]
-                return [is_open, "assets/cross_to_right.png"]
+            (is_open) => {
+                return is_open ? "assets/cross_to_down.png" : "assets/cross_to_right.png"
+            },
+        update_click:
+            (n, m, is_open) => {
+                if (n || m[0])
+                    return !is_open
+                return is_open
             },
         search_nodes:
             (store, node, style) => {
@@ -51,12 +54,18 @@ window.dash_clientside = {
                 })
                 // console.log(filter)
                 // console.log(matching)
+                // collapse = []
                 node.map((child, i) => {
-                    if (matching.includes(child[0]['props']['children'][2]['props']['label'][0]))
+                    if (matching.includes(child[0]['props']['children'][2]['props']['label'][0])) {
                         style[i] = {}
-                    else
+                        // collapse.push(true)
+                    }
+                    else {
                         style[i] = { 'display': 'none' }
+                        // collapse.push(false)
+                    }
                 })
+                // console.log(style)
                 return style
             },
         update_filter:
@@ -67,8 +76,8 @@ window.dash_clientside = {
         update_selected_rows:
             (checked_box, selected_row_ids) => {
                 const triggered = dash_clientside.callback_context.triggered.map(t => t.prop_id)
-                console.log(selected_row_ids, "start")
-                console.log(triggered, "tri")
+                // console.log(selected_row_ids, "start")
+                // console.log(triggered, "tri")
                 if (triggered.length == 1) {
                     const start = triggered[0].indexOf(":") + 1
                     const end = triggered[0].indexOf(",")
@@ -77,7 +86,7 @@ window.dash_clientside = {
                     if (!selected_row_ids.includes(index)) selected_row_ids.push(index)
                     else selected_row_ids = selected_row_ids.filter(i => i != index)
                 }
-                console.log(selected_row_ids, "end")
+                // console.log(selected_row_ids, "end")
                 return selected_row_ids
             }
     }

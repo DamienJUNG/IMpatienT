@@ -11,8 +11,6 @@ from sklearn.metrics import confusion_matrix
 with open("assets/text_reports.csv", "r") as read_file:
     onto = pd.read_csv(read_file,sep=',')
 
-dash.register_page(__name__, path='/visualisation_dashboard')
-
 # Récupération de la partie du df sur les genes
 corr_columns = onto.columns[15:]
 threshold = 10
@@ -109,7 +107,9 @@ for item in onto['age_biopsie']:
     else : age_biopsie.append('Newborn (2<=years)')
 onto['age_biopsie'] = pd.DataFrame(age_biopsie)
 
-layout = [
+class Layout:
+    def get_layout(args):
+        return [
     dmc.Grid(children=[
         # Muscles
         dmc.GridCol(make_it_graph(onto['muscle_prelev'],'Cohort repartition by muscle','Biopsy muscle','Number of reports'),span=6),
@@ -124,3 +124,6 @@ layout = [
 
     ],style={'padding':'0 10em 0 10em'})
 ]
+    @staticmethod
+    def registered_callbacks(app):
+        return
