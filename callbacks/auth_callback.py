@@ -32,7 +32,7 @@ class AuthCallback(BaseCallback):
                     children.insert(-1,dmc.GridCol(dmc.NavLink([],className='normal-text bold-text',label="Standard vocabulary",leftSection=DashIconify(icon="icon-park-solid:tree-diagram",width=30),href="/vocabulary",active=True,color='transparent',variant='filled'),span='content'))
                 if "/patient" in accessible_pages: 
                     children.insert(-1,dmc.GridCol(dmc.NavLink([],className='normal-text bold-text',label="Patient",leftSection=DashIconify(icon="mdi:person",width=30),href="/patient",active=True,color='transparent',variant='filled'),span='content'))
-                if "/image_annottaion" in accessible_pages: 
+                if "/image_annotation" in accessible_pages: 
                     children.insert(-1,dmc.GridCol(dmc.NavLink([],className='normal-text bold-text',label="Image annotation",leftSection=DashIconify(icon='mdi:folder-image',width=30,color='white'),href="/image_annotation",active=True,color='transparent',variant='filled'),span='content'))
                 if "/reports" in accessible_pages:                     
                     children.insert(-1,dmc.GridCol(dmc.NavLink([],className='normal-text bold-text',label="Reports",leftSection=DashIconify(icon="fluent:folder-person-16-filled",width=30),href="/reports",active=True,color='transparent',variant='filled'),span='content'))

@@ -76,4 +76,4 @@ for module in modules :
 if __name__ == '__main__':
     try_connection()
     generate_all()
-    app.run(debug=True)
+    app.run(debug=False)

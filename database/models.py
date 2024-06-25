@@ -3,6 +3,7 @@ from sqlalchemy import Column, Integer, String, Float, ForeignKey,DateTime,Boole
 from sqlalchemy.orm import relationship,backref,Mapped,mapped_column
 from sqlalchemy.ext.mutable import MutableList
 from database.db import Base
+import datetime
 
 roles_access = Table('roleAccess',
     Base.metadata,
@@ -69,3 +70,51 @@ class User(Base):
     
     def get_id(self):         
         return str(self.id)
+    
+
+class Image(Base):
+    """Database table for Image & annotations"""
+    __tablename__ = 'images'
+    id = Column(Integer, primary_key=True)
+    image_name = Column(String(140), nullable=False)
+    expert_id = Column(Integer, ForeignKey("users.id"), nullable=False)
+    patient_id = Column(String(100), index=True, nullable=False)
+    biopsy_id = Column(String(100), index=True)
+    type_coloration = Column(String(140))
+    age_at_biopsy = Column(Integer, default=-1)
+    image_path = Column(String(4096), unique=True, nullable=False)
+    image_background_path = Column(String(4096), unique=True)
+    sigma_range_min = Column(Float())
+    sigma_range_max = Column(Float())
+    diagnostic = Column(String(140), index=True)
+    seg_matrix_path = Column(String(4096), unique=True)
+    mask_image_path = Column(String(4096), unique=True)
+    blend_image_path = Column(String(4096), unique=True)
+    classifier_path = Column(String(4096), unique=True)
+    mask_annot_path = Column(String(4096), unique=True)
+    class_info_path = Column(String(4096), unique=True)
+    datetime = Column(
+        DateTime(),
+        onupdate=datetime.date.today(),
+        default=datetime.date.today(),
+    )
+
+    def __repr__(self):
+        return "<Image Name {} Patient {}>".format(self.image_name, self.patient_id)
+
+    def isduplicated(self):
+        """Method to check if the image is already in the
+        database (same name and patient ID)
+
+        Returns:
+            bool: True if the image is already in the database, False otherwise
+        """
+        if (
+            Image.query.filter_by(
+                image_name=self.image_name, patient_id=self.patient_id
+            ).first()
+            is None
+        ):
+            return False
+        else:
+            return True

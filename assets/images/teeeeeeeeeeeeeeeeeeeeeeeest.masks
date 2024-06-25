@@ -1,0 +1,74 @@
+[
+    {
+        "editable": true,
+        "label": {
+            "text": ""
+        },
+        "layer": "above",
+        "legendgrouptitle": {},
+        "line": {
+            "color": "#70e663",
+            "dash": "solid",
+            "width": 4
+        },
+        "opacity": 1,
+        "path": "M333.4930555555556,239.11458333333331L350.1597222222223,300.22569444444446L351.27083333333337,302.4479166666667",
+        "showlegend": false,
+        "type": "path",
+        "visible": true,
+        "xref": "x",
+        "yref": "y"
+    },
+    {
+        "editable": true,
+        "label": {
+            "text": "",
+            "texttemplate": ""
+        },
+        "layer": "above",
+        "legend": "legend",
+        "legendgroup": "",
+        "legendgrouptitle": {
+            "text": ""
+        },
+        "legendrank": 1000,
+        "line": {
+            "color": "#031526",
+            "dash": "solid",
+            "width": 4
+        },
+        "opacity": 1,
+        "path": "M176.82638888888894,316.8923611111111L193.49305555555563,333.55902777777777L241.2708333333334,360.22569444444446L255.71527777777786,366.8923611111111",
+        "showlegend": false,
+        "type": "path",
+        "visible": true,
+        "xref": "x",
+        "yref": "y"
+    },
+    {
+        "editable": true,
+        "visible": true,
+        "showlegend": false,
+        "legend": "legend",
+        "legendgroup": "",
+        "legendgrouptitle": {
+            "text": ""
+        },
+        "legendrank": 1000,
+        "label": {
+            "text": "",
+            "texttemplate": ""
+        },
+        "xref": "x",
+        "yref": "y",
+        "layer": "above",
+        "opacity": 1,
+        "line": {
+            "color": "#ed1536",
+            "width": 4,
+            "dash": "solid"
+        },
+        "type": "path",
+        "path": "M164.6041666666667,156.89236111111111L161.2708333333334,169.11458333333334L161.2708333333334,179.11458333333334"
+    }
+]

@@ -8,7 +8,6 @@ from components.collapse_tree_node import CollapseTreeNodeAIO
 from components.collapse_tree_root import CollapseTreeRootAIO
 import plotly.express as px
 import sqlite3 as sq
-import dash._get_app
 from database import users, models,db
 import dash_mantine_components as dmc 
 from dash_iconify import DashIconify
