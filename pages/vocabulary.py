@@ -37,7 +37,7 @@ class Layout:
                 dmc.Textarea(label="Description",autosize=True,minRows=7),
             ],style={'padding':'3em','paddingTop':'0px'}
         )
-    ],className='not_implemented')]))
+    ])]))
 
     @staticmethod
     def registered_callbacks(app):
