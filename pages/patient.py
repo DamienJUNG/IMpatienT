@@ -22,28 +22,28 @@ class Layout:
         gutter="md",
         children=[
             dmc.GridCol([
-                dmc.TextInput(label="Patient ID",placeholder="Patient_ID",className='not_implemented')
+                dmc.TextInput(label="Patient ID",placeholder="Patient_ID")
             ], span=3),
             dmc.GridCol([
-                dmc.TextInput(label="Biopsy ID",placeholder="Biopsy_ID",className='not_implemented'),
+                dmc.TextInput(label="Biopsy ID",placeholder="Biopsy_ID"),
             ], span=3),
             dmc.GridCol([
-                dmc.DateInput(label="Biopsy Date",className='not_implemented'),
+                dmc.DateInput(label="Biopsy Date"),
             ], span=3),
             dmc.GridCol([
-                dmc.TextInput(label="Muscle",placeholder="Muscle",className='not_implemented'),
+                dmc.TextInput(label="Muscle",placeholder="Muscle"),
             ], span=3),
             dmc.GridCol([
-                dmc.NumberInput(label="Patient age at biopsy",allowNegative=False,value=18,className='not_implemented')
+                dmc.NumberInput(label="Patient age at biopsy",allowNegative=False,value=18)
             ], span=6),
             dmc.GridCol([
-                dmc.TextInput(label="Diagnosed Gene (HGNC API)",placeholder="Diagnosed Gene",className='not_implemented'),
+                dmc.TextInput(label="Diagnosed Gene (HGNC API)",placeholder="Diagnosed Gene"),
             ], span=6),
             dmc.GridCol([
-                dmc.TagsInput(label="Phenotype terms (HPO API)",placeholder="HPO Phenotype Description",className='not_implemented'),
+                dmc.TagsInput(label="Phenotype terms (HPO API)",placeholder="HPO Phenotype Description"),
             ], span=6),
             dmc.GridCol([
-                dmc.TextInput(label="Mutation",className='not_implemented'),
+                dmc.TextInput(label="Mutation"),
             ], span=6),
         ],style={'padding':'2em'}
     ),
@@ -79,15 +79,15 @@ class Layout:
         children=[
             dmc.GridCol([
                 dmc.Title("Commentaries and Conclusions",order=3),
-                dmc.Textarea(placeholder="Commentaries and Conclusions",autosize=True,minRows=3,className='not_implemented'),
+                dmc.Textarea(placeholder="Commentaries and Conclusions",autosize=True,minRows=3),
             ]),
             dmc.GridCol([
                 dmc.Title("Diagnosis Prediction : ",order=3),
-                dmc.Button("Predict !",color='red')
+                dmc.Button("Predict !",color='blue')
             ]),
             dmc.GridCol([
                 dmc.Text("Method BOQA (Stats):"),
-                dmc.Badge("Placeholder",color='red'),dmc.Badge("Placeholder",color='red')
+                dmc.Badge("Placeholder",color='orange'),dmc.Badge("Placeholder",color='orange')
             ]),
             dmc.GridCol([
                 dmc.Title("Final Diagnosis",order=4),
@@ -96,7 +96,7 @@ class Layout:
                     {"value": "healthy", "label": "HEALTHY"},
                     {"value": "other", "label": "OTHER"},
                 ]),
-                dmc.Button("Save to Database",rightSection=DashIconify(icon="ic:outline-save",width=25),color='red')
+                dmc.Button("Save to Database",rightSection=DashIconify(icon="ic:outline-save",width=25),color='green')
             ]),
         ],style={'padding':'2em'}
     ),
