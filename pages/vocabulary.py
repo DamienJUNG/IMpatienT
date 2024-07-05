@@ -7,8 +7,7 @@ from components import collapse_tree_root as ctr,orphanet_parser
 import dash_mantine_components as dmc
 
 import json
-with open("test.json", "r") as read_file:
-    data = json.load(read_file)
+
 with open("en_product3_146.json", "r") as read_file:
     onto = json.load(read_file)
 

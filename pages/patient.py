@@ -10,8 +10,6 @@ from dash_iconify import DashIconify
 
 from utils import ocr
 import json
-with open("test.json", "r") as read_file:
-    data = json.load(read_file)
 with open("en_product3_146.json", "r") as read_file:
     onto = json.load(read_file)
 
@@ -147,7 +145,7 @@ class Layout:
         )
         def get_report_data(report_id):
             if report_id:
-                with open("assets/text_reports.csv") as file:
+                with open("data/text_reports.csv") as file:
                     report = pd.read_csv(file,sep=',').fillna("")
                     report_id-=1
                     return (report["patient_id"].to_list()[report_id],

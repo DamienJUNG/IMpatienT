@@ -6,7 +6,7 @@ from dash_iconify import DashIconify
 
 dash.register_page(__name__, path='/reports')
 
-with open("assets/text_reports.csv") as file:
+with open("data/text_reports.csv") as file:
     data = pd.read_csv(file,sep=',')
 labels = ["biopsie_id","patient_id","gene_diag","conclusion","BOQA_prediction","BOQA_prediction_score"]
 # on ajoute l'id uniquement pour les données

@@ -37,4 +37,4 @@ def get_all_report():
     except Exception as ex:
         print(ex)
     finally:
-        return [report.as_dict() for report in reports]
+        return [report for report in reports]

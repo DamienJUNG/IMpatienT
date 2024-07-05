@@ -8,7 +8,7 @@ import plotly.express as px
 import plotly.figure_factory as ff
 from sklearn.metrics import confusion_matrix
 
-with open("assets/text_reports.csv", "r") as read_file:
+with open("data/text_reports.csv", "r") as read_file:
     onto = pd.read_csv(read_file,sep=',')
 
 # Récupération de la partie du df sur les genes

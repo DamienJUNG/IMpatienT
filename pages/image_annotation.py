@@ -140,18 +140,6 @@ class Layout:
                 data.append({"Biopsy ID":'Not available','Patient ID':'Not available','Image Name':file,'Diagnostic':'Not available'})
             return no_update,data
 
-            if contents:
-                for i,file in enumerate(contents):
-                    img_str = str.split(file,",")[1]
-                    encoded_str = base64.b64decode(img_str)
-                    fd = open("assets/images/"+names[i],'+wb')
-                    fd.write(encoded_str)
-                    fd.close()
-            data = []
-            for file in os.listdir("./assets/images/"):
-                data.append({"Biopsy ID":'Not available','Patient ID':'Not available','Image Name':file,'Diagnostic':'Not available'})
-            return data
-
         # Change le nombre d'images affichés dans le tableau
         @app.callback(
                 Output("image-table","page_size"),
