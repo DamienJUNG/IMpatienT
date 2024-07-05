@@ -23,15 +23,14 @@ class AuthCallback(BaseCallback):
             prevent_initial_call=True
         )
         def update_navBar(path,children):
-            # print("login ici",current_user.get_role(),"i")
-            # print("logged in",current_user.is_authenticated)
             if current_user.is_authenticated:
+                print('role',current_user.get_role())
                 accessible_pages = roles.get_role_accessible_pages(current_user.get_role())
                 dmc.GridCol(dmc.NavLink([],className='normal-text bold-text',rightSection=DashIconify(icon='mdi:log-out-variant',width=30,color='white'),active=True,color='transparent',variant='filled',id='log-link'),span='content')
                 if "/vocabulary" in accessible_pages:
                     children.insert(-1,dmc.GridCol(dmc.NavLink([],className='normal-text bold-text',label="Standard vocabulary",leftSection=DashIconify(icon="icon-park-solid:tree-diagram",width=30),href="/vocabulary",active=True,color='transparent',variant='filled'),span='content'))
-                if "/patient" in accessible_pages: 
-                    children.insert(-1,dmc.GridCol(dmc.NavLink([],className='normal-text bold-text',label="Patient",leftSection=DashIconify(icon="mdi:person",width=30),href="/patient",active=True,color='transparent',variant='filled'),span='content'))
+                if "/projects" in accessible_pages: 
+                    children.insert(-1,dmc.GridCol(dmc.NavLink([],className='normal-text bold-text',label="Projects",leftSection=DashIconify(icon="mdi:person",width=30),href="/projects",active=True,color='transparent',variant='filled'),span='content'))
                 if "/image_annotation" in accessible_pages: 
                     children.insert(-1,dmc.GridCol(dmc.NavLink([],className='normal-text bold-text',label="Image annotation",leftSection=DashIconify(icon='mdi:folder-image',width=30,color='white'),href="/image_annotation",active=True,color='transparent',variant='filled'),span='content'))
                 if "/reports" in accessible_pages:                     
@@ -53,11 +52,9 @@ class AuthCallback(BaseCallback):
             )
         def is_logged(url,old_url):
             max = 20
+            # print(url)
             id = "Logged as : "+(current_user.username if len(current_user.username)<=max else current_user.username[:max]+"..." ) if current_user.is_authenticated else "Not logged in"
-            # print("ici",old_url,url,url in without_account)
-            # print("login ",login)
-            # print("current user ",flog.current_user.is_authenticated)
-            # Si'il n'y a pas besoin de compte
+            # S'il n'y a pas besoin de compte
             if url in without_account:
                 return url,id,url
             # Sinon, si on est pas connecté
@@ -66,6 +63,7 @@ class AuthCallback(BaseCallback):
             role = current_user.get_role()
             accessible_pages = roles.get_role_accessible_pages(current_user.get_role())
             if url in accessible_pages:
+                print("access",url)
                 return url,id,url
             else: return old_url,no_update,no_update
 

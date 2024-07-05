@@ -1,9 +1,10 @@
 from typing import List,Optional
-from sqlalchemy import Column, Integer, String, Float, ForeignKey,DateTime,Boolean, Table
+from sqlalchemy import Column, Integer, String, Float, ForeignKey,DateTime,Boolean, Table,Enum
 from sqlalchemy.orm import relationship,backref,Mapped,mapped_column
 from sqlalchemy.ext.mutable import MutableList
 from database.db import Base
 import datetime
+import enum
 
 roles_access = Table('roleAccess',
     Base.metadata,
@@ -50,7 +51,7 @@ class User(Base):
     is_active = Column(Boolean)
     is_authenticated = Column(Boolean)
     roles_id: Mapped[int] = mapped_column(ForeignKey("roles.id")) 
-    # Pour une raison que j'ignore à la place de mettre l'id comme demandé sqlalchemy a placé le rôle
+    # Pour une raison que j'ignore à la place de mettre l'id comme demandé sqlalchemy a placé le nom du rôle
     roles: Mapped["Role"] = relationship()
 
     def get_role(self):
@@ -70,12 +71,44 @@ class User(Base):
     
     def get_id(self):         
         return str(self.id)
-    
+
+
+class Project(Base):
+    """Database table for projects"""
+    __tablename__ = 'projects'
+    id = Column(Integer, primary_key=True,autoincrement=True)
+    name=Column(String(140), nullable=False)
+    director_id = Column(Integer, ForeignKey("users.id"), nullable=False)
+    archived=Column(String(10), nullable=False)
+    reports:Mapped[List["Report"]] = relationship(back_populates="project")
+
+    def set_status(self,status):
+        self.archived = status
+
+    def as_dict(self):
+       return {'id':self.id,'name':self.name,'director_id':self.director_id,'archived':self.archived}
+
+class Report(Base):
+    """Database table for medical reports"""
+    __tablename__ = 'reports'
+    id = Column(Integer, primary_key=True,autoincrement=True)
+    name=Column(String(140), nullable=False)
+    author_id = Column(Integer, ForeignKey("users.id"), nullable=False)
+    patient_id = Column(String(100), index=True, nullable=False)
+    report_path = Column(String(4096), unique=True, nullable=True)
+
+    images:Mapped[List["Image"]] = relationship(back_populates="report")
+
+    project_id: Mapped[int] = mapped_column(ForeignKey("projects.id"))
+    project: Mapped["Project"] = relationship(back_populates="reports")
+
+    present_terms=Column(String,nullable=True)
+    absent_terms=Column(String,nullable=True)
 
 class Image(Base):
     """Database table for Image & annotations"""
     __tablename__ = 'images'
-    id = Column(Integer, primary_key=True)
+    id = Column(Integer, primary_key=True,autoincrement=True)
     image_name = Column(String(140), nullable=False)
     expert_id = Column(Integer, ForeignKey("users.id"), nullable=False)
     patient_id = Column(String(100), index=True, nullable=False)
@@ -83,7 +116,6 @@ class Image(Base):
     type_coloration = Column(String(140))
     age_at_biopsy = Column(Integer, default=-1)
     image_path = Column(String(4096), unique=True, nullable=False)
-    image_background_path = Column(String(4096), unique=True)
     sigma_range_min = Column(Float())
     sigma_range_max = Column(Float())
     diagnostic = Column(String(140), index=True)
@@ -93,6 +125,10 @@ class Image(Base):
     classifier_path = Column(String(4096), unique=True)
     mask_annot_path = Column(String(4096), unique=True)
     class_info_path = Column(String(4096), unique=True)
+
+    report_id: Mapped[int] = mapped_column(ForeignKey("reports.id"))
+    report: Mapped["Report"] = relationship(back_populates="images")
+
     datetime = Column(
         DateTime(),
         onupdate=datetime.date.today(),

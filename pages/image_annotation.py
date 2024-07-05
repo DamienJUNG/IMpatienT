@@ -14,11 +14,11 @@ class Layout:
         return [
     dcc.Store(id="page-config",storage_type="memory",data={'page_size':10,'current_page':1,'nb_page':0}),
     dcc.Store(id="display-mode",storage_type="session",data="card"),
-    dcc.Store(id="data-to-display",storage_type="memory",data={'images':[],'info':{'nb_pages':0,'current_page':0,'page_size':10}}),
+    dcc.Store(id="data-to-display",storage_type="memory",data=[]),
     dcc.Location(id="loc",refresh=True),
     dmc.Stack([
         dmc.Title("Upload a new image"),
-        dcc.Upload(dmc.Button("New Image",rightSection=DashIconify(icon="mdi:image-plus-outline",width=25)),multiple=True,id='uploader'),
+        dmc.Button("New Image",id="add-image-button",rightSection=DashIconify(icon="mdi:image-plus-outline",width=25))
     ],justify="center",align="center",gap=0),
     dmc.Stack(
         children=[
@@ -127,11 +127,19 @@ class Layout:
 
         # Recharge toutes les images à l'upload
         @app.callback(
+            Output("global-url","href",allow_duplicate=True),
             Output("data-to-display","data"),
-            Input("uploader","contents"),
-            State("uploader","filename"),
+            Input("add-image-button","n_clicks"),
+            prevent_initial_call=True
         )
-        def upload(contents,names):
+        def upload(n):
+            if n:
+                return "/create_image",no_update;
+            data = []
+            for file in os.listdir("./assets/images/"):
+                data.append({"Biopsy ID":'Not available','Patient ID':'Not available','Image Name':file,'Diagnostic':'Not available'})
+            return no_update,data
+
             if contents:
                 for i,file in enumerate(contents):
                     img_str = str.split(file,",")[1]
@@ -215,7 +223,7 @@ class Layout:
             images_to_delete = []
             if ctx.triggered_id=="delete-selection":
                 images_to_delete.append(data[i]['Image Name'] for i in image_ids)
-            elif len(ctx.triggered)==1:
+            elif len(ctx.triggered)==1 and ctx.triggered_id:
                 index = ctx.triggered_id['index']
                 if len(ns)>=index%page_size and ns[index%page_size]!=None:
                     images_to_delete.append(data[index]['Image Name'])

@@ -15,10 +15,7 @@ with open("en_product3_146.json", "r") as read_file:
 class Layout:
     def get_layout(args):
         return dmc.MantineProvider(dmc.SimpleGrid(cols=2,spacing="md",verticalSpacing="sm",
-    children=[dmc.LoadingOverlay(visible=True,
-                    id="loading-overlay",
-                    zIndex=1000,
-                    overlayProps={"radius": "sm", "blur": 2}),
+    children=[
         dbc.Container([html.H1("Tree"),dbc.Input(placeholder="type something...",id="input",value=""),dbc.Button("Search",id='button'),
     ctr.CollapseTreeRootAIO(orphanet_parser.parse_ontology(onto),aio_id='onto')]),
     dbc.Container([

@@ -5,7 +5,7 @@ ADD ./ impatient
 WORKDIR /impatient
 RUN pip install -r requirements.txt \
     && apt-get update \
-    && apt-get install -y libcairo2 \
+    && apt-get install -y libcairo2 libgl1-mesa-glx \
     && apt-get clean \
     && pip cache purge
 

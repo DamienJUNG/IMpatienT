@@ -6,13 +6,7 @@ from callbacks.base import BaseCallback
 from dash import clientside_callback, MATCH, Output, Input, State, ALL, ClientsideFunction,callback,no_update,ctx
 from components.collapse_tree_node import CollapseTreeNodeAIO
 from components.collapse_tree_root import CollapseTreeRootAIO
-import plotly.express as px
-import sqlite3 as sq
-from database import users, models,db
-import dash_mantine_components as dmc 
-from dash_iconify import DashIconify
-
-from flask_login import logout_user, current_user
+from database import reports
 
 def find_children(json,text):
     if json['name']['text']==text:
@@ -36,7 +30,6 @@ class LayoutCallback(BaseCallback):
             if pathname=="/":
                 pathname="home"
             module = importlib.import_module("."+pathname.replace("/",""),"pages")
-            # print(module)
             layout = module.Layout
             return layout.get_layout(self.args)
             
@@ -71,11 +64,6 @@ class LayoutCallback(BaseCallback):
                     'aio_ids':ALL,   
                     'parent':ALL
                 },"style"),
-                # Output({
-                #     'component':'CollapseTreeNodeAIO',
-                #     'subcomponent':'collapse',
-                #     'aio_ids':ALL,
-                # },"is_open",allow_duplicate=True)],
             Input({
                     'component':'CollapseTreeRootAIO',
                     'subcomponent':'store',
@@ -122,4 +110,40 @@ class LayoutCallback(BaseCallback):
                 return 0
             else :
                 return value
+            
+
+        @self.app.callback(
+            Output({'action':'delete','type':'report','id':ALL},"n_clicks"),
+            Output("global-url","href"),
+            Input({'action':'delete','type':'report','id':ALL},"n_clicks"),
+            State("global-url","href"),
+            prevent_initial_call=True
+        )
+        def delete_report(n,url):
+            is_none = True
+            i=0
+            while is_none and i<len(n): 
+                is_none=(n[i]==None)
+                i+=1
+            if len(ctx.triggered)==1 and ctx.triggered_id and not is_none:
+                reports.delete_report(ctx.triggered_id['id'])
+                return n,url
+            return no_update
+        
+        @self.app.callback(
+            Output("selected-reports","data"),
+            Output("global-url","href",allow_duplicate=True),
+            Input({'action':'resume','type':'report','id':ALL},"n_clicks"),
+            prevent_initial_call=True
+        )
+        def resume_report(n):
+            is_none = True
+            i=0
+            while is_none and i<len(n): 
+                is_none=(n[i]==None)
+                i+=1
+            if len(ctx.triggered)==1 and ctx.triggered_id and not is_none:
+                print("------------- coucou ----------------",n)
+                return ctx.triggered_id['id'],"/patient"
+            return no_update
 

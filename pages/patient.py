@@ -1,11 +1,14 @@
 # Import packages
-from dash import callback, State, Input,Output,clientside_callback,ClientsideFunction,dcc,html,ALL,MATCH,ctx
+import base64
+from dash import callback, State, Input,Output,clientside_callback,ClientsideFunction,dcc,html,ALL,MATCH,ctx,no_update
 import dash
 import dash_bootstrap_components as dbc
+import pandas as pd
 from components import collapse_tree_root as ctr,orphanet_parser,collapse_tree_node as ctn
 import dash_mantine_components as dmc
 from dash_iconify import DashIconify
 
+from utils import ocr
 import json
 with open("test.json", "r") as read_file:
     data = json.load(read_file)
@@ -16,34 +19,49 @@ class Layout:
     def get_layout(args):
         return dmc.Stack([
     dcc.Store(id="selected-terms",data=dict(),storage_type='memory'),
+    dcc.Store(id="report-data",data=dict(),storage_type='memory'),
+
+    dmc.Card(
+            children=[
+                dmc.CardSection(dmc.Center(html.H1("OCR/NLP analysis")),withBorder=True),
+                dmc.CardSection(dmc.Grid([
+                    dmc.GridCol(dcc.Upload([dmc.Button("Select a file"),dmc.Text("No file selected",id="uploaded-pdf")],id="uploader-pdf"),span=1),
+                    dmc.GridCol(dmc.Select(id="selected-langage",value="eng",data=[{"value":"eng","label":"English"},{"value":"fra","label":"French"}]),span='auto'),
+                    dmc.GridCol(dmc.Button("Perform analysis",id="analysis-pdf"),span='auto')
+                ],style={'padding':'2em','marginLeft':"1em"}))
+            ],style={'margin':'6em','padding':'1em',"marginBottom":"1em","marginTop":"3em"},
+            shadow='lg',
+            radius='xl',
+            withBorder=True),
+
     dmc.Title("Patient Information"),
     dmc.Grid(
         grow=True,
         gutter="md",
         children=[
             dmc.GridCol([
-                dmc.TextInput(label="Patient ID",placeholder="Patient_ID")
+                dmc.TextInput(id="patient-id",label="Patient ID",placeholder="Patient_ID")
             ], span=3),
             dmc.GridCol([
-                dmc.TextInput(label="Biopsy ID",placeholder="Biopsy_ID"),
+                dmc.TextInput(id="biopsy-id",label="Biopsy ID",placeholder="Biopsy_ID"),
             ], span=3),
             dmc.GridCol([
-                dmc.DateInput(label="Biopsy Date"),
+                dmc.DateInput(id="biopsy-date",label="Biopsy Date"),
             ], span=3),
             dmc.GridCol([
-                dmc.TextInput(label="Muscle",placeholder="Muscle"),
+                dmc.TextInput(id="muscle-name",label="Muscle",placeholder="Muscle"),
             ], span=3),
             dmc.GridCol([
-                dmc.NumberInput(label="Patient age at biopsy",allowNegative=False,value=18)
+                dmc.NumberInput(id="patient-age",label="Patient age at biopsy",allowNegative=False,value=18)
             ], span=6),
             dmc.GridCol([
-                dmc.TextInput(label="Diagnosed Gene (HGNC API)",placeholder="Diagnosed Gene"),
+                dmc.TextInput(id="diagnosed-gene",label="Diagnosed Gene (HGNC API)",placeholder="Diagnosed Gene"),
             ], span=6),
             dmc.GridCol([
-                dmc.TagsInput(label="Phenotype terms (HPO API)",placeholder="HPO Phenotype Description"),
+                dmc.TagsInput(id="used-ontology",label="Phenotype terms (HPO API)"),
             ], span=6),
             dmc.GridCol([
-                dmc.TextInput(label="Mutation"),
+                dmc.TextInput(id="mutation-name",label="Mutation"),
             ], span=6),
         ],style={'padding':'2em'}
     ),
@@ -116,32 +134,64 @@ class Layout:
             State(component_id=ctr.CollapseTreeRootAIO.ids.store("test",ALL),component_property='data')
         )
 
+        @app.callback(
+            Output("patient-id", "value"),
+            Output("biopsy-id", "value"),
+            Output("muscle-name", "value"),
+            Output("patient-age", "value"),
+            Output("biopsy-date", "value"),
+            Output("diagnosed-gene", "value"),
+            Output("mutation-name", "value"),
+            Output("used-ontology", "value"),
+            Input("selected-reports", "data"),
+        )
+        def get_report_data(report_id):
+            if report_id:
+                with open("assets/text_reports.csv") as file:
+                    report = pd.read_csv(file,sep=',').fillna("")
+                    report_id-=1
+                    return (report["patient_id"].to_list()[report_id],
+                            report["biopsie_id"].to_list()[report_id],
+                            report["muscle_prelev"].to_list()[report_id],
+                            report["age_biopsie"].to_list()[report_id],
+                            report["date_envoie"].to_list()[report_id],
+                            report["gene_diag"].to_list()[report_id],
+                            report["mutation"].to_list()[report_id],
+                            [i for i in str(report["pheno_terms"].to_list()[report_id]).split(',')])
+        
+            return no_update
+
         # On vient récupérer dans un dictionnaire les termes qui ont été cliqué, on ne s'intéresse qu'à celui qui déclenche l'évenement
         # On le conserve dans un Store pour unifier le flux de données et permettre plus tard une synchronisation + poussée
         # Entre la sélection et l'arbre
         @app.callback(
             Output("selected-terms", "data"),
             Input(ctn.CollapseTreeNodeAIO.ids.group(ALL), "value"),
-            State(ctn.CollapseTreeNodeAIO.ids.label(ALL,ALL), "label"),
+            Input("analysis-pdf","n_clicks"),
+            State("uploader-pdf","contents"),
             State("selected-terms", "data"),
+            State("selected-langage", "value"),
         )
-        def update_checked(value,label,children):
-            print(ctx.triggered)
-            id = ctx.triggered_id['aio_ids'] if ctx.triggered_id else None
-            print(id)
-            print(ctx.states)
-            print("-------------------------")
+        def perform_ocr(value,n,content,children,langage):
             if ctx.triggered_id :
-                id = ctx.triggered_id['aio_ids']
-                text = ""
-                for key,value in ctx.states.items() :
-                    if id in key:
-                        # print("Trouvééééééééé",key,value)
-                        for str in value:
-                            text+=str
-                        
-                        # print(children)
-                children[text] = {'value':ctx.triggered[0]['value'],'id':id}
+                if ctx.triggered_id == "analysis-pdf":
+                    if content:
+                        pdf_object = ocr.TextReport(file_obj=base64.b64decode(content.split(',')[1]), lang=langage)
+                        pdf_object.pdf_to_text()
+                        # pdf_object.detect_sections()
+                        # pdf_object.extract_section_text()
+                        match_list = pdf_object.analyze_text()
+                        results = {"full_text": pdf_object.sentence_as_list, "match_list": match_list}
+                        print(results)
+                else:
+                    id = ctx.triggered_id['aio_ids']
+                    text = ""
+                    for key,value in ctx.states.items() :
+                        if id in key:
+                            for str in value:
+                                text+=str
+                            
+                    children[text] = {'value':ctx.triggered[0]['value'],'id':id}
             return children
         
         # On met à jour la sélection (partie de droite) en fonction des données du Store
@@ -182,3 +232,13 @@ class Layout:
             Input({"action":"add-details","id":MATCH}, "n_clicks"),
             State({"action":"collapse","id":MATCH}, "is_open")
             )
+        
+        @app.callback(
+            Output("uploaded-pdf","children"),
+            Input("uploader-pdf","filename"),
+        )
+        def upload_file(file):
+            if file:
+                return file
+            return "No file selected"
+            

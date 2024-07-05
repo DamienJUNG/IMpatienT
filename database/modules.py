@@ -1,5 +1,5 @@
 from database.db import db_session
-from database.models import Module,Page,modules_access
+from database.models import Module,Page,modules_access,roles_access
 
 def create_module(module_name):
     try:
@@ -15,6 +15,10 @@ def delete_module(module_name):
     try:
         module = db_session.query(Module).filter_by(name=module_name).one_or_none()
         if module:
+            relations = db_session.query(modules_access).filter_by(name=module_name).all()
+            relations.extend(db_session.query(roles_access).filter_by(name=module_name).all())
+            for relation in relations:
+                db_session.delete(relation)
             db_session.delete(module)
             db_session.commit()
             return True

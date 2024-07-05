@@ -16,6 +16,9 @@ def delete_role(role_name):
     try:
         role = db_session.query(Role).filter_by(name=role_name).one_or_none()
         if role:
+            relations = db_session.query(roles_access).filter_by(name=role_name).all()
+            for relation in relations:
+                db_session.delete(relation)
             db_session.delete(role)
             db_session.commit()
             return True
@@ -39,11 +42,12 @@ def get_role_accessible_pages(roleName):
             pages = []
             for access in db_session.query(roles_access).filter_by(role_id=role.id).all():
                 module = modules.get_module(access.module_id)
+                # print('module',module,access)
                 for page in module.pages : 
                     pages.append("/"+page.name)
         return pages
     except Exception as ex:
-        print("ex",ex)
+        print("ex accessible pages",ex)
         return None
     
 def get_role_access(roleName):

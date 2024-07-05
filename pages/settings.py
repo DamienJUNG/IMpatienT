@@ -1,5 +1,5 @@
 import pandas as pd
-from dash import callback, State, Input,Output,clientside_callback,ClientsideFunction,dcc,html,ALL,MATCH,ctx
+from dash import callback, State, Input,Output,clientside_callback,ClientsideFunction,dcc,html,ALL,MATCH,ctx,no_update
 import dash
 import dash_mantine_components as dmc
 import dash_bootstrap_components as dbc
@@ -11,12 +11,30 @@ dataModules = [{"label":str(item['name']),"value":str(item['id'])} for item in m
 
 data = users.get_all_users()
 
-
-
-
 class Layout:
     def get_layout(args):
         return [
+            dcc.Store(id="to-delete",storage_type='session',data=[]),
+            dmc.Modal(
+            title="Confirm deletion",
+            id="modal-confirm",
+            zIndex=10000,
+            children=[
+                dmc.Text("Do you really want to delete this ?"),
+                dmc.Space(h=20),
+                dmc.Group(
+                    [
+                        dmc.Button(
+                            "No",
+                            color="red",
+                            variant="outline",
+                            id="abort-delete",
+                        ),
+                        dmc.Button("Yes !", id="confirm-delete"),
+                    ],
+                    justify="space-between",
+                ),
+            ]),
             dmc.Tabs([
                 dmc.TabsList(
                 [
@@ -44,7 +62,11 @@ class Layout:
                     )
                     ],justify="center",align="center",gap=0),
                     dmc.Stack([
-                        dash.dash_table.DataTable(id="users-table",filter_action='native',data=data,columns=[{'name': str(item).capitalize(), 'id': str(item)} for item in ["username","role"]])
+                        dmc.Table(id="users-table"),
+                        dmc.ButtonGroup([
+                            dmc.Button("Save changes",color='green',id='save-users'),
+                            dmc.Button("Reset changes",color='yellow',id='reset-users')
+                        ])
                     ],style={'padding':'2em'})
                 ], value="users", pb="xs"),
                 dmc.TabsPanel([
@@ -202,7 +224,38 @@ class Layout:
             body = dmc.TableTbody(rows)
 
             return [head,body],new_data
-        
+        data=data,columns=[{'name': str(item).capitalize(), 'id': str(item)} for item in ["username","role"]]
+
+        @app.callback(
+            Output("users-table","children"),
+            Input("reset-users","n_clicks"),
+        )
+        def reset_user_access(n):
+
+            all_users = users.get_all_users()
+
+            head = dmc.TableThead(
+                dmc.TableTr(
+                    [
+                        *[dmc.TableTh(item) for item in ["Username","Role"]],
+                        dmc.TableTh("Action")
+                    ]
+                )
+            )
+            rows = [
+                dmc.TableTr(
+                    [
+                        dmc.TableTd(user['username']),
+                        dmc.TableTd(user['role']),
+                        dmc.TableTd(dmc.Button("Delete",color='red',id={'action':'delete','type':'user','value':user['username']}))
+                    ]
+                )
+                for user in all_users
+            ]
+            body = dmc.TableTbody(rows)
+
+            return [head,body]
+
         @app.callback(
             Output("save-access-module","n_clicks"),
             Input("save-access-module","n_clicks"),
@@ -258,7 +311,7 @@ class Layout:
         def add_module(n,new_module):
             # print(n,new_module)
             if n and str(new_module).replace(" ","")!="":
-                # print(modules.create_module(str(new_module).lower()))
+                print(modules.create_module(str(new_module).lower()))
                 return "" 
             return new_module
         
@@ -267,25 +320,45 @@ class Layout:
             Input("add-role","n_clicks"),
             State("role-input","value"),
         )
-        def add_module(n,new_role):
+        def add_role(n,new_role):
             # print(n,new_role)
             if n and str(new_role).replace(" ","")!="":
-                # print(roles.create_role(str(new_role).upper()))
+                print(roles.create_role(str(new_role).upper()))
                 return "" 
             return new_role
         
         @app.callback(
             Output({'action':'delete','type':ALL,'value':ALL},"n_clicks"),
-            Output("reset-access-module","n_clicks"),
-            Output("reset-access-role","n_clicks"),
+            Output("to-delete","data"),
+            Output("modal-confirm","opened"),
             Input({'action':'delete','type':ALL,'value':ALL},"n_clicks"),
-            State("reset-access-module","n_clicks"),
-            State("reset-access-role","n_clicks"),
+            State("to-delete", "data"),
         )
-        def delete_row(n,reset_module,reset_role):
+        def delete_row(n,delete):
             # print(n)
-            if n and ctx.triggered_id['type']=='module':
-                modules.delete_module(ctx.triggered_id['value'])
-            elif n and ctx.triggered_id['type']=='role':
-                roles.delete_role(ctx.triggered_id['value'])
-            return n,reset_module,reset_role
+            if n and len(ctx.triggered)==1:
+                delete.append({'type':ctx.triggered_id['type'],'value':ctx.triggered_id['value']})
+                return n,delete,True
+            return no_update
+        
+
+        @app.callback(
+            Output("to-delete","data",allow_duplicate=True),
+            Output("modal-confirm","opened",allow_duplicate=True),
+            Input("confirm-delete","n_clicks"),
+            Input("abort-delete","n_clicks"),
+            State("to-delete", "data"),
+            prevent_initial_call=True
+        )
+        def confirm_delete(n,m,delete):
+            print(delete)
+            if len(delete)==1 and ctx.triggered_id=="confirm-delete":
+                item = delete[0]
+                if item['type']=='module':
+                    modules.delete_module(item['value'])
+                elif item['type']=='role':
+                    roles.delete_role(item['value'])
+                elif item['type']=='user':
+                    users.delete_user(item['value'])
+                return [],False
+            return delete,False

@@ -52,3 +52,15 @@ def verify_user(username,password):
     except Exception as ex:
         print(ex)
         return False
+    
+def delete_user(username):
+    try:
+        user = db_session.query(User).filter_by(username=username).first()
+        if user:
+            db_session.delete(user)
+            db_session.commit()
+        return True
+        # print(password,user.password,check_password_hash(user.password,password))
+    except Exception as ex:
+        print(ex)
+        return False

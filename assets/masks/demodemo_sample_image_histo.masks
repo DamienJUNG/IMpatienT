@@ -1,0 +1,54 @@
+[
+    {
+        "editable": true,
+        "label": {
+            "text": "",
+            "texttemplate": ""
+        },
+        "layer": "above",
+        "legend": "legend",
+        "legendgroup": "",
+        "legendgrouptitle": {
+            "text": ""
+        },
+        "legendrank": 1000,
+        "line": {
+            "color": "#70e663",
+            "dash": "solid",
+            "width": 4
+        },
+        "opacity": 1,
+        "path": "M206.82638888888894,333.99305555555554L250.15972222222229,360.65972222222223L270.1597222222223,369.5486111111111",
+        "showlegend": false,
+        "type": "path",
+        "visible": true,
+        "xref": "x",
+        "yref": "y"
+    },
+    {
+        "editable": true,
+        "visible": true,
+        "showlegend": false,
+        "legend": "legend",
+        "legendgroup": "",
+        "legendgrouptitle": {
+            "text": ""
+        },
+        "legendrank": 1000,
+        "label": {
+            "text": "",
+            "texttemplate": ""
+        },
+        "xref": "x",
+        "yref": "y",
+        "layer": "above",
+        "opacity": 1,
+        "line": {
+            "color": "#031526",
+            "width": 4,
+            "dash": "solid"
+        },
+        "type": "path",
+        "path": "M345.7152777777778,196.21527777777777L345.7152777777778,230.65972222222223L343.4930555555556,250.65972222222223"
+    }
+]

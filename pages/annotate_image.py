@@ -201,12 +201,15 @@ class Layout:
                                             c['text'],
                                             id={"type": "label-class-button", "color": c['color']},
                                             style={
-                                                "background-color": c['color']
+                                                "backgroundColor": c['color'],
+                                                "border" : "1px solid transparent"
                                             },
                                         )
                                         for c in classes
                                     ],
                                 ),
+                                dmc.Text("Selected color : "),
+                                dmc.Text(id="selected-color",miw=20,mih=20),
                                 dmc.Divider(),
                                 "Paintbrush Size",
                                 dcc.Slider(id="brush-width",value=3,min=0,max=6,step=0.1,marks=None),
@@ -244,10 +247,10 @@ class Layout:
                 State("current-page","data"),
                 State("selected-images","data")
         )
-        def display_button(_,layout,current_page,images):
+        def save_button(_,layout,current_page,images):
             if _: 
                 image = images[current_page]
-                with open("./assets/images/"+str(image).split(".")[0]+".masks", "w") as file:
+                with open("./assets/masks/"+str(image).split(".")[0]+".masks", "w") as file:
                         if "shapes" in layout.keys():
                             json.dump(layout["shapes"], file, indent=4) 
 
@@ -255,11 +258,12 @@ class Layout:
 
         @app.callback(
                 Output("current-color","data"),
+                Output("selected-color","style"),
                 Input({"type": "label-class-button", "color": ALL},'n_clicks'),
                 prevent_initial_call=True
         )
         def update_color(n):
-            return ctx.triggered_id['color']
+            return ctx.triggered_id['color'],{"backgroundColor":ctx.triggered_id['color']}
 
 
         @app.callback(
@@ -305,14 +309,13 @@ class Layout:
                 # get the current image
                 img_path = "./assets/images/"+images[current_page]
                 img = skio.imread(img_path)
-                masks_path = "./assets/images/"+str(images[current_page]).split(".")[0]+".masks"
+                masks_path = "./assets/masks/"+str(images[current_page]).split(".")[0]+".masks"
                 
                 if masks_data==None:
                     masks_data = []
                     for i in range(len(images)):
-                        print(i)
                         masks_data.append({"shapes":[]})
-                print("1",current_page,masks_data)
+                # print("1",current_page,masks_data)
                 if ctx.triggered_id=="reset-image":
                     masks_data[current_page]["shapes"] = []
                 elif graph_relayoutData:
